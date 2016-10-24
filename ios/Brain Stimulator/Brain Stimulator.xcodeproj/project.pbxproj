@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49D759F91DBDDC1D007E5216 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D759F81DBDDC1D007E5216 /* Login.swift */; };
+		49D759FB1DBDE6EC007E5216 /* UniversalParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */; };
 		49DEC32C1D8921C4002DEE51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC32B1D8921C4002DEE51 /* AppDelegate.swift */; };
 		49DEC32E1D8921C4002DEE51 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49DEC32D1D8921C4002DEE51 /* GameScene.sks */; };
 		49DEC3301D8921C4002DEE51 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49DEC32F1D8921C4002DEE51 /* Actions.sks */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49D759F81DBDDC1D007E5216 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalParams.swift; sourceTree = "<group>"; };
 		49DEC3281D8921C4002DEE51 /* Brain Stimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brain Stimulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DEC32B1D8921C4002DEE51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DEC32D1D8921C4002DEE51 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				49DEC3381D8921C4002DEE51 /* Assets.xcassets */,
 				49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */,
 				49DEC33D1D8921C4002DEE51 /* Info.plist */,
+				49D759F81DBDDC1D007E5216 /* Login.swift */,
+				49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */,
 			);
 			path = "Brain Stimulator";
 			sourceTree = "<group>";
@@ -275,7 +281,9 @@
 			files = (
 				49DEC3321D8921C4002DEE51 /* GameScene.swift in Sources */,
 				49DEC3341D8921C4002DEE51 /* GameViewController.swift in Sources */,
+				49D759FB1DBDE6EC007E5216 /* UniversalParams.swift in Sources */,
 				49DEC32C1D8921C4002DEE51 /* AppDelegate.swift in Sources */,
+				49D759F91DBDDC1D007E5216 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +536,7 @@
 				49DEC3581D8921C4002DEE51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49DEC3591D8921C4002DEE51 /* Build configuration list for PBXNativeTarget "Brain StimulatorTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +545,7 @@
 				49DEC35B1D8921C4002DEE51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49DEC35C1D8921C4002DEE51 /* Build configuration list for PBXNativeTarget "Brain StimulatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +554,7 @@
 				49DEC35E1D8921C4002DEE51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
