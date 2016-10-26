@@ -11,8 +11,18 @@ import UIKit
 
 class CreateAccount: UIViewController{
     
+    @IBOutlet var titleLab: UILabel!
+    @IBOutlet var usernameField: UITextField!
+    @IBOutlet var emailField: UITextField!
+    @IBOutlet var paswdField: UITextField!
+    @IBOutlet var confirmpswdField: UITextField!
+    @IBOutlet var createButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        assignbackground()
+        setViewColor()
         self.view.backgroundColor = bgColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogIn.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -29,5 +39,38 @@ class CreateAccount: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    func setViewColor(){
+        self.view.backgroundColor = bgColor
+        self.titleLab.textColor = fontColor
+        createButton.setTitleColor(fontColor, for: UIControlState.normal)
+        cancelButton.setTitleColor(fontColor, for: UIControlState.normal)
+    }
+    
+    func assignbackground(){
+        let background = UIImage(named: "Brain.png")
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+    }
+    
+    @IBAction func create(_ sender: AnyObject) {
+        let username = usernameField.text!
+        let email = emailField.text!
+        let pswd = paswdField.text!
+        let conPswd = confirmpswdField.text!
+    }
+    
+    @IBAction func cancel(_ sender: AnyObject) {
+        usernameField.text = ""
+        emailField.text = ""
+        paswdField.text = ""
+        confirmpswdField.text = ""
+        self.performSegue(withIdentifier: "createtologseg", sender: nil)
+    }
     
 }

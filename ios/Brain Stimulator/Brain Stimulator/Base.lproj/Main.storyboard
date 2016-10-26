@@ -40,6 +40,9 @@
                                 <state key="normal" title=" Remember me">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="remembermeTriggered:" destination="HIx-Hk-QRF" eventType="touchUpInside" id="un4-Uc-DRC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srk-qT-bvE">
                                 <state key="normal" title="Sign Up">
@@ -89,7 +92,7 @@
                         <outlet property="signupButton" destination="Srk-qT-bvE" id="0WJ-wi-eCI"/>
                         <outlet property="titleLab" destination="Siq-2X-pV7" id="D6q-TR-AK4"/>
                         <outlet property="useremailField" destination="mga-J6-caV" id="QyT-cF-tq6"/>
-                        <segue destination="7yo-eQ-IEF" kind="show" identifier="logtohub" id="Ih3-4i-vis"/>
+                        <segue destination="CLk-HX-QBs" kind="show" identifier="logtohubseg" id="Z4q-I5-yOC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pb4-A8-IOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,11 +140,17 @@
                                 <state key="normal" title="Create">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="create:" destination="OZE-Av-HQc" eventType="touchUpInside" id="l5a-oj-nGT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEq-ko-vuh">
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancel:" destination="OZE-Av-HQc" eventType="touchUpInside" id="byR-8l-MUt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -169,26 +178,20 @@
                             <constraint firstAttribute="trailingMargin" secondItem="XkV-E0-Oey" secondAttribute="trailing" id="w0n-jB-9gv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="XEq-ko-vuh" id="Gst-yq-QM4"/>
+                        <outlet property="confirmpswdField" destination="7yO-Ho-Crf" id="4bC-jM-daw"/>
+                        <outlet property="createButton" destination="M7Y-ST-3Ko" id="eTu-fO-nff"/>
+                        <outlet property="emailField" destination="Bac-DT-O9q" id="Piv-VN-nJe"/>
+                        <outlet property="paswdField" destination="XkV-E0-Oey" id="gaC-tL-vjS"/>
+                        <outlet property="titleLab" destination="XN1-6X-ohR" id="O57-BN-0vD"/>
+                        <outlet property="usernameField" destination="GbH-aT-FHO" id="1eM-OG-3eE"/>
+                        <segue destination="HIx-Hk-QRF" kind="show" identifier="createtologseg" id="Vte-ay-V1M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHN-xW-HVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1055" y="-612"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="X1X-72-7r4">
-            <objects>
-                <navigationController id="7yo-eQ-IEF" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L2z-Ss-rgj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="CLk-HX-QBs" kind="relationship" relationship="rootViewController" id="YUa-1b-me5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hXr-D5-zMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137" y="248"/>
         </scene>
         <!--Mainhub-->
         <scene sceneID="pVA-yg-YeL">
@@ -207,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZC4-t9-Ptx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="248"/>
+            <point key="canvasLocation" x="137" y="188"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -225,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2049" y="248"/>
+            <point key="canvasLocation" x="1054" y="188"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

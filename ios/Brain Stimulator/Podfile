@@ -1,0 +1,22 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Brain Stimulator' do
+  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'Firebase/Core'
+
+  # Pods for Brain Stimulator
+
+  target 'Brain StimulatorTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Brain StimulatorUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

@@ -20,7 +20,13 @@ class LogIn: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = bgColor
+        setViewColor()
+        assignbackground()
+        let sharedApp = UIApplication.shared
+        sharedApp.delegate?.window??.tintColor = fontColor
+        if bgColor != UIColor.white{
+            UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogIn.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
@@ -35,9 +41,36 @@ class LogIn: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func setViewColor(){
+        self.view.backgroundColor = bgColor
+        self.titleLab.textColor = fontColor
+        rememberMeButton.setTitleColor(fontColor, for: UIControlState.normal)
+        loginButton.setTitleColor(fontColor, for: UIControlState.normal)
+        signupButton.setTitleColor(fontColor, for: UIControlState.normal)
+    }
+    
+    func assignbackground(){
+        let background = UIImage(named: "Brain.png")
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+    }
 
     @IBAction func logIn(_ sender: AnyObject) {
+        let useremail = useremailField.text!
+        let pswd = pswdField.text!
+        remembered = rememberMeButton.isSelected
         
+    }
+    
+    @IBAction func remembermeTriggered(_ sender: AnyObject) {
+        rememberMeButton.isSelected = !rememberMeButton.isSelected
     }
 
 }

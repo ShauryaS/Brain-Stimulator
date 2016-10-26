@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C34F97B8F7188D7ED4316D9 /* Pods_Brain_Stimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED74D80DA81CCC3A02DFF8C /* Pods_Brain_Stimulator.framework */; };
 		49ADD38E1DC019A2006F4431 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD38D1DC019A2006F4431 /* CreateAccount.swift */; };
 		49ADD3901DC019CC006F4431 /* MainHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD38F1DC019CC006F4431 /* MainHub.swift */; };
+		49ADD3981DC0603F006F4431 /* Brain.png in Resources */ = {isa = PBXBuildFile; fileRef = 49ADD3971DC0603F006F4431 /* Brain.png */; };
+		49BE01231DC06676004A3817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49BE01221DC06676004A3817 /* GoogleService-Info.plist */; };
 		49D759F91DBDDC1D007E5216 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D759F81DBDDC1D007E5216 /* Login.swift */; };
 		49D759FB1DBDE6EC007E5216 /* UniversalParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */; };
 		49DEC32C1D8921C4002DEE51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC32B1D8921C4002DEE51 /* AppDelegate.swift */; };
@@ -21,6 +24,8 @@
 		49DEC33C1D8921C4002DEE51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */; };
 		49DEC3471D8921C4002DEE51 /* Brain_StimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC3461D8921C4002DEE51 /* Brain_StimulatorTests.swift */; };
 		49DEC3521D8921C4002DEE51 /* Brain_StimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC3511D8921C4002DEE51 /* Brain_StimulatorUITests.swift */; };
+		F28D08FD9294E22D8035D6E7 /* Pods_Brain_StimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC24B9C6CA970AE576C2661 /* Pods_Brain_StimulatorTests.framework */; };
+		FAF563F747176FF00FE1F6D2 /* Pods_Brain_StimulatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52DD51F27B07501CBF98B31 /* Pods_Brain_StimulatorUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1ED74D80DA81CCC3A02DFF8C /* Pods_Brain_Stimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brain_Stimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A18F14AE8DC1CCE8614CD1E /* Pods-Brain StimulatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain StimulatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brain StimulatorUITests/Pods-Brain StimulatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3A5ECE2501C918056964048E /* Pods-Brain StimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain StimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brain StimulatorTests/Pods-Brain StimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		49ADD38D1DC019A2006F4431 /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		49ADD38F1DC019CC006F4431 /* MainHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHub.swift; sourceTree = "<group>"; };
+		49ADD3971DC0603F006F4431 /* Brain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brain.png; sourceTree = "<group>"; };
+		49BE01221DC06676004A3817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49D759F81DBDDC1D007E5216 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalParams.swift; sourceTree = "<group>"; };
 		49DEC3281D8921C4002DEE51 /* Brain Stimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brain Stimulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +71,12 @@
 		49DEC34D1D8921C4002DEE51 /* Brain StimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brain StimulatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DEC3511D8921C4002DEE51 /* Brain_StimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brain_StimulatorUITests.swift; sourceTree = "<group>"; };
 		49DEC3531D8921C4002DEE51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56A89C41916DBAF3ECAF3039 /* Pods-Brain StimulatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain StimulatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brain StimulatorUITests/Pods-Brain StimulatorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		63FD149C3C5288010EF6A857 /* Pods-Brain Stimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain Stimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brain Stimulator/Pods-Brain Stimulator.release.xcconfig"; sourceTree = "<group>"; };
+		6EF965E3F8E785C6986A937A /* Pods-Brain Stimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain Stimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brain Stimulator/Pods-Brain Stimulator.debug.xcconfig"; sourceTree = "<group>"; };
+		8BE4342AB974A808A8131595 /* Pods-Brain StimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain StimulatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brain StimulatorTests/Pods-Brain StimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8FC24B9C6CA970AE576C2661 /* Pods_Brain_StimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brain_StimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A52DD51F27B07501CBF98B31 /* Pods_Brain_StimulatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brain_StimulatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C34F97B8F7188D7ED4316D9 /* Pods_Brain_Stimulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28D08FD9294E22D8035D6E7 /* Pods_Brain_StimulatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +100,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF563F747176FF00FE1F6D2 /* Pods_Brain_StimulatorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38E3BEF26C9745CF3F12CCDA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EF965E3F8E785C6986A937A /* Pods-Brain Stimulator.debug.xcconfig */,
+				63FD149C3C5288010EF6A857 /* Pods-Brain Stimulator.release.xcconfig */,
+				8BE4342AB974A808A8131595 /* Pods-Brain StimulatorTests.debug.xcconfig */,
+				3A5ECE2501C918056964048E /* Pods-Brain StimulatorTests.release.xcconfig */,
+				2A18F14AE8DC1CCE8614CD1E /* Pods-Brain StimulatorUITests.debug.xcconfig */,
+				56A89C41916DBAF3ECAF3039 /* Pods-Brain StimulatorUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		42EF94B337EC84EE0D0CD954 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1ED74D80DA81CCC3A02DFF8C /* Pods_Brain_Stimulator.framework */,
+				8FC24B9C6CA970AE576C2661 /* Pods_Brain_StimulatorTests.framework */,
+				A52DD51F27B07501CBF98B31 /* Pods_Brain_StimulatorUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		49DEC31F1D8921C4002DEE51 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +137,8 @@
 				49DEC3451D8921C4002DEE51 /* Brain StimulatorTests */,
 				49DEC3501D8921C4002DEE51 /* Brain StimulatorUITests */,
 				49DEC3291D8921C4002DEE51 /* Products */,
+				38E3BEF26C9745CF3F12CCDA /* Pods */,
+				42EF94B337EC84EE0D0CD954 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,12 +162,14 @@
 				49DEC3331D8921C4002DEE51 /* GameViewController.swift */,
 				49DEC3351D8921C4002DEE51 /* Main.storyboard */,
 				49DEC3381D8921C4002DEE51 /* Assets.xcassets */,
+				49ADD3971DC0603F006F4431 /* Brain.png */,
 				49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */,
 				49DEC33D1D8921C4002DEE51 /* Info.plist */,
 				49D759F81DBDDC1D007E5216 /* Login.swift */,
 				49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */,
 				49ADD38D1DC019A2006F4431 /* CreateAccount.swift */,
 				49ADD38F1DC019CC006F4431 /* MainHub.swift */,
+				49BE01221DC06676004A3817 /* GoogleService-Info.plist */,
 			);
 			path = "Brain Stimulator";
 			sourceTree = "<group>";
@@ -153,9 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49DEC3561D8921C4002DEE51 /* Build configuration list for PBXNativeTarget "Brain Stimulator" */;
 			buildPhases = (
+				CFCB8266734B25DFC98DB422 /* [CP] Check Pods Manifest.lock */,
 				49DEC3241D8921C4002DEE51 /* Sources */,
 				49DEC3251D8921C4002DEE51 /* Frameworks */,
 				49DEC3261D8921C4002DEE51 /* Resources */,
+				7DA3B2BD4EA62C3599E27690 /* [CP] Embed Pods Frameworks */,
+				EF2E7FC116B925B82B7B371A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49DEC3591D8921C4002DEE51 /* Build configuration list for PBXNativeTarget "Brain StimulatorTests" */;
 			buildPhases = (
+				482EC075C19B93337ECF7BDD /* [CP] Check Pods Manifest.lock */,
 				49DEC33E1D8921C4002DEE51 /* Sources */,
 				49DEC33F1D8921C4002DEE51 /* Frameworks */,
 				49DEC3401D8921C4002DEE51 /* Resources */,
+				C68C650A94DBF72004D4D8B9 /* [CP] Embed Pods Frameworks */,
+				8B11527DB60FF5459F876242 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,9 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49DEC35C1D8921C4002DEE51 /* Build configuration list for PBXNativeTarget "Brain StimulatorUITests" */;
 			buildPhases = (
+				51FF03556016CFC23F4B96BF /* [CP] Check Pods Manifest.lock */,
 				49DEC3491D8921C4002DEE51 /* Sources */,
 				49DEC34A1D8921C4002DEE51 /* Frameworks */,
 				49DEC34B1D8921C4002DEE51 /* Resources */,
+				979E2AAFDBC99E199673F58C /* [CP] Embed Pods Frameworks */,
+				7933FE597F7D313345D04BE1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,11 +311,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ADD3981DC0603F006F4431 /* Brain.png in Resources */,
 				49DEC3371D8921C4002DEE51 /* Main.storyboard in Resources */,
 				49DEC32E1D8921C4002DEE51 /* GameScene.sks in Resources */,
 				49DEC3391D8921C4002DEE51 /* Assets.xcassets in Resources */,
 				49DEC33C1D8921C4002DEE51 /* LaunchScreen.storyboard in Resources */,
 				49DEC3301D8921C4002DEE51 /* Actions.sks in Resources */,
+				49BE01231DC06676004A3817 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +336,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		482EC075C19B93337ECF7BDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		51FF03556016CFC23F4B96BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7933FE597F7D313345D04BE1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brain StimulatorUITests/Pods-Brain StimulatorUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DA3B2BD4EA62C3599E27690 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brain Stimulator/Pods-Brain Stimulator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B11527DB60FF5459F876242 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brain StimulatorTests/Pods-Brain StimulatorTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		979E2AAFDBC99E199673F58C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brain StimulatorUITests/Pods-Brain StimulatorUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C68C650A94DBF72004D4D8B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brain StimulatorTests/Pods-Brain StimulatorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFCB8266734B25DFC98DB422 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EF2E7FC116B925B82B7B371A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brain Stimulator/Pods-Brain Stimulator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		49DEC3241D8921C4002DEE51 /* Sources */ = {
@@ -441,6 +636,7 @@
 		};
 		49DEC3571D8921C4002DEE51 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EF965E3F8E785C6986A937A /* Pods-Brain Stimulator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CC9N3SP5VS;
@@ -455,6 +651,7 @@
 		};
 		49DEC3581D8921C4002DEE51 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63FD149C3C5288010EF6A857 /* Pods-Brain Stimulator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CC9N3SP5VS;
@@ -469,6 +666,7 @@
 		};
 		49DEC35A1D8921C4002DEE51 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BE4342AB974A808A8131595 /* Pods-Brain StimulatorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +682,7 @@
 		};
 		49DEC35B1D8921C4002DEE51 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A5ECE2501C918056964048E /* Pods-Brain StimulatorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -499,6 +698,7 @@
 		};
 		49DEC35D1D8921C4002DEE51 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A18F14AE8DC1CCE8614CD1E /* Pods-Brain StimulatorUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = CC9N3SP5VS;
@@ -513,6 +713,7 @@
 		};
 		49DEC35E1D8921C4002DEE51 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56A89C41916DBAF3ECAF3039 /* Pods-Brain StimulatorUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = CC9N3SP5VS;
