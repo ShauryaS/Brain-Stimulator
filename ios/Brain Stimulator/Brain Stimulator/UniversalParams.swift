@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import UIKit
+
+var bgColor = UIColor.white
+var fontColor = UIColor.black
+var username = ""
+var email = ""
+var pswd = ""
+var remembered:Bool!

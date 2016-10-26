@@ -56,6 +56,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logIn:" destination="HIx-Hk-QRF" eventType="touchUpInside" id="1MB-XQ-8Xz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,15 +82,24 @@
                             <constraint firstItem="Srk-qT-bvE" firstAttribute="top" secondItem="lMp-Xt-8mc" secondAttribute="bottom" constant="50" id="t9f-ud-MJF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="lMp-Xt-8mc" id="DS2-Hk-Hcw"/>
+                        <outlet property="pswdField" destination="o4A-Ty-Rlk" id="K12-gV-yeb"/>
+                        <outlet property="rememberMeButton" destination="cz3-ak-Kjj" id="ESk-ka-ofM"/>
+                        <outlet property="signupButton" destination="Srk-qT-bvE" id="0WJ-wi-eCI"/>
+                        <outlet property="titleLab" destination="Siq-2X-pV7" id="D6q-TR-AK4"/>
+                        <outlet property="useremailField" destination="mga-J6-caV" id="QyT-cF-tq6"/>
+                        <segue destination="7yo-eQ-IEF" kind="show" identifier="logtohub" id="Ih3-4i-vis"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pb4-A8-IOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="-612.14392803598207"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Account-->
         <scene sceneID="YbE-7w-sa8">
             <objects>
-                <viewController id="OZE-Av-HQc" sceneMemberID="viewController">
+                <viewController id="OZE-Av-HQc" customClass="CreateAccount" customModule="Brain_Stimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y3a-An-zAn"/>
                         <viewControllerLayoutGuide type="bottom" id="k5Z-bq-iFl"/>
@@ -162,10 +174,26 @@
             </objects>
             <point key="canvasLocation" x="1055" y="-612"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="X1X-72-7r4">
+            <objects>
+                <navigationController id="7yo-eQ-IEF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L2z-Ss-rgj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CLk-HX-QBs" kind="relationship" relationship="rootViewController" id="YUa-1b-me5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXr-D5-zMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="248"/>
+        </scene>
+        <!--Mainhub-->
         <scene sceneID="pVA-yg-YeL">
             <objects>
-                <viewController id="CLk-HX-QBs" sceneMemberID="viewController">
+                <viewController id="CLk-HX-QBs" customClass="Mainhub" customModule="Brain_Stimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ax7-yt-JCl"/>
                         <viewControllerLayoutGuide type="bottom" id="0cC-QE-FHx"/>
@@ -175,15 +203,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8iR-cq-weN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZC4-t9-Ptx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="105"/>
+            <point key="canvasLocation" x="1054" y="248"/>
         </scene>
-        <!--Brain Stimulator-->
+        <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController title="Brain Stimulator" id="BV1-FR-VrT" customClass="GameViewController" customModule="Brain_Stimulator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Brain_Stimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
@@ -196,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="105"/>
+            <point key="canvasLocation" x="2049" y="248"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
