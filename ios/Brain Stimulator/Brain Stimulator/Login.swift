@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class LogIn: UIViewController{
     
@@ -66,7 +67,6 @@ class LogIn: UIViewController{
         let useremail = useremailField.text!
         let pswd = pswdField.text!
         remembered = rememberMeButton.isSelected
-        
     }
     
     @IBAction func remembermeTriggered(_ sender: AnyObject) {

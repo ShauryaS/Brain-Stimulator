@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 var bgColor = UIColor.black
 var fontColor = UIColor.white
@@ -16,3 +17,11 @@ var email = ""
 var pswd = ""
 var remembered:Bool!
 
+let firebaseRef = FIRDatabase.database().reference()
+
+var CURRENT_USER: FIRDatabaseReference
+{
+    let userID = UserDefaults.standard.value(forKey: "uid") as! String
+    let currentUser = firebaseRef.child("users").child(userID)
+    return currentUser
+}
