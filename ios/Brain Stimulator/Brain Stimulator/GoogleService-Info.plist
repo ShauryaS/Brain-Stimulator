@@ -7,25 +7,25 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>271117745733-m847bsadkcdpls32otr8lbso7p2tqmq5.apps.googleusercontent.com</string>
+	<string>252543824342-7d4ibk6kklr4u6ip51u2urprfov01t51.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.271117745733-m847bsadkcdpls32otr8lbso7p2tqmq5</string>
+	<string>com.googleusercontent.apps.252543824342-7d4ibk6kklr4u6ip51u2urprfov01t51</string>
 	<key>API_KEY</key>
-	<string>AIzaSyATnK3HZ6woQWWrYtFcZtL5ENDPfwIck5c</string>
+	<string>AIzaSyDpSEV-DPbZHPv85gZR7hfMOlwdBd0wZcU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>271117745733</string>
+	<string>252543824342</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.shauryas.brain-stimulator</string>
+	<string>com.shauryas.Brain-Stimulator</string>
 	<key>PROJECT_ID</key>
-	<string>brain-stimulator</string>
+	<string>brain-stimulator-b8473</string>
 	<key>STORAGE_BUCKET</key>
-	<string>brain-stimulator.appspot.com</string>
+	<string>brain-stimulator-b8473.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<true/>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
 	<false/>
 	<key>IS_GCM_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:271117745733:ios:5dc256bdf1b6fe44</string>
+	<string>1:252543824342:ios:1d69a3f919417e9a</string>
 	<key>DATABASE_URL</key>
-	<string>https://brain-stimulator.firebaseio.com</string>
+	<string>https://brain-stimulator-b8473.firebaseio.com</string>
 </dict>
 </plist>

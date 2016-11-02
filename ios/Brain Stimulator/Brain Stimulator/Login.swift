@@ -30,6 +30,7 @@ class LogIn: UIViewController{
         }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogIn.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        print(firebaseRef.description())
     }
     
     //Calls this function when the tap is recognized.
@@ -41,6 +42,11 @@ class LogIn: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        readAuthFile()
     }
     
     func setViewColor(){
@@ -71,6 +77,37 @@ class LogIn: UIViewController{
     
     @IBAction func remembermeTriggered(_ sender: AnyObject) {
         rememberMeButton.isSelected = !rememberMeButton.isSelected
+    }
+    
+    func readAuthFile(){
+        let filePath = getDocumentsDirectory().appending("/savedData.txt")
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: filePath) {
+            var savedContents = ""
+            do {
+                savedContents = try NSString(contentsOf: URL(fileURLWithPath: filePath), encoding: String.Encoding.utf8.rawValue) as String
+                let contents = savedContents.characters.split(separator: " ").map(String.init)
+                username = contents[0]
+                pswd = contents[1]
+            }
+            catch {
+                print("Error: "+"\(error)")
+            }
+        }
+    }
+    
+    func saveAuth(_ username: String, password: String){
+        if remembered == true{
+            let filePath = getDocumentsDirectory().appending("/savedData.txt")
+            let fileurl = URL(fileURLWithPath: filePath)
+            let savedString = username+" "+password
+            do{
+                try savedString.write(to: fileurl, atomically: false, encoding: String.Encoding.utf8)
+            }
+            catch{
+                print("Error: "+"\(error)")
+            }
+        }
     }
 
 }

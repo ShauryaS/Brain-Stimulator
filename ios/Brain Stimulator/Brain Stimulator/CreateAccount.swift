@@ -64,6 +64,42 @@ class CreateAccount: UIViewController{
         let email = emailField.text!
         let pswd = paswdField.text!
         let conPswd = confirmpswdField.text!
+        if username != "" && email != "" && pswd != "" && conPswd != ""{
+            if pswd == conPswd{
+                FIRAuth.auth()?.createUser(withEmail: email, password: pswd) { (user, error) in
+                    if error == nil
+                    {
+                        FIRAuth.auth()?.signIn(withEmail: email, password: pswd) { (user, error) in
+                            if error == nil{
+                                let data = ["username": username]
+                                firebaseRef.child("users").child((user?.uid)!).setValue(data)
+                                print("success")
+                            }
+                            else{
+                                print(error!)
+                            }
+                        }
+                    }
+                    else
+                    {
+                        print(error!)
+                    }
+
+                }
+            }
+            else{
+                let alert = UIAlertController(title: "Error", message: "Make sure passwords match.", preferredStyle: UIAlertControllerStyle.alert)
+                let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        else{
+            let alert = UIAlertController(title: "Error", message: "Enter All Credentials.", preferredStyle: UIAlertControllerStyle.alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func cancel(_ sender: AnyObject) {

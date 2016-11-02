@@ -7,7 +7,8 @@ target 'Brain Stimulator' do
 
   pod 'Firebase/Core'  
   pod 'Firebase/Database'
-
+  pod 'Firebase/Auth'
+                    
   # Pods for Brain Stimulator
 
   target 'Brain StimulatorTests' do
