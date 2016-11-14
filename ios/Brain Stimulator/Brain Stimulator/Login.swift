@@ -31,6 +31,10 @@ class LogIn: UIViewController{
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogIn.dismissKeyboard))
         view.addGestureRecognizer(tap)
         print(firebaseRef.description())
+        readAuthFile()
+        if username != "" && pswd != ""{
+            login(useremail: username, pswd: pswd)
+        }
     }
     
     //Calls this function when the tap is recognized.
@@ -73,6 +77,33 @@ class LogIn: UIViewController{
         let useremail = useremailField.text!
         let pswd = pswdField.text!
         remembered = rememberMeButton.isSelected
+        login(useremail: useremail, pswd: pswd)
+    }
+    
+    func login(useremail:String, pswd:String){
+        if useremail != "" && pswd != ""{
+            FIRAuth.auth()?.signIn(withEmail: useremail, password: pswd) { (user, error) in
+                if error == nil{
+                    if remembered != nil && remembered == true{
+                        self.saveAuth(username: useremail, password: pswd)
+                    }
+                    uid = (user?.uid)!
+                    self.performSegue(withIdentifier: "logtohubseg", sender: nil)
+                }
+                else{
+                    let alert = UIAlertController(title: "Error", message: "Sign In Failed.", preferredStyle: UIAlertControllerStyle.alert)
+                    let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+        else{
+            let alert = UIAlertController(title: "Error", message: "Enter All Credentials.", preferredStyle: UIAlertControllerStyle.alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func remembermeTriggered(_ sender: AnyObject) {
@@ -96,7 +127,7 @@ class LogIn: UIViewController{
         }
     }
     
-    func saveAuth(_ username: String, password: String){
+    func saveAuth(username: String, password: String){
         if remembered == true{
             let filePath = getDocumentsDirectory().appending("/savedData.txt")
             let fileurl = URL(fileURLWithPath: filePath)

@@ -15,6 +15,7 @@ var fontColor = UIColor.black
 var username = ""
 var email = ""
 var pswd = ""
+var uid = ""
 var remembered:Bool!
 
 let firebaseRef = FIRDatabase.database().reference()

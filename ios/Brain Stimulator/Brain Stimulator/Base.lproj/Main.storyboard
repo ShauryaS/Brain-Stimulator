@@ -220,13 +220,115 @@
                     <view key="view" contentMode="scaleToFill" id="UuC-9l-XpR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2E-KG-eJi">
+                                <rect key="frame" x="16" y="28" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dw9-3D-lqV">
+                                <rect key="frame" x="16" y="82" width="343" height="504"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCv-2E-Ym0">
+                                <rect key="frame" x="16" y="616" width="343" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WgP-ME-FUI" kind="show" id="lKs-bi-jDb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0cC-QE-FHx" firstAttribute="top" secondItem="dw9-3D-lqV" secondAttribute="bottom" constant="81" id="1of-iQ-Ioh"/>
+                            <constraint firstItem="dw9-3D-lqV" firstAttribute="leading" secondItem="UuC-9l-XpR" secondAttribute="leadingMargin" id="FKh-eR-Gkf"/>
+                            <constraint firstItem="dw9-3D-lqV" firstAttribute="centerY" secondItem="UuC-9l-XpR" secondAttribute="centerY" id="Yiq-1N-8M1"/>
+                            <constraint firstItem="dw9-3D-lqV" firstAttribute="trailing" secondItem="UuC-9l-XpR" secondAttribute="trailingMargin" id="gAB-dq-Dj1"/>
+                            <constraint firstItem="GCv-2E-Ym0" firstAttribute="top" secondItem="dw9-3D-lqV" secondAttribute="bottom" constant="30" id="qXv-H3-hc4"/>
+                            <constraint firstItem="dw9-3D-lqV" firstAttribute="top" secondItem="B2E-KG-eJi" secondAttribute="bottom" constant="20" id="rr0-TN-cix"/>
+                            <constraint firstItem="GCv-2E-Ym0" firstAttribute="leading" secondItem="UuC-9l-XpR" secondAttribute="leadingMargin" id="t50-1V-xR5"/>
+                            <constraint firstItem="B2E-KG-eJi" firstAttribute="trailing" secondItem="dw9-3D-lqV" secondAttribute="trailing" id="uFf-TW-ent"/>
+                            <constraint firstItem="B2E-KG-eJi" firstAttribute="leading" secondItem="dw9-3D-lqV" secondAttribute="leading" id="vds-U7-M5l"/>
+                            <constraint firstItem="B2E-KG-eJi" firstAttribute="top" secondItem="ax7-yt-JCl" secondAttribute="bottom" constant="8" symbolic="YES" id="wfB-9r-1fV"/>
+                            <constraint firstItem="GCv-2E-Ym0" firstAttribute="trailing" secondItem="UuC-9l-XpR" secondAttribute="trailingMargin" id="yxH-Y3-iHx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8iR-cq-weN"/>
+                    <connections>
+                        <outlet property="settingsButton" destination="GCv-2E-Ym0" id="EpV-bE-8TJ"/>
+                        <outlet property="userWelLab" destination="B2E-KG-eJi" id="1kU-sq-99E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZC4-t9-Ptx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="188"/>
+            <point key="canvasLocation" x="136.80000000000001" y="187.55622188905548"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Z7v-ZI-AcZ">
+            <objects>
+                <viewController id="WgP-ME-FUI" customClass="Settings" customModule="Brain_Stimulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hvG-d3-ORK"/>
+                        <viewControllerLayoutGuide type="bottom" id="82k-hf-b0t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K2H-bg-Bii">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBd-yy-bwd">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4qI-f5-vPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.5999999999999" y="187.55622188905548"/>
+        </scene>
+        <!--Color Game-->
+        <scene sceneID="ipV-QV-J06">
+            <objects>
+                <viewController id="PEG-mU-hoa" customClass="ColorGame" customModule="Brain_Stimulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="igH-qz-KvF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fme-Pd-ifc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NPm-wr-sQd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJl-1G-O54" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1054" y="898"/>
+        </scene>
+        <!--Math Game-->
+        <scene sceneID="Ezy-Rw-vlJ">
+            <objects>
+                <viewController id="ccv-Xw-TrV" customClass="MathGame" customModule="Brain_Stimulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XPI-ra-wZM"/>
+                        <viewControllerLayoutGuide type="bottom" id="wpF-Gx-qiZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="THK-en-Zga">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9U-Ob-0Mz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="897"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -244,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="188"/>
+            <point key="canvasLocation" x="122" y="1661"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
