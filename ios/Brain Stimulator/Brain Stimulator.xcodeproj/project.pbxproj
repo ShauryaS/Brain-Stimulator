@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C34F97B8F7188D7ED4316D9 /* Pods_Brain_Stimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED74D80DA81CCC3A02DFF8C /* Pods_Brain_Stimulator.framework */; };
 		4901DA241DD8683F00962C9D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901DA231DD8683F00962C9D /* Settings.swift */; };
+		492BA3511DDAD382003345AE /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BA3501DDAD382003345AE /* ProgressView.swift */; };
+		494C50831DDAEACD0079E4D3 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 494C50821DDAEACD0079E4D3 /* pause.png */; };
 		49A0F39F1DD99C6500540372 /* MathGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0F39E1DD99C6500540372 /* MathGame.swift */; };
 		49A0F3A11DD99C7300540372 /* ColorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0F3A01DD99C7300540372 /* ColorGame.swift */; };
 		49A98D8C1DC885DF0088B029 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */; };
@@ -53,6 +55,8 @@
 		2A18F14AE8DC1CCE8614CD1E /* Pods-Brain StimulatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain StimulatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brain StimulatorUITests/Pods-Brain StimulatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A5ECE2501C918056964048E /* Pods-Brain StimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain StimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brain StimulatorTests/Pods-Brain StimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		4901DA231DD8683F00962C9D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		492BA3501DDAD382003345AE /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		494C50821DDAEACD0079E4D3 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		49A0F39E1DD99C6500540372 /* MathGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathGame.swift; sourceTree = "<group>"; };
 		49A0F3A01DD99C7300540372 /* ColorGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGame.swift; sourceTree = "<group>"; };
 		49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				49DEC3351D8921C4002DEE51 /* Main.storyboard */,
 				49DEC3381D8921C4002DEE51 /* Assets.xcassets */,
 				49ADD3971DC0603F006F4431 /* Brain.png */,
+				494C50821DDAEACD0079E4D3 /* pause.png */,
 				49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */,
 				49DEC33D1D8921C4002DEE51 /* Info.plist */,
 				49D759F81DBDDC1D007E5216 /* Login.swift */,
@@ -181,6 +186,7 @@
 				4901DA231DD8683F00962C9D /* Settings.swift */,
 				49A0F39E1DD99C6500540372 /* MathGame.swift */,
 				49A0F3A01DD99C7300540372 /* ColorGame.swift */,
+				492BA3501DDAD382003345AE /* ProgressView.swift */,
 			);
 			path = "Brain Stimulator";
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 			files = (
 				49ADD3981DC0603F006F4431 /* Brain.png in Resources */,
 				49DEC3371D8921C4002DEE51 /* Main.storyboard in Resources */,
+				494C50831DDAEACD0079E4D3 /* pause.png in Resources */,
 				49DEC32E1D8921C4002DEE51 /* GameScene.sks in Resources */,
 				49DEC3391D8921C4002DEE51 /* Assets.xcassets in Resources */,
 				49DEC33C1D8921C4002DEE51 /* LaunchScreen.storyboard in Resources */,
@@ -506,6 +513,7 @@
 				49DEC32C1D8921C4002DEE51 /* AppDelegate.swift in Sources */,
 				49D759F91DBDDC1D007E5216 /* Login.swift in Sources */,
 				49A0F3A11DD99C7300540372 /* ColorGame.swift in Sources */,
+				492BA3511DDAD382003345AE /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

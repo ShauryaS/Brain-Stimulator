@@ -22,7 +22,7 @@ class LogIn: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewColor()
-        assignbackground()
+        //assignbackground()
         let sharedApp = UIApplication.shared
         sharedApp.delegate?.window??.tintColor = fontColor
         if bgColor != UIColor.white{

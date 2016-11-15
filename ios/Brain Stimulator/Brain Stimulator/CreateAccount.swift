@@ -22,7 +22,7 @@ class CreateAccount: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        assignbackground()
+        //assignbackground()
         setViewColor()
         self.view.backgroundColor = bgColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogIn.dismissKeyboard))

@@ -11,14 +11,19 @@ import UIKit
 
 class Mainhub: UIViewController{
     
-    @IBOutlet var userWelLab: UILabel!
-    @IBOutlet var settingsButton: UIButton!
+    @IBOutlet var mainLabel: UILabel!
+    @IBOutlet var button1: UIButton!
+    @IBOutlet var button2: UIButton!
+    @IBOutlet var button3: UIButton!
+    @IBOutlet var button4: UIButton!
+    @IBOutlet var button5: UIButton!
+    @IBOutlet var button6: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = bgColor
-        settingsButton.setTitleColor(fontColor, for: UIControlState.normal)
         setWelLab()
+        setButtons()
     }
      
     override func didReceiveMemoryWarning() {
@@ -27,13 +32,27 @@ class Mainhub: UIViewController{
     }
     
     func setWelLab(){
-        userWelLab.textColor = fontColor
         firebaseRef.child("users").child(uid).child("username").observeSingleEvent(of: .value, with: {
             snapshot in
             username = snapshot.value as! String
             print(username)
-            self.userWelLab.text = username + " hub"
+            self.navigationItem.title = username + " hub"
         })
+    }
+    
+    func setButtons(){
+        button1.backgroundColor = bgColor
+        button1.titleLabel?.textColor = fontColor
+        button2.backgroundColor = bgColor
+        button2.titleLabel?.textColor = fontColor
+        button3.backgroundColor = bgColor
+        button3.titleLabel?.textColor = fontColor
+        button4.backgroundColor = bgColor
+        button4.titleLabel?.textColor = fontColor
+        button5.backgroundColor = bgColor
+        button5.titleLabel?.textColor = fontColor
+        button6.backgroundColor = bgColor
+        button6.titleLabel?.textColor = fontColor
     }
     
 }

@@ -1,25 +1,24 @@
 //
-//  Settings.swift
+//  ProgressView.swift
 //  Brain Stimulator
 //
-//  Created by Shaurya Srivastava on 11/13/16.
+//  Created by Shaurya Srivastava on 11/14/16.
 //  Copyright © 2016 Shaurya Srivastava. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class Settings: UIViewController{
+class ProgressView: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = bgColor
-        navigationItem.title = "Settings"
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
