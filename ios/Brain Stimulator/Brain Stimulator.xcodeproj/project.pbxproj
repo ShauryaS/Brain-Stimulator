@@ -11,7 +11,6 @@
 		4901DA241DD8683F00962C9D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901DA231DD8683F00962C9D /* Settings.swift */; };
 		492BA3511DDAD382003345AE /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BA3501DDAD382003345AE /* ProgressView.swift */; };
 		494C50831DDAEACD0079E4D3 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 494C50821DDAEACD0079E4D3 /* pause.png */; };
-		49A0F39F1DD99C6500540372 /* MathGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0F39E1DD99C6500540372 /* MathGame.swift */; };
 		49A0F3A11DD99C7300540372 /* ColorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0F3A01DD99C7300540372 /* ColorGame.swift */; };
 		49A98D8C1DC885DF0088B029 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */; };
 		49ADD38E1DC019A2006F4431 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD38D1DC019A2006F4431 /* CreateAccount.swift */; };
@@ -29,6 +28,18 @@
 		49DEC33C1D8921C4002DEE51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */; };
 		49DEC3471D8921C4002DEE51 /* Brain_StimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC3461D8921C4002DEE51 /* Brain_StimulatorTests.swift */; };
 		49DEC3521D8921C4002DEE51 /* Brain_StimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC3511D8921C4002DEE51 /* Brain_StimulatorUITests.swift */; };
+		49E467481DDC3F9800950EA1 /* SelectMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467471DDC3F9800950EA1 /* SelectMode.swift */; };
+		49E4674A1DDC3FA800950EA1 /* SelectDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467491DDC3FA800950EA1 /* SelectDifficulty.swift */; };
+		49E4674D1DDC45EB00950EA1 /* NameTheColor.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E4674C1DDC45EB00950EA1 /* NameTheColor.txt */; };
+		49E4674F1DDC462D00950EA1 /* ColorOfWordShown.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E4674E1DDC462D00950EA1 /* ColorOfWordShown.txt */; };
+		49E467511DDC469A00950EA1 /* WordOfColorOfWordShown.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E467501DDC469A00950EA1 /* WordOfColorOfWordShown.txt */; };
+		49E467541DDC470700950EA1 /* AddSub.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E467531DDC470700950EA1 /* AddSub.txt */; };
+		49E467561DDC471C00950EA1 /* MultDiv.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E467551DDC471C00950EA1 /* MultDiv.txt */; };
+		49E467581DDC473300950EA1 /* SqSqrt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E467571DDC473300950EA1 /* SqSqrt.txt */; };
+		49E4675A1DDC476500950EA1 /* SimpleMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467591DDC476500950EA1 /* SimpleMath.swift */; };
+		49E467631DDC48AD00950EA1 /* ComplexMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467621DDC48AD00950EA1 /* ComplexMath.swift */; };
+		49E467651DDC4BD200950EA1 /* FindIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467641DDC4BD200950EA1 /* FindIt.swift */; };
+		49E467671DDC4C7E00950EA1 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467661DDC4C7E00950EA1 /* Memory.swift */; };
 		F28D08FD9294E22D8035D6E7 /* Pods_Brain_StimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC24B9C6CA970AE576C2661 /* Pods_Brain_StimulatorTests.framework */; };
 		FAF563F747176FF00FE1F6D2 /* Pods_Brain_StimulatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52DD51F27B07501CBF98B31 /* Pods_Brain_StimulatorUITests.framework */; };
 /* End PBXBuildFile section */
@@ -57,7 +68,6 @@
 		4901DA231DD8683F00962C9D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		492BA3501DDAD382003345AE /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		494C50821DDAEACD0079E4D3 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
-		49A0F39E1DD99C6500540372 /* MathGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathGame.swift; sourceTree = "<group>"; };
 		49A0F3A01DD99C7300540372 /* ColorGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGame.swift; sourceTree = "<group>"; };
 		49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49A98D8D1DC8880B0088B029 /* Brain Stimulator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Brain Stimulator.entitlements"; sourceTree = "<group>"; };
@@ -82,6 +92,18 @@
 		49DEC34D1D8921C4002DEE51 /* Brain StimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brain StimulatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DEC3511D8921C4002DEE51 /* Brain_StimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brain_StimulatorUITests.swift; sourceTree = "<group>"; };
 		49DEC3531D8921C4002DEE51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49E467471DDC3F9800950EA1 /* SelectMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMode.swift; sourceTree = "<group>"; };
+		49E467491DDC3FA800950EA1 /* SelectDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDifficulty.swift; sourceTree = "<group>"; };
+		49E4674C1DDC45EB00950EA1 /* NameTheColor.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NameTheColor.txt; sourceTree = "<group>"; };
+		49E4674E1DDC462D00950EA1 /* ColorOfWordShown.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorOfWordShown.txt; sourceTree = "<group>"; };
+		49E467501DDC469A00950EA1 /* WordOfColorOfWordShown.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WordOfColorOfWordShown.txt; sourceTree = "<group>"; };
+		49E467531DDC470700950EA1 /* AddSub.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AddSub.txt; sourceTree = "<group>"; };
+		49E467551DDC471C00950EA1 /* MultDiv.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultDiv.txt; sourceTree = "<group>"; };
+		49E467571DDC473300950EA1 /* SqSqrt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SqSqrt.txt; sourceTree = "<group>"; };
+		49E467591DDC476500950EA1 /* SimpleMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleMath.swift; sourceTree = "<group>"; };
+		49E467621DDC48AD00950EA1 /* ComplexMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexMath.swift; sourceTree = "<group>"; };
+		49E467641DDC4BD200950EA1 /* FindIt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindIt.swift; sourceTree = "<group>"; };
+		49E467661DDC4C7E00950EA1 /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		56A89C41916DBAF3ECAF3039 /* Pods-Brain StimulatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain StimulatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brain StimulatorUITests/Pods-Brain StimulatorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		63FD149C3C5288010EF6A857 /* Pods-Brain Stimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain Stimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brain Stimulator/Pods-Brain Stimulator.release.xcconfig"; sourceTree = "<group>"; };
 		6EF965E3F8E785C6986A937A /* Pods-Brain Stimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain Stimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brain Stimulator/Pods-Brain Stimulator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -166,27 +188,34 @@
 		49DEC32A1D8921C4002DEE51 /* Brain Stimulator */ = {
 			isa = PBXGroup;
 			children = (
-				49A98D8D1DC8880B0088B029 /* Brain Stimulator.entitlements */,
-				49DEC32B1D8921C4002DEE51 /* AppDelegate.swift */,
-				49DEC32D1D8921C4002DEE51 /* GameScene.sks */,
 				49DEC32F1D8921C4002DEE51 /* Actions.sks */,
+				49DEC32B1D8921C4002DEE51 /* AppDelegate.swift */,
+				49DEC3381D8921C4002DEE51 /* Assets.xcassets */,
+				49A98D8D1DC8880B0088B029 /* Brain Stimulator.entitlements */,
+				49ADD3971DC0603F006F4431 /* Brain.png */,
+				49E4674B1DDC443500950EA1 /* Color Game Files */,
+				49A0F3A01DD99C7300540372 /* ColorGame.swift */,
+				49E467621DDC48AD00950EA1 /* ComplexMath.swift */,
+				49ADD38D1DC019A2006F4431 /* CreateAccount.swift */,
+				49DEC32D1D8921C4002DEE51 /* GameScene.sks */,
 				49DEC3311D8921C4002DEE51 /* GameScene.swift */,
 				49DEC3331D8921C4002DEE51 /* GameViewController.swift */,
-				49DEC3351D8921C4002DEE51 /* Main.storyboard */,
-				49DEC3381D8921C4002DEE51 /* Assets.xcassets */,
-				49ADD3971DC0603F006F4431 /* Brain.png */,
-				494C50821DDAEACD0079E4D3 /* pause.png */,
-				49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */,
-				49DEC33D1D8921C4002DEE51 /* Info.plist */,
-				49D759F81DBDDC1D007E5216 /* Login.swift */,
-				49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */,
-				49ADD38D1DC019A2006F4431 /* CreateAccount.swift */,
-				49ADD38F1DC019CC006F4431 /* MainHub.swift */,
 				49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */,
-				4901DA231DD8683F00962C9D /* Settings.swift */,
-				49A0F39E1DD99C6500540372 /* MathGame.swift */,
-				49A0F3A01DD99C7300540372 /* ColorGame.swift */,
+				49DEC33D1D8921C4002DEE51 /* Info.plist */,
+				49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */,
+				49D759F81DBDDC1D007E5216 /* Login.swift */,
+				49DEC3351D8921C4002DEE51 /* Main.storyboard */,
+				49ADD38F1DC019CC006F4431 /* MainHub.swift */,
+				494C50821DDAEACD0079E4D3 /* pause.png */,
 				492BA3501DDAD382003345AE /* ProgressView.swift */,
+				49E467491DDC3FA800950EA1 /* SelectDifficulty.swift */,
+				49E467471DDC3F9800950EA1 /* SelectMode.swift */,
+				4901DA231DD8683F00962C9D /* Settings.swift */,
+				49E467611DDC487A00950EA1 /* Simple Math */,
+				49E467591DDC476500950EA1 /* SimpleMath.swift */,
+				49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */,
+				49E467641DDC4BD200950EA1 /* FindIt.swift */,
+				49E467661DDC4C7E00950EA1 /* Memory.swift */,
 			);
 			path = "Brain Stimulator";
 			sourceTree = "<group>";
@@ -207,6 +236,26 @@
 				49DEC3531D8921C4002DEE51 /* Info.plist */,
 			);
 			path = "Brain StimulatorUITests";
+			sourceTree = "<group>";
+		};
+		49E4674B1DDC443500950EA1 /* Color Game Files */ = {
+			isa = PBXGroup;
+			children = (
+				49E4674C1DDC45EB00950EA1 /* NameTheColor.txt */,
+				49E4674E1DDC462D00950EA1 /* ColorOfWordShown.txt */,
+				49E467501DDC469A00950EA1 /* WordOfColorOfWordShown.txt */,
+			);
+			name = "Color Game Files";
+			sourceTree = "<group>";
+		};
+		49E467611DDC487A00950EA1 /* Simple Math */ = {
+			isa = PBXGroup;
+			children = (
+				49E467531DDC470700950EA1 /* AddSub.txt */,
+				49E467551DDC471C00950EA1 /* MultDiv.txt */,
+				49E467571DDC473300950EA1 /* SqSqrt.txt */,
+			);
+			name = "Simple Math";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,12 +383,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				49ADD3981DC0603F006F4431 /* Brain.png in Resources */,
+				49E4674F1DDC462D00950EA1 /* ColorOfWordShown.txt in Resources */,
+				49E467581DDC473300950EA1 /* SqSqrt.txt in Resources */,
+				49E4674D1DDC45EB00950EA1 /* NameTheColor.txt in Resources */,
+				49E467541DDC470700950EA1 /* AddSub.txt in Resources */,
 				49DEC3371D8921C4002DEE51 /* Main.storyboard in Resources */,
+				49E467561DDC471C00950EA1 /* MultDiv.txt in Resources */,
 				494C50831DDAEACD0079E4D3 /* pause.png in Resources */,
 				49DEC32E1D8921C4002DEE51 /* GameScene.sks in Resources */,
 				49DEC3391D8921C4002DEE51 /* Assets.xcassets in Resources */,
 				49DEC33C1D8921C4002DEE51 /* LaunchScreen.storyboard in Resources */,
 				49DEC3301D8921C4002DEE51 /* Actions.sks in Resources */,
+				49E467511DDC469A00950EA1 /* WordOfColorOfWordShown.txt in Resources */,
 				49A98D8C1DC885DF0088B029 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,16 +558,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E467671DDC4C7E00950EA1 /* Memory.swift in Sources */,
+				49E4674A1DDC3FA800950EA1 /* SelectDifficulty.swift in Sources */,
 				49DEC3321D8921C4002DEE51 /* GameScene.swift in Sources */,
 				49ADD38E1DC019A2006F4431 /* CreateAccount.swift in Sources */,
 				4901DA241DD8683F00962C9D /* Settings.swift in Sources */,
-				49A0F39F1DD99C6500540372 /* MathGame.swift in Sources */,
+				49E467481DDC3F9800950EA1 /* SelectMode.swift in Sources */,
+				49E467651DDC4BD200950EA1 /* FindIt.swift in Sources */,
 				49ADD3901DC019CC006F4431 /* MainHub.swift in Sources */,
+				49E4675A1DDC476500950EA1 /* SimpleMath.swift in Sources */,
 				49DEC3341D8921C4002DEE51 /* GameViewController.swift in Sources */,
 				49D759FB1DBDE6EC007E5216 /* UniversalParams.swift in Sources */,
 				49DEC32C1D8921C4002DEE51 /* AppDelegate.swift in Sources */,
 				49D759F91DBDDC1D007E5216 /* Login.swift in Sources */,
 				49A0F3A11DD99C7300540372 /* ColorGame.swift in Sources */,
+				49E467631DDC48AD00950EA1 /* ComplexMath.swift in Sources */,
 				492BA3511DDAD382003345AE /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
