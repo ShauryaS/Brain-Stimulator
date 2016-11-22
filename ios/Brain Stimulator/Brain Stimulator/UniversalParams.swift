@@ -17,6 +17,10 @@ var email = ""
 var pswd = ""
 var uid = ""
 var remembered:Bool!
+var gameburst = 10
+var game = ""
+var gameType = ""
+var gameDifficulty = ""
 
 let firebaseRef = FIRDatabase.database().reference()
 

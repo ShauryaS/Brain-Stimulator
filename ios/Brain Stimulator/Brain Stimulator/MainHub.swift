@@ -55,4 +55,34 @@ class Mainhub: UIViewController{
         button6.titleLabel?.textColor = fontColor
     }
     
+    @IBAction func transSM(_ sender: UIButton) {
+        game = (sender.titleLabel?.text!)!
+        print(game)
+        self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
+    }
+    
+    @IBAction func transColors(_ sender: UIButton) {
+        game = (sender.titleLabel?.text!)!
+        print(game)
+        self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
+    }
+    
+    @IBAction func transCM(_ sender: UIButton) {
+        game = (sender.titleLabel?.text!)!
+        print(game)
+        self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
+    }
+    
+    @IBAction func transMem(_ sender: UIButton) {
+        game = (sender.titleLabel?.text!)!
+        print(game)
+        self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
+    }
+    
+    @IBAction func transFind(_ sender: UIButton) {
+        game = (sender.titleLabel?.text!)!
+        print(game)
+        self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
+    }
+    
 }

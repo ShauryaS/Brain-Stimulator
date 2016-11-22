@@ -249,6 +249,9 @@
                                 <state key="normal" title="Simple Math">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="transSM:" destination="CLk-HX-QBs" eventType="touchDragInside" id="nCj-CA-JfG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmF-6n-ff1">
                                 <rect key="frame" x="16" y="293" width="165" height="175"/>
@@ -260,6 +263,9 @@
                                 <state key="normal" title="Complex Math">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="transCM:" destination="CLk-HX-QBs" eventType="touchUpInside" id="5vi-4u-tzc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCZ-V1-6wh">
                                 <rect key="frame" x="16" y="472" width="165" height="175"/>
@@ -271,6 +277,9 @@
                                 <state key="normal" title="Find It">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="transFind:" destination="CLk-HX-QBs" eventType="touchUpInside" id="7Mi-sI-jFk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DO-bq-qtj">
                                 <rect key="frame" x="189" y="110" width="170" height="175"/>
@@ -282,6 +291,9 @@
                                 <state key="normal" title="Colors">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="transColors:" destination="CLk-HX-QBs" eventType="touchUpInside" id="Fru-XS-IaT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAS-WR-Phz">
                                 <rect key="frame" x="189" y="293" width="170" height="175"/>
@@ -293,6 +305,9 @@
                                 <state key="normal" title="Memory">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="transMem:" destination="CLk-HX-QBs" eventType="touchUpInside" id="ue1-mC-JXX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glB-fS-d0u">
                                 <rect key="frame" x="189" y="472" width="170" height="175"/>
@@ -378,7 +393,7 @@
                         <outlet property="button5" destination="eCZ-V1-6wh" id="zck-ua-WPe"/>
                         <outlet property="button6" destination="glB-fS-d0u" id="9ru-sP-g39"/>
                         <outlet property="mainLabel" destination="dfQ-Un-Gmw" id="xep-th-Jzr"/>
-                        <segue destination="YIz-Nt-SlO" kind="show" id="cxv-gf-C3Q"/>
+                        <segue destination="YIz-Nt-SlO" kind="show" identifier="maintomodesegue" id="cxv-gf-C3Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZC4-t9-Ptx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -671,7 +686,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="WKN-Sn-rIr" kind="show" id="OPP-zE-5eP"/>
+                        <segue destination="WKN-Sn-rIr" kind="show" identifier="modetodifficultysegue" id="OPP-zE-5eP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cji-bQ-Nuv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -760,11 +775,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="ccv-Xw-TrV" kind="show" id="ciB-Ya-mw6"/>
-                        <segue destination="PEG-mU-hoa" kind="show" id="qUa-5z-9Pg"/>
-                        <segue destination="Iih-9q-ySJ" kind="show" id="ScE-bb-DSc"/>
-                        <segue destination="1oq-xf-PCR" kind="show" id="1RV-xw-IqN"/>
-                        <segue destination="AWl-xJ-eMZ" kind="show" id="Uzg-s7-T7m"/>
+                        <segue destination="ccv-Xw-TrV" kind="show" identifier="difftosmsegue" id="ciB-Ya-mw6"/>
+                        <segue destination="PEG-mU-hoa" kind="show" identifier="difftocolorsegue" id="qUa-5z-9Pg"/>
+                        <segue destination="Iih-9q-ySJ" kind="show" identifier="difftocmsegue" id="ScE-bb-DSc"/>
+                        <segue destination="1oq-xf-PCR" kind="show" identifier="difftomemorysegue" id="1RV-xw-IqN"/>
+                        <segue destination="AWl-xJ-eMZ" kind="show" identifier="difftofinditsegue" id="Uzg-s7-T7m"/>
                         <segue destination="zda-xz-7LV" kind="show" id="C86-gH-HAt"/>
                         <segue destination="BV1-FR-VrT" kind="show" id="NCR-8e-Spq"/>
                     </connections>

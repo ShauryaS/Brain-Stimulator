@@ -18,6 +18,11 @@ class ColorGame: UIViewController{
     @IBOutlet var colorWordDisp: UIView!
     @IBOutlet var timerLab: UILabel!
     
+    var tutorialInfo:[[String]] = [["Green", "Yellow", "Red", "Green", "Blue"],["Purple", "Purple", "Red", "Blue", "Orange"],["Red", "Purple", "Green", "Blue", "Red"]]
+    var easyColor:[String] = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"]
+    var medColor:[String] = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray", "White", "Indigo", "Violet", "Black"]
+    var hardColor:[String] = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray", "White", "Indigo", "Violet", "Black", "Cyan", "Royal Blue", "Magenta", "Peach", "Tan", "Turquoise"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = bgColor

@@ -30,12 +30,6 @@
 		49DEC3521D8921C4002DEE51 /* Brain_StimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC3511D8921C4002DEE51 /* Brain_StimulatorUITests.swift */; };
 		49E467481DDC3F9800950EA1 /* SelectMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467471DDC3F9800950EA1 /* SelectMode.swift */; };
 		49E4674A1DDC3FA800950EA1 /* SelectDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467491DDC3FA800950EA1 /* SelectDifficulty.swift */; };
-		49E4674D1DDC45EB00950EA1 /* NameTheColor.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E4674C1DDC45EB00950EA1 /* NameTheColor.txt */; };
-		49E4674F1DDC462D00950EA1 /* ColorOfWordShown.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E4674E1DDC462D00950EA1 /* ColorOfWordShown.txt */; };
-		49E467511DDC469A00950EA1 /* WordOfColorOfWordShown.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E467501DDC469A00950EA1 /* WordOfColorOfWordShown.txt */; };
-		49E467541DDC470700950EA1 /* AddSub.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E467531DDC470700950EA1 /* AddSub.txt */; };
-		49E467561DDC471C00950EA1 /* MultDiv.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E467551DDC471C00950EA1 /* MultDiv.txt */; };
-		49E467581DDC473300950EA1 /* SqSqrt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49E467571DDC473300950EA1 /* SqSqrt.txt */; };
 		49E4675A1DDC476500950EA1 /* SimpleMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467591DDC476500950EA1 /* SimpleMath.swift */; };
 		49E467631DDC48AD00950EA1 /* ComplexMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467621DDC48AD00950EA1 /* ComplexMath.swift */; };
 		49E467651DDC4BD200950EA1 /* FindIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467641DDC4BD200950EA1 /* FindIt.swift */; };
@@ -94,12 +88,6 @@
 		49DEC3531D8921C4002DEE51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49E467471DDC3F9800950EA1 /* SelectMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMode.swift; sourceTree = "<group>"; };
 		49E467491DDC3FA800950EA1 /* SelectDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDifficulty.swift; sourceTree = "<group>"; };
-		49E4674C1DDC45EB00950EA1 /* NameTheColor.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NameTheColor.txt; sourceTree = "<group>"; };
-		49E4674E1DDC462D00950EA1 /* ColorOfWordShown.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorOfWordShown.txt; sourceTree = "<group>"; };
-		49E467501DDC469A00950EA1 /* WordOfColorOfWordShown.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WordOfColorOfWordShown.txt; sourceTree = "<group>"; };
-		49E467531DDC470700950EA1 /* AddSub.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AddSub.txt; sourceTree = "<group>"; };
-		49E467551DDC471C00950EA1 /* MultDiv.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultDiv.txt; sourceTree = "<group>"; };
-		49E467571DDC473300950EA1 /* SqSqrt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SqSqrt.txt; sourceTree = "<group>"; };
 		49E467591DDC476500950EA1 /* SimpleMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleMath.swift; sourceTree = "<group>"; };
 		49E467621DDC48AD00950EA1 /* ComplexMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexMath.swift; sourceTree = "<group>"; };
 		49E467641DDC4BD200950EA1 /* FindIt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindIt.swift; sourceTree = "<group>"; };
@@ -193,7 +181,6 @@
 				49DEC3381D8921C4002DEE51 /* Assets.xcassets */,
 				49A98D8D1DC8880B0088B029 /* Brain Stimulator.entitlements */,
 				49ADD3971DC0603F006F4431 /* Brain.png */,
-				49E4674B1DDC443500950EA1 /* Color Game Files */,
 				49A0F3A01DD99C7300540372 /* ColorGame.swift */,
 				49E467621DDC48AD00950EA1 /* ComplexMath.swift */,
 				49ADD38D1DC019A2006F4431 /* CreateAccount.swift */,
@@ -211,7 +198,6 @@
 				49E467491DDC3FA800950EA1 /* SelectDifficulty.swift */,
 				49E467471DDC3F9800950EA1 /* SelectMode.swift */,
 				4901DA231DD8683F00962C9D /* Settings.swift */,
-				49E467611DDC487A00950EA1 /* Simple Math */,
 				49E467591DDC476500950EA1 /* SimpleMath.swift */,
 				49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */,
 				49E467641DDC4BD200950EA1 /* FindIt.swift */,
@@ -236,26 +222,6 @@
 				49DEC3531D8921C4002DEE51 /* Info.plist */,
 			);
 			path = "Brain StimulatorUITests";
-			sourceTree = "<group>";
-		};
-		49E4674B1DDC443500950EA1 /* Color Game Files */ = {
-			isa = PBXGroup;
-			children = (
-				49E4674C1DDC45EB00950EA1 /* NameTheColor.txt */,
-				49E4674E1DDC462D00950EA1 /* ColorOfWordShown.txt */,
-				49E467501DDC469A00950EA1 /* WordOfColorOfWordShown.txt */,
-			);
-			name = "Color Game Files";
-			sourceTree = "<group>";
-		};
-		49E467611DDC487A00950EA1 /* Simple Math */ = {
-			isa = PBXGroup;
-			children = (
-				49E467531DDC470700950EA1 /* AddSub.txt */,
-				49E467551DDC471C00950EA1 /* MultDiv.txt */,
-				49E467571DDC473300950EA1 /* SqSqrt.txt */,
-			);
-			name = "Simple Math";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,18 +349,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				49ADD3981DC0603F006F4431 /* Brain.png in Resources */,
-				49E4674F1DDC462D00950EA1 /* ColorOfWordShown.txt in Resources */,
-				49E467581DDC473300950EA1 /* SqSqrt.txt in Resources */,
-				49E4674D1DDC45EB00950EA1 /* NameTheColor.txt in Resources */,
-				49E467541DDC470700950EA1 /* AddSub.txt in Resources */,
 				49DEC3371D8921C4002DEE51 /* Main.storyboard in Resources */,
-				49E467561DDC471C00950EA1 /* MultDiv.txt in Resources */,
 				494C50831DDAEACD0079E4D3 /* pause.png in Resources */,
 				49DEC32E1D8921C4002DEE51 /* GameScene.sks in Resources */,
 				49DEC3391D8921C4002DEE51 /* Assets.xcassets in Resources */,
 				49DEC33C1D8921C4002DEE51 /* LaunchScreen.storyboard in Resources */,
 				49DEC3301D8921C4002DEE51 /* Actions.sks in Resources */,
-				49E467511DDC469A00950EA1 /* WordOfColorOfWordShown.txt in Resources */,
 				49A98D8C1DC885DF0088B029 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
