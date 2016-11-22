@@ -23,4 +23,21 @@ class SelectDifficulty: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    func getSpecifiedSegue()->String{
+        switch(game){
+            case "Simple Math":
+                return "difftosmsegue"
+            case "Complex Math":
+                return "difftocmsegue"
+            case "Memory":
+                return "difftomemorysegue"
+            case "Find It":
+                return "difftofinditsegue"
+            case "Colors":
+                return "difftocolorsegue"
+            default:
+                return ""
+        }
+    }
+    
 }
