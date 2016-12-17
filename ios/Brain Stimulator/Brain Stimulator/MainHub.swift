@@ -22,6 +22,7 @@ class Mainhub: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = bgColor
+        self.navigationController?.isNavigationBarHidden = false
         setWelLab()
         setButtons()
     }

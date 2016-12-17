@@ -35,6 +35,40 @@ class ColorGame: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    func startGame(){
+        switch(gameType){
+            case "Name The Color":
+                playNTC()
+                break
+            case "Identify The Word Color":
+                playITWC()
+                break
+            case "Name The Font Color":
+                playNTFC()
+                break
+            case "Find the Different Color":
+                playFTDC()
+                break
+            default:
+                break
+        }
+    }
+    
+    func playNTC(){
+        
+    }
+    
+    func playITWC(){
+    
+    }
+    
+    func playNTFC(){
+        
+    }
+    
+    func playFTDC(){
+        
+    }
     
     @IBAction func pause(_ sender: Any) {
         

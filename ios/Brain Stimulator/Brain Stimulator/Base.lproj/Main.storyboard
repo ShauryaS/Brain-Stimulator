@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HIx-Hk-QRF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HIx-Hk-QRF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -316,7 +316,7 @@
                                     <constraint firstAttribute="height" constant="175" id="ii8-nn-jQS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal">
+                                <state key="normal" title="Directions">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -538,7 +538,6 @@
                                 <state key="normal" title="Button" image="pause.png"/>
                                 <connections>
                                     <action selector="pause:" destination="PEG-mU-hoa" eventType="touchUpInside" id="WCi-Kw-5Cc"/>
-                                    <segue destination="Pvn-JM-KSv" kind="show" id="xAv-Rt-u5S"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -594,6 +593,7 @@
                         <outlet property="button4" destination="sbh-o7-DPB" id="lGB-dB-haY"/>
                         <outlet property="colorWordDisp" destination="HBT-mh-0Cd" id="yyz-Qa-24N"/>
                         <outlet property="timerLab" destination="Vej-1t-kwv" id="BVN-K6-fBI"/>
+                        <segue destination="CLk-HX-QBs" kind="show" identifier="colortomainsegue" id="ZpN-V8-Fwc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJl-1G-O54" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -613,6 +613,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="CLk-HX-QBs" kind="show" identifier="complexmathtomainsegue" id="ySQ-xT-YhH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AH-f2-f0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -631,6 +634,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="CLk-HX-QBs" kind="show" identifier="memorytomainsegue" id="SUf-7V-JQ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFF-Ep-bK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -649,15 +655,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="CLk-HX-QBs" kind="show" identifier="findittomainsegue" id="XBe-cn-aXL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Fq-bx-9ij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1054" y="2472"/>
         </scene>
-        <!--View Controller-->
+        <!--Directions-->
         <scene sceneID="8dL-8f-Axc">
             <objects>
-                <viewController id="zda-xz-7LV" sceneMemberID="viewController">
+                <viewController id="zda-xz-7LV" customClass="Directions" customModule="Brain_Stimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d9S-E5-dhI"/>
                         <viewControllerLayoutGuide type="bottom" id="Rkj-Zn-mh4"/>
@@ -667,6 +676,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="CLk-HX-QBs" kind="show" identifier="directionstomainsegue" id="aqR-vf-GGt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Je-xr-4Th" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,15 +695,22 @@
                     <view key="view" contentMode="scaleToFill" id="nV9-pf-XdH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8AS-a9-dY6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="scroll" destination="8AS-a9-dY6" id="Uz7-xB-wpb"/>
                         <segue destination="WKN-Sn-rIr" kind="show" identifier="modetodifficultysegue" id="OPP-zE-5eP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cji-bQ-Nuv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="896"/>
+            <point key="canvasLocation" x="136.80000000000001" y="895.50224887556226"/>
         </scene>
         <!--Simple Math-->
         <scene sceneID="Ezy-Rw-vlJ">
@@ -707,6 +726,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="CLk-HX-QBs" kind="show" identifier="simplemathtomainsegue" id="Z3Y-wM-Ern"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9U-Ob-0Mz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -725,7 +747,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zh4-ty-Xe1">
-                                <rect key="frame" x="16" y="120" width="343" height="60"/>
+                                <rect key="frame" x="16" y="164" width="343" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5LX-uN-VnE"/>
                                     <constraint firstAttribute="width" constant="343" id="eZp-eP-hZ4"/>
@@ -734,6 +756,9 @@
                                 <state key="normal" title="Easy">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="selEasy:" destination="WKN-Sn-rIr" eventType="touchUpInside" id="fNp-uS-29n"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnb-WR-OH3">
                                 <rect key="frame" x="16" y="303.5" width="343" height="60"/>
@@ -745,6 +770,9 @@
                                 <state key="normal" title="Medium">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="selMedium:" destination="WKN-Sn-rIr" eventType="touchUpInside" id="mL5-eW-XCX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAI-58-hIZ">
                                 <rect key="frame" x="16" y="487" width="343" height="60"/>
@@ -756,6 +784,9 @@
                                 <state key="normal" title="Hard">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="selHard:" destination="WKN-Sn-rIr" eventType="touchDragInside" id="FT9-bM-LfA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -763,7 +794,6 @@
                             <constraint firstItem="Tnb-WR-OH3" firstAttribute="trailing" secondItem="igN-k5-zEB" secondAttribute="trailingMargin" id="33h-bh-gWF"/>
                             <constraint firstItem="SAI-58-hIZ" firstAttribute="top" secondItem="Tnb-WR-OH3" secondAttribute="bottom" constant="123.5" id="894-C1-jOV"/>
                             <constraint firstItem="Zh4-ty-Xe1" firstAttribute="top" secondItem="g3s-4V-vrl" secondAttribute="bottom" constant="100" id="LIt-MG-9np"/>
-                            <constraint firstItem="Tnb-WR-OH3" firstAttribute="top" secondItem="Zh4-ty-Xe1" secondAttribute="bottom" constant="123.5" id="SjJ-Gi-EQg"/>
                             <constraint firstItem="Tnb-WR-OH3" firstAttribute="centerY" secondItem="igN-k5-zEB" secondAttribute="centerY" id="VXZ-03-d0W"/>
                             <constraint firstItem="Tnb-WR-OH3" firstAttribute="leading" secondItem="igN-k5-zEB" secondAttribute="leadingMargin" id="Y6X-3h-nAE"/>
                             <constraint firstItem="Zh4-ty-Xe1" firstAttribute="trailing" secondItem="igN-k5-zEB" secondAttribute="trailingMargin" id="ZYs-w9-Gmo"/>
@@ -780,7 +810,7 @@
                         <segue destination="Iih-9q-ySJ" kind="show" identifier="difftocmsegue" id="ScE-bb-DSc"/>
                         <segue destination="1oq-xf-PCR" kind="show" identifier="difftomemorysegue" id="1RV-xw-IqN"/>
                         <segue destination="AWl-xJ-eMZ" kind="show" identifier="difftofinditsegue" id="Uzg-s7-T7m"/>
-                        <segue destination="zda-xz-7LV" kind="show" id="C86-gH-HAt"/>
+                        <segue destination="zda-xz-7LV" kind="show" identifier="difftodirsegue" id="C86-gH-HAt"/>
                         <segue destination="BV1-FR-VrT" kind="show" id="NCR-8e-Spq"/>
                     </connections>
                 </viewController>
@@ -811,8 +841,8 @@
         <image name="pause.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="A6V-cT-gxd"/>
+        <segue reference="ZpN-V8-Fwc"/>
         <segue reference="Vte-ay-V1M"/>
-        <segue reference="xAv-Rt-u5S"/>
+        <segue reference="A6V-cT-gxd"/>
     </inferredMetricsTieBreakers>
 </document>

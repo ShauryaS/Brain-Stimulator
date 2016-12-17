@@ -40,4 +40,19 @@ class SelectDifficulty: UIViewController{
         }
     }
     
+    @IBAction func selEasy(_ sender: Any) {
+        gameDifficulty = "Easy"
+        self.performSegue(withIdentifier: getSpecifiedSegue(), sender: nil)
+    }
+    
+    @IBAction func selMedium(_ sender: Any) {
+        gameDifficulty = "Medium"
+        self.performSegue(withIdentifier: getSpecifiedSegue(), sender: nil)
+    }
+    
+    @IBAction func selHard(_ sender: Any) {
+        gameDifficulty = "Hard"
+        self.performSegue(withIdentifier: getSpecifiedSegue(), sender: nil)
+    }
+    
 }

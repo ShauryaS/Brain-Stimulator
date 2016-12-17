@@ -12,6 +12,7 @@
 		492BA3511DDAD382003345AE /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BA3501DDAD382003345AE /* ProgressView.swift */; };
 		494C50831DDAEACD0079E4D3 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 494C50821DDAEACD0079E4D3 /* pause.png */; };
 		49A0F3A11DD99C7300540372 /* ColorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0F3A01DD99C7300540372 /* ColorGame.swift */; };
+		49A41E191DEAA29500C0884B /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A41E181DEAA29500C0884B /* Directions.swift */; };
 		49A98D8C1DC885DF0088B029 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */; };
 		49ADD38E1DC019A2006F4431 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD38D1DC019A2006F4431 /* CreateAccount.swift */; };
 		49ADD3901DC019CC006F4431 /* MainHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD38F1DC019CC006F4431 /* MainHub.swift */; };
@@ -63,6 +64,7 @@
 		492BA3501DDAD382003345AE /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		494C50821DDAEACD0079E4D3 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		49A0F3A01DD99C7300540372 /* ColorGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGame.swift; sourceTree = "<group>"; };
+		49A41E181DEAA29500C0884B /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
 		49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49A98D8D1DC8880B0088B029 /* Brain Stimulator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Brain Stimulator.entitlements"; sourceTree = "<group>"; };
 		49ADD38D1DC019A2006F4431 /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */,
 				49E467641DDC4BD200950EA1 /* FindIt.swift */,
 				49E467661DDC4C7E00950EA1 /* Memory.swift */,
+				49A41E181DEAA29500C0884B /* Directions.swift */,
 			);
 			path = "Brain Stimulator";
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				49D759F91DBDDC1D007E5216 /* Login.swift in Sources */,
 				49A0F3A11DD99C7300540372 /* ColorGame.swift in Sources */,
 				49E467631DDC48AD00950EA1 /* ComplexMath.swift in Sources */,
+				49A41E191DEAA29500C0884B /* Directions.swift in Sources */,
 				492BA3511DDAD382003345AE /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
