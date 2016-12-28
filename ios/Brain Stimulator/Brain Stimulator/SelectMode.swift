@@ -13,7 +13,7 @@ class SelectMode: UIViewController{
     
     @IBOutlet var scroll: UIScrollView!
     var options:[String] = []
-    var colorModes:[String] = ["Name The Color", "Identify The Word Color", "Name The Font Color", "Find the Different Color"]
+    var colorModes:[String] = ["Name The Color", "Identify The Word Color", "Name The Font Color", "Name The Background Color"]
     var complexMathModes:[String] = []
     var memoryModes:[String] = []
     var directionModes:[String] = []
@@ -38,7 +38,7 @@ class SelectMode: UIViewController{
     
     func addButtons(){
         for mode in options{
-            let button = UIButton(frame: CGRect(x: 0,y: 5+(CGFloat(self.count))*35,width: 450,height: 25))
+            let button = UIButton(frame: CGRect(x: 0,y: -50+(CGFloat(self.count))*35,width: 450,height: 25))
             button.titleLabel!.font = button.titleLabel!.font.withSize(18)
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
             button.setTitleColor(UIColor.black, for: UIControlState())

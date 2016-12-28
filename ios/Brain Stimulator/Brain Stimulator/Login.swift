@@ -30,7 +30,6 @@ class LogIn: UIViewController{
         }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogIn.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        print(firebaseRef.description())
         readAuthFile()
         if username != "" && pswd != ""{
             login(useremail: username, pswd: pswd)
