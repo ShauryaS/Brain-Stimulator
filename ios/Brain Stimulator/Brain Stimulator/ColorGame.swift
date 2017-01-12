@@ -11,15 +11,16 @@ import UIKit
 
 class ColorGame: UIViewController{
     
-    @IBOutlet var button1: UIButton!
-    @IBOutlet var button2: UIButton!
-    @IBOutlet var button3: UIButton!
-    @IBOutlet var button4: UIButton!
+    var button1: UIButton!
+    var button2: UIButton!
+    var button3: UIButton!
+    var button4: UIButton!
     @IBOutlet var colorWordDisp: UIView!
     @IBOutlet var colorWordText: UILabel!
     @IBOutlet var timerLab: UILabel!
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var roundLab: UILabel!
+    @IBOutlet var buttonDisp: UIView!
 
     var answerSelected = ""
     var correctAnswer = ""
@@ -37,6 +38,7 @@ class ColorGame: UIViewController{
         timerLab.textColor = fontColor
         self.navigationController?.isNavigationBarHidden = true
         selectColorBank()
+        addButtons()
         startGame()
     }
     
@@ -70,20 +72,37 @@ class ColorGame: UIViewController{
         }
     }
     
-    @IBAction func b1Pressed(_ sender: UIButton) {
-        doButtonStuff(sender)
-    }
-    
-    @IBAction func b2Pressed(_ sender: UIButton) {
-        doButtonStuff(sender)
-    }
-    
-    @IBAction func b3Pressed(_ sender: UIButton) {
-        doButtonStuff(sender)
-    }
-    
-    @IBAction func b4Pressed(_ sender: UIButton) {
-        doButtonStuff(sender)
+    func addButtons(){
+        let totWidth = buttonDisp.bounds.width
+        let totHeight = buttonDisp.bounds.height
+        button1 = UIButton(frame: CGRect(x: 0,y: 0, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button1.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        button1.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        button1.setTitleColor(UIColor.black, for: UIControlState())
+        button1.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
+                         for: UIControlEvents.touchUpInside)
+        buttonDisp.addSubview(button1)
+        button2 = UIButton(frame: CGRect(x: totWidth/2+2.5,y: 0, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        button2.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        button2.setTitleColor(UIColor.black, for: UIControlState())
+        button2.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
+                          for: UIControlEvents.touchUpInside)
+        buttonDisp.addSubview(button2)
+        button3 = UIButton(frame: CGRect(x: 0,y: totHeight/2+2.5, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        button3.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        button3.setTitleColor(UIColor.black, for: UIControlState())
+        button3.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
+                          for: UIControlEvents.touchUpInside)
+        buttonDisp.addSubview(button3)
+        button4 = UIButton(frame: CGRect(x: totWidth/2+2.5,y: totHeight/2+2.5, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button4.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        button4.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        button4.setTitleColor(UIColor.black, for: UIControlState())
+        button4.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
+                          for: UIControlEvents.touchUpInside)
+        buttonDisp.addSubview(button4)
     }
     
     @IBAction func nextPressed(_ sender: Any) {
@@ -188,47 +207,6 @@ class ColorGame: UIViewController{
     
     @IBAction func pause(_ sender: Any) {
         
-    }
-    
-    func getColor(color:String) -> UIColor{
-        switch(color){
-            case "Red":
-                return UIColor.red
-            case "Orange":
-                return UIColor.orange
-            case "Yellow":
-                return UIColor.yellow
-            case "Green":
-                return UIColor.green
-            case "Blue":
-                return UIColor.blue
-            case "Purple":
-                return UIColor.purple
-            case "Brown":
-                return UIColor.brown
-            case "Gray":
-                return UIColor.gray
-            case "Indigo":
-                return UIColor.init(displayP3Red: 75.0/255.0, green: 0.0/255.0, blue: 130.0/255.0, alpha: 1.0)
-            case "Violet":
-                return UIColor.init(displayP3Red: 238.0/255.0, green: 130.0/255.0, blue: 238.0/255.0, alpha: 1.0)
-            case "Black":
-                return UIColor.black
-            case "Cyan":
-                return UIColor.cyan
-            case "Royal Blue":
-                return UIColor.init(displayP3Red: 65.0/255.0, green: 105.0/255.0, blue: 225.0/255.0, alpha: 1.0)
-            case "Magenta":
-                return UIColor.magenta
-            case "Peach":
-                return UIColor.init(displayP3Red: 255.0/255.0, green: 218.0/255.0, blue: 185.0/255.0, alpha: 1.0)
-            case "Tan":
-                return UIColor.init(displayP3Red: 210.0/255.0, green: 180.0/255.0, blue: 140.0/255.0, alpha: 1.0)
-            case "Turquoise":
-                return UIColor.init(displayP3Red: 64.0/255.0, green: 224.0/255.0, blue: 208.0/255.0, alpha: 1.0)
-            default:
-                return UIColor.white
-        }
     }
     
     func selectColorBank(){

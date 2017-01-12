@@ -13,21 +13,27 @@ class SelectMode: UIViewController{
     
     @IBOutlet var scroll: UIScrollView!
     var options:[String] = []
-    var colorModes:[String] = ["Name The Color", "Identify The Word Color", "Name The Font Color", "Name The Background Color"]
-    var complexMathModes:[String] = []
+    var colorModes:[String] = ["Name The Color", "Identify The Word Color", "Name The Font Color", "Name The Background Color", "Mix"]
+    var complexMathModes:[String] = ["Exponents", "PEMDAS", "Algebra Addition", "Algebra Subtraction", "Algebra Multiplication", "Algebra Division", "Mix"]
     var memoryModes:[String] = []
     var directionModes:[String] = []
     var findItModes:[String] = []
-    var simpleMathModes:[String] = []
+    var simpleMathModes:[String] = ["Addition", "Subtraction", "Multiplication", "Division", "Square", "Square Root", "Mix"]
     var count = 0
+    
+    let width = Int(UIScreen.main.bounds.width)
+    var height = 0
+    var buttonHeight = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = bgColor
         self.navigationController?.isNavigationBarHidden = false
         navigationItem.title = "Select Mode"
-        scroll.contentSize.height = 40
         getGameModeOps()
+        height = Int(UIScreen.main.bounds.height - (self.navigationController?.navigationBar.frame.size.height)!)
+        buttonHeight = Int(height/5)
+        scroll.contentSize.height = CGFloat(buttonHeight*options.count)
         addButtons()
     }
     
@@ -37,19 +43,18 @@ class SelectMode: UIViewController{
     }
     
     func addButtons(){
+        
         for mode in options{
-            let button = UIButton(frame: CGRect(x: 0,y: -50+(CGFloat(self.count))*35,width: 450,height: 25))
+            let button = UIButton(frame: CGRect(x: 0,y: buttonHeight * count, width: width, height: buttonHeight))
             button.titleLabel!.font = button.titleLabel!.font.withSize(18)
-            button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
+            button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+            button.contentVerticalAlignment = UIControlContentVerticalAlignment.top
             button.setTitleColor(UIColor.black, for: UIControlState())
             button.setTitle(mode, for: UIControlState())
             button.addTarget(self, action: #selector(SelectMode.buttonClicked(_:)),
                              for: UIControlEvents.touchUpInside)
             self.scroll.addSubview(button)
-            if (5+CGFloat(self.count)+1)*35>self.scroll.contentSize.height{
-                self.scroll.contentSize.height+=40
-            }
-            self.count=self.count+1
+            count+=1
         }
     }
     
