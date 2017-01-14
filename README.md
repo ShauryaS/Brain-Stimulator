@@ -1,1 +1,2 @@
 # Brain-Stimulator
+This application is developed in Swift using Xcode. It is an iOS application consisting of different games and activities for people with brain traumatic injuries. One of the games is based on an experiment that I did with people about brain traumatic injuries regarding depth perception. It pushes people analytically. Inspired to make an app after working with people who had brain traumatic injuries.
