@@ -18,6 +18,7 @@ class LogIn: UIViewController{
     @IBOutlet var signupButton: UIButton!
     @IBOutlet var useremailField: UITextField!
     @IBOutlet var pswdField: UITextField!
+    var selected:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +76,7 @@ class LogIn: UIViewController{
     @IBAction func logIn(_ sender: AnyObject) {
         let useremail = useremailField.text!
         let pswd = pswdField.text!
-        remembered = rememberMeButton.isSelected
+        remembered = selected
         login(useremail: useremail, pswd: pswd)
     }
     
@@ -106,7 +107,13 @@ class LogIn: UIViewController{
     }
     
     @IBAction func remembermeTriggered(_ sender: AnyObject) {
-        rememberMeButton.isSelected = !rememberMeButton.isSelected
+        selected = !selected
+        if selected == true{
+            rememberMeButton.setImage(UIImage(named: "checkmarkselected"), for: .normal)
+        }
+        else{
+            rememberMeButton.setImage(UIImage(named: "checkmarkunselected"), for: .normal)
+        }
     }
     
     func readAuthFile(){

@@ -48,7 +48,12 @@ class SimpleMath: UIViewController{
     }
     
     func startGame(){
-        
+        switch(gameType){
+            case "Addition":
+                additionGame()
+            default:
+                break
+        }
     }
     
     func doButtonStuff(_ sender: UIButton){
@@ -146,6 +151,10 @@ class SimpleMath: UIViewController{
     }
     
     @IBAction func pause(_ sender: Any) {
+        
+    }
+    
+    func additionGame(){
         
     }
     

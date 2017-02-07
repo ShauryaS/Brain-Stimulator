@@ -19,12 +19,15 @@ class CreateAccount: UIViewController{
     @IBOutlet var confirmpswdField: UITextField!
     @IBOutlet var createButton: UIButton!
     @IBOutlet var cancelButton: UIButton!
+    @IBOutlet var therapistCheck: UIButton!
+    var selected:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //assignbackground()
         setViewColor()
         self.view.backgroundColor = bgColor
+        selected = false
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogIn.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
@@ -71,7 +74,7 @@ class CreateAccount: UIViewController{
                     {
                         FIRAuth.auth()?.signIn(withEmail: email, password: pswd) { (user, error) in
                             if error == nil{
-                                let data = ["username": username]
+                                let data = ["username": username, "isTherapist": self.selected] as [String : Any]
                                 firebaseRef.child("users").child((user?.uid)!).setValue(data)
                                 print("success")
                             }
@@ -99,6 +102,16 @@ class CreateAccount: UIViewController{
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func checkBox(_ sender: Any) {
+        selected = !selected
+        if selected == true{
+            therapistCheck.setImage(UIImage(named: "checkmarkselected"), for: .normal)
+        }
+        else{
+            therapistCheck.setImage(UIImage(named: "checkmarkunselected"), for: .normal)
         }
     }
     
