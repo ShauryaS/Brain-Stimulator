@@ -48,9 +48,19 @@ class SimpleMath: UIViewController{
     }
     
     func startGame(){
+        answerSelected = ""
+        correctAnswer = ""
+        playGameType()
+    }
+    
+    func playGameType(){
         switch(gameType){
             case "Addition":
                 additionGame()
+            case "Multiplication":
+                multiplication()
+            case "Square":
+                square()
             default:
                 break
         }
@@ -60,10 +70,12 @@ class SimpleMath: UIViewController{
         answerSelected = (sender.titleLabel?.text!)!
         let corr = checkAnswer()
         if corr == true{
-            sender.backgroundColor = getColor(color: "Green")
+            timerLab.text = "Correct"
+            sender.layer.borderColor = getColor(color: "Dark Green").cgColor
         }
         else{
-            sender.backgroundColor = getColor(color: "Red")
+            timerLab.text = "Incorrect"
+            sender.layer.borderColor = getColor(color: "Dark Red").cgColor
         }
         button1.isEnabled = false
         button2.isEnabled = false
@@ -79,6 +91,9 @@ class SimpleMath: UIViewController{
         button1.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button1.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button1.setTitleColor(UIColor.black, for: UIControlState())
+        button1.layer.borderWidth = 2.0
+        button1.layer.borderColor = UIColor.white.cgColor
+        button1.layer.cornerRadius = 5.0
         button1.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button1)
@@ -86,6 +101,9 @@ class SimpleMath: UIViewController{
         button2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button2.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button2.setTitleColor(UIColor.black, for: UIControlState())
+        button2.layer.borderWidth = 2.0
+        button2.layer.borderColor = UIColor.white.cgColor
+        button2.layer.cornerRadius = 5.0
         button2.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button2)
@@ -93,6 +111,9 @@ class SimpleMath: UIViewController{
         button3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button3.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button3.setTitleColor(UIColor.black, for: UIControlState())
+        button3.layer.borderWidth = 2.0
+        button3.layer.borderColor = UIColor.white.cgColor
+        button3.layer.cornerRadius = 5.0
         button3.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button3)
@@ -100,6 +121,9 @@ class SimpleMath: UIViewController{
         button4.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button4.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button4.setTitleColor(UIColor.black, for: UIControlState())
+        button4.layer.borderWidth = 2.0
+        button4.layer.borderColor = UIColor.white.cgColor
+        button4.layer.cornerRadius = 5.0
         button4.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button4)
@@ -146,8 +170,25 @@ class SimpleMath: UIViewController{
         }
     }
     
+    func getButton(pos:Int)->UIButton{
+        switch(pos){
+            case 1:
+                return button1
+            case 2:
+                return button2
+            case 3:
+                return button3
+            default:
+                return button4
+        }
+    }
+    
     func randomGen(range:Int)->Int{
         return Int(arc4random_uniform(UInt32(range)))
+    }
+    
+    func randomGen(range:Int, start:Int)->Int{
+        return Int(arc4random_uniform(UInt32(range)))+start
     }
     
     @IBAction func pause(_ sender: Any) {
@@ -155,7 +196,124 @@ class SimpleMath: UIViewController{
     }
     
     func additionGame(){
+        roundLab.text = "Round " + count.description
+        let t1 = randomGen(range: rangeEnd+1)
+        let t2 = randomGen(range: rangeEnd+1)
+        mathText.text = String(t1) + " + " + String(t2) + " = "
+        correctAnswer = Int(t1+t2).description
+        var buttPos:[Int] = [1,2,3,4]
+        var w1 = 0
+        var w2 = 0
+        var w3 = 0
+        repeat{
+            w1 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+        }while(w1 == Int(correctAnswer)!)
+        repeat{
+            w2 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+        }while(w1 == w2 && w2==Int(correctAnswer)!)
+        repeat{
+            w3 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+        }while(w3 == w2 && w3 == w1 && w3 == Int(correctAnswer)!)
+        var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
+        var a1 = 0
+        while(buttPos.count != 0){
+            let p = randomGen(range: buttPos.count)
+            getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            buttPos.remove(at: p)
+            a1 += 1
+        }
+        count += 1
+    }
+    
+    func subtraction(){
         
+    }
+    
+    func multiplication(){
+        roundLab.text = "Round " + count.description
+        let t1 = randomGen(range: rangeEnd+1)
+        let t2 = randomGen(range: rangeEnd+1)
+        mathText.text = String(t1) + " x " + String(t2) + " = "
+        correctAnswer = Int(t1*t2).description
+        var buttPos:[Int] = [1,2,3,4]
+        var w1 = 0
+        var w2 = 0
+        var w3 = 0
+        repeat{
+            w1 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+        }while(w1 == Int(correctAnswer)!)
+        repeat{
+            w2 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+        }while(w1 == w2 && w2==Int(correctAnswer)!)
+        repeat{
+            w3 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+        }while(w3 == w2 && w3 == w1 && w3 == Int(correctAnswer)!)
+        var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
+        var a1 = 0
+        while(buttPos.count != 0){
+            let p = randomGen(range: buttPos.count)
+            getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            buttPos.remove(at: p)
+            a1 += 1
+        }
+        count += 1
+    }
+    
+    func division(){
+        
+    }
+    
+    func square(){
+        roundLab.text = "Round " + count.description
+        let t1 = randomGen(range: rangeEnd+1)
+        mathText.text = String(t1) + "^2 = "
+        correctAnswer = Int(t1*t1).description
+        var buttPos:[Int] = [1,2,3,4]
+        var w1 = 0
+        var w2 = 0
+        var w3 = 0
+        repeat{
+            w1 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+        }while(w1 == Int(correctAnswer)!)
+        repeat{
+            w2 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+        }while(w1 == w2 || w2==Int(correctAnswer)!)
+        repeat{
+            w3 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+        }while(w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)!)
+        var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
+        var a1 = 0
+        while(buttPos.count != 0){
+            let p = randomGen(range: buttPos.count)
+            getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            buttPos.remove(at: p)
+            a1 += 1
+        }
+        count += 1
+    }
+    
+    func sqroot(){
+        
+    }
+    
+    @IBAction func nextPressed(_ sender: Any) {
+        if(count <= gameburst){
+            button1.isEnabled = true
+            button2.isEnabled = true
+            button3.isEnabled = true
+            button4.isEnabled = true
+            timerLab.text = ""
+            button1.layer.borderColor = getColor(color: "").cgColor
+            button2.layer.borderColor = getColor(color: "").cgColor
+            button3.layer.borderColor = getColor(color: "").cgColor
+            button4.layer.borderColor = getColor(color: "").cgColor
+            nextButton.isHidden = true
+            playGameType()
+        }
+        else{
+            points += pointsEarned
+            self.performSegue(withIdentifier: "simplemathtomainsegue", sender: nil)
+        }
     }
     
 }

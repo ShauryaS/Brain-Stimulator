@@ -37,7 +37,7 @@ class Mainhub: UIViewController{
             snapshot in
             username = snapshot.value as! String
             print(username)
-            self.navigationItem.title = username + " hub"
+            self.navigationItem.title = username
         })
     }
     

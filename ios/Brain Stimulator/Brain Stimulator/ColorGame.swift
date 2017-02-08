@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ColorGame: UIViewController{
+class ColorGame: UIViewController{//make method that returns button with specific text
     
     var button1: UIButton!
     var button2: UIButton!
@@ -79,6 +79,9 @@ class ColorGame: UIViewController{
         button1.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button1.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button1.setTitleColor(UIColor.black, for: UIControlState())
+        button1.layer.borderWidth = 2.0
+        button1.layer.borderColor = UIColor.white.cgColor
+        button1.layer.cornerRadius = 5.0
         button1.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
                          for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button1)
@@ -86,6 +89,9 @@ class ColorGame: UIViewController{
         button2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button2.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button2.setTitleColor(UIColor.black, for: UIControlState())
+        button2.layer.borderWidth = 2.0
+        button2.layer.borderColor = UIColor.white.cgColor
+        button2.layer.cornerRadius = 5.0
         button2.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button2)
@@ -93,6 +99,9 @@ class ColorGame: UIViewController{
         button3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button3.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button3.setTitleColor(UIColor.black, for: UIControlState())
+        button3.layer.borderWidth = 2.0
+        button3.layer.borderColor = UIColor.white.cgColor
+        button3.layer.cornerRadius = 5.0
         button3.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button3)
@@ -100,6 +109,9 @@ class ColorGame: UIViewController{
         button4.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button4.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button4.setTitleColor(UIColor.black, for: UIControlState())
+        button4.layer.borderWidth = 2.0
+        button4.layer.borderColor = UIColor.white.cgColor
+        button4.layer.cornerRadius = 5.0
         button4.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button4)
@@ -111,10 +123,15 @@ class ColorGame: UIViewController{
             button2.isEnabled = true
             button3.isEnabled = true
             button4.isEnabled = true
+            timerLab.text = ""
             button1.backgroundColor = getColor(color: "")
             button2.backgroundColor = getColor(color: "")
             button3.backgroundColor = getColor(color: "")
             button4.backgroundColor = getColor(color: "")
+            button1.layer.borderColor = getColor(color: "").cgColor
+            button2.layer.borderColor = getColor(color: "").cgColor
+            button3.layer.borderColor = getColor(color: "").cgColor
+            button4.layer.borderColor = getColor(color: "").cgColor
             nextButton.isHidden = true
             playGameType()
         }
@@ -128,10 +145,12 @@ class ColorGame: UIViewController{
         answerSelected = (sender.titleLabel?.text!)!
         let corr = checkAnswer()
         if corr == true{
-            sender.backgroundColor = getColor(color: "Green")
+            timerLab.text = "Correct"
+            sender.layer.borderColor = getColor(color: "Dark Green").cgColor
         }
         else{
-            sender.backgroundColor = getColor(color: "Red")
+            timerLab.text = "Incorrect"
+            sender.layer.borderColor = getColor(color: "Dark Red").cgColor
         }
         button1.isEnabled = false
         button2.isEnabled = false

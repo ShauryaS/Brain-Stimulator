@@ -74,9 +74,8 @@ class CreateAccount: UIViewController{
                     {
                         FIRAuth.auth()?.signIn(withEmail: email, password: pswd) { (user, error) in
                             if error == nil{
-                                let data = ["username": username, "isTherapist": self.selected] as [String : Any]
+                                let data = ["username": username, "isTherapist": self.selected, "points": 0] as [String : Any]
                                 firebaseRef.child("users").child((user?.uid)!).setValue(data)
-                                print("success")
                             }
                             else{
                                 print(error!)

@@ -41,12 +41,16 @@ func getColor(color:String) -> UIColor{
     switch(color){
     case "Red":
         return UIColor.red
+    case "Dark Red":
+        return UIColor.init(displayP3Red: 163.0/255.0, green: 25.0/255.0, blue: 25.0/255.0, alpha: 1.0)
     case "Orange":
         return UIColor.orange
     case "Yellow":
         return UIColor.yellow
     case "Green":
         return UIColor.green
+    case "Dark Green":
+        return UIColor.init(displayP3Red: 25.0/255.0, green: 93.0/255.0, blue: 25.0/255.0, alpha: 1.0)
     case "Blue":
         return UIColor.blue
     case "Purple":

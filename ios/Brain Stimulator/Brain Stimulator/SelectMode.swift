@@ -43,12 +43,12 @@ class SelectMode: UIViewController{
     }
     
     func addButtons(){
-        
+        scroll.contentInset = UIEdgeInsets.zero
         for mode in options{
-            let button = UIButton(frame: CGRect(x: 0,y: buttonHeight * count, width: width, height: buttonHeight))
+            let button = UIButton(frame: CGRect(x: 0,y: Int(CGFloat(buttonHeight) * (CGFloat(count))-(self.navigationController?.navigationBar.frame.size.height)!), width: width, height: buttonHeight))
             button.titleLabel!.font = button.titleLabel!.font.withSize(18)
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
-            button.contentVerticalAlignment = UIControlContentVerticalAlignment.top
+            button.contentVerticalAlignment = UIControlContentVerticalAlignment.center
             button.setTitleColor(UIColor.black, for: UIControlState())
             button.setTitle(mode, for: UIControlState())
             button.addTarget(self, action: #selector(SelectMode.buttonClicked(_:)),
