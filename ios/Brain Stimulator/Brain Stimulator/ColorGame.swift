@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ColorGame: UIViewController{//make method that returns button with specific text
+class ColorGame: UIViewController{//make method that returns button with specific text//find out why button disp width is always 343 --> same no matter the actual size
     
     var button1: UIButton!
     var button2: UIButton!
@@ -32,19 +32,30 @@ class ColorGame: UIViewController{//make method that returns button with specifi
     var hardColor:[String] = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray", "Indigo", "Violet", "Black", "Cyan", "Royal Blue", "Magenta", "Peach", "Tan", "Turquoise"]
     var colorBank:[String] = []
     
+    var totWidth = 0
+    var totHeight = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = bgColor
         timerLab.textColor = fontColor
         self.navigationController?.isNavigationBarHidden = true
         selectColorBank()
-        addButtons()
-        startGame()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        totWidth = Int(colorWordDisp.frame.size.width)
+        print(totWidth)
+        totHeight = Int(colorWordDisp.frame.size.height)
+        print(totHeight)
+        addButtons()
+        startGame()
     }
     
     func startGame(){
@@ -73,9 +84,7 @@ class ColorGame: UIViewController{//make method that returns button with specifi
     }
     
     func addButtons(){
-        let totWidth = buttonDisp.bounds.width
-        let totHeight = buttonDisp.bounds.height
-        button1 = UIButton(frame: CGRect(x: 0,y: 0, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button1 = UIButton(frame: CGRect(x: 0,y: 0, width: totWidth/2, height: totHeight/2))
         button1.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button1.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button1.setTitleColor(UIColor.black, for: UIControlState())
@@ -85,7 +94,7 @@ class ColorGame: UIViewController{//make method that returns button with specifi
         button1.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
                          for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button1)
-        button2 = UIButton(frame: CGRect(x: totWidth/2+2.5,y: 0, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button2 = UIButton(frame: CGRect(x: totWidth/2,y: 0, width: totWidth/2, height: totHeight/2))
         button2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button2.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button2.setTitleColor(UIColor.black, for: UIControlState())
@@ -95,7 +104,7 @@ class ColorGame: UIViewController{//make method that returns button with specifi
         button2.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button2)
-        button3 = UIButton(frame: CGRect(x: 0,y: totHeight/2+2.5, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button3 = UIButton(frame: CGRect(x: 0,y: totHeight/2, width: totWidth/2, height: totHeight/2))
         button3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button3.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button3.setTitleColor(UIColor.black, for: UIControlState())
@@ -105,7 +114,7 @@ class ColorGame: UIViewController{//make method that returns button with specifi
         button3.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button3)
-        button4 = UIButton(frame: CGRect(x: totWidth/2+2.5,y: totHeight/2+2.5, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button4 = UIButton(frame: CGRect(x: totWidth/2,y: totHeight/2, width: totWidth/2, height: totHeight/2))
         button4.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button4.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button4.setTitleColor(UIColor.black, for: UIControlState())
@@ -137,7 +146,7 @@ class ColorGame: UIViewController{//make method that returns button with specifi
         }
         else{
             points += pointsEarned
-            self.performSegue(withIdentifier: "colortomainsegue", sender: nil)
+            self.performSegue(withIdentifier: "coltopvsegue", sender: nil)
         }
     }
     

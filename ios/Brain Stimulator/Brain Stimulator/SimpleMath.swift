@@ -32,19 +32,27 @@ class SimpleMath: UIViewController{
     var count = 1
     var pointsEarned = 0
     
+    var totWidth = 0
+    var totHeight = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = bgColor
         timerLab.textColor = fontColor
         self.navigationController?.isNavigationBarHidden = true
         selectRangeEnd()
-        addButtons()
-        startGame()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        totWidth = Int(buttonDisp.frame.size.width)
+        totHeight = Int(buttonDisp.frame.size.height)
+        addButtons()
+        startGame()
     }
     
     func startGame(){
@@ -85,9 +93,7 @@ class SimpleMath: UIViewController{
     }
     
     func addButtons(){
-        let totWidth = buttonDisp.bounds.width
-        let totHeight = buttonDisp.bounds.height
-        button1 = UIButton(frame: CGRect(x: 0,y: 0, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button1 = UIButton(frame: CGRect(x: 0,y: 0, width: totWidth/2, height: totHeight/2))
         button1.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button1.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button1.setTitleColor(UIColor.black, for: UIControlState())
@@ -97,7 +103,7 @@ class SimpleMath: UIViewController{
         button1.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button1)
-        button2 = UIButton(frame: CGRect(x: totWidth/2+2.5,y: 0, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button2 = UIButton(frame: CGRect(x: totWidth/2,y: 0, width: totWidth/2, height: totHeight/2))
         button2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button2.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button2.setTitleColor(UIColor.black, for: UIControlState())
@@ -107,7 +113,7 @@ class SimpleMath: UIViewController{
         button2.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button2)
-        button3 = UIButton(frame: CGRect(x: 0,y: totHeight/2+2.5, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button3 = UIButton(frame: CGRect(x: 0,y: totHeight/2, width: totWidth/2, height: totHeight/2))
         button3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button3.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button3.setTitleColor(UIColor.black, for: UIControlState())
@@ -117,7 +123,7 @@ class SimpleMath: UIViewController{
         button3.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button3)
-        button4 = UIButton(frame: CGRect(x: totWidth/2+2.5,y: totHeight/2+2.5, width: totWidth/2-2.5, height: totHeight/2-2.5))
+        button4 = UIButton(frame: CGRect(x: totWidth/2, y: totHeight/2, width: totWidth/2, height: totHeight/2))
         button4.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button4.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         button4.setTitleColor(UIColor.black, for: UIControlState())
@@ -206,13 +212,13 @@ class SimpleMath: UIViewController{
         var w2 = 0
         var w3 = 0
         repeat{
-            w1 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+            w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
         }while(w1 == Int(correctAnswer)!)
         repeat{
-            w2 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+            w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
         }while(w1 == w2 && w2==Int(correctAnswer)!)
         repeat{
-            w3 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+            w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
         }while(w3 == w2 && w3 == w1 && w3 == Int(correctAnswer)!)
         var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
         var a1 = 0
@@ -240,13 +246,13 @@ class SimpleMath: UIViewController{
         var w2 = 0
         var w3 = 0
         repeat{
-            w1 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+            w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
         }while(w1 == Int(correctAnswer)!)
         repeat{
-            w2 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+            w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
         }while(w1 == w2 && w2==Int(correctAnswer)!)
         repeat{
-            w3 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+            w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
         }while(w3 == w2 && w3 == w1 && w3 == Int(correctAnswer)!)
         var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
         var a1 = 0
@@ -273,13 +279,13 @@ class SimpleMath: UIViewController{
         var w2 = 0
         var w3 = 0
         repeat{
-            w1 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+            w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
         }while(w1 == Int(correctAnswer)!)
         repeat{
-            w2 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+            w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
         }while(w1 == w2 || w2==Int(correctAnswer)!)
         repeat{
-            w3 = randomGen(range: 10, start: Int(correctAnswer)!-5)
+            w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
         }while(w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)!)
         var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
         var a1 = 0
@@ -312,7 +318,7 @@ class SimpleMath: UIViewController{
         }
         else{
             points += pointsEarned
-            self.performSegue(withIdentifier: "simplemathtomainsegue", sender: nil)
+            self.performSegue(withIdentifier: "smtopvsegue", sender: nil)
         }
     }
     

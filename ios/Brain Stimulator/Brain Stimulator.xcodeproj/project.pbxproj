@@ -12,6 +12,7 @@
 		491AFC561E48612400235F71 /* checkmarkselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 491AFC551E48612400235F71 /* checkmarkselected.png */; };
 		491AFC581E48612B00235F71 /* checkmarkunselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 491AFC571E48612B00235F71 /* checkmarkunselected.png */; };
 		492BA3511DDAD382003345AE /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BA3501DDAD382003345AE /* ProgressView.swift */; };
+		4938617E1E544A4A0017597A /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938617D1E544A4A0017597A /* PointsView.swift */; };
 		494C50831DDAEACD0079E4D3 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 494C50821DDAEACD0079E4D3 /* pause.png */; };
 		49A0F3A11DD99C7300540372 /* ColorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0F3A01DD99C7300540372 /* ColorGame.swift */; };
 		49A41E191DEAA29500C0884B /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A41E181DEAA29500C0884B /* Directions.swift */; };
@@ -66,6 +67,7 @@
 		491AFC551E48612400235F71 /* checkmarkselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkmarkselected.png; path = ../../../../../../../../Downloads/checkmarkselected.png; sourceTree = "<group>"; };
 		491AFC571E48612B00235F71 /* checkmarkunselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkmarkunselected.png; path = ../../../../../../../../Downloads/checkmarkunselected.png; sourceTree = "<group>"; };
 		492BA3501DDAD382003345AE /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		4938617D1E544A4A0017597A /* PointsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 		494C50821DDAEACD0079E4D3 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		49A0F3A01DD99C7300540372 /* ColorGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGame.swift; sourceTree = "<group>"; };
 		49A41E181DEAA29500C0884B /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				49E467641DDC4BD200950EA1 /* FindIt.swift */,
 				49E467661DDC4C7E00950EA1 /* Memory.swift */,
 				49A41E181DEAA29500C0884B /* Directions.swift */,
+				4938617D1E544A4A0017597A /* PointsView.swift */,
 			);
 			path = "Brain Stimulator";
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				49E4675A1DDC476500950EA1 /* SimpleMath.swift in Sources */,
 				49DEC3341D8921C4002DEE51 /* GameViewController.swift in Sources */,
 				49D759FB1DBDE6EC007E5216 /* UniversalParams.swift in Sources */,
+				4938617E1E544A4A0017597A /* PointsView.swift in Sources */,
 				49DEC32C1D8921C4002DEE51 /* AppDelegate.swift in Sources */,
 				49D759F91DBDDC1D007E5216 /* Login.swift in Sources */,
 				49A0F3A11DD99C7300540372 /* ColorGame.swift in Sources */,

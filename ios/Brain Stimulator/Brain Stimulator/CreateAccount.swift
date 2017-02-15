@@ -27,6 +27,7 @@ class CreateAccount: UIViewController{
         //assignbackground()
         setViewColor()
         self.view.backgroundColor = bgColor
+        self.navigationController?.isNavigationBarHidden = true
         selected = false
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogIn.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -76,6 +77,7 @@ class CreateAccount: UIViewController{
                             if error == nil{
                                 let data = ["username": username, "isTherapist": self.selected, "points": 0] as [String : Any]
                                 firebaseRef.child("users").child((user?.uid)!).setValue(data)
+                                self.performSegue(withIdentifier: "createtologseg", sender: nil)
                             }
                             else{
                                 print(error!)

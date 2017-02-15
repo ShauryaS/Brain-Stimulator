@@ -26,6 +26,7 @@ class LogIn: UIViewController{
         //assignbackground()
         let sharedApp = UIApplication.shared
         sharedApp.delegate?.window??.tintColor = fontColor
+        self.navigationController?.isNavigationBarHidden = true
         if bgColor != UIColor.white{
             UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         }
