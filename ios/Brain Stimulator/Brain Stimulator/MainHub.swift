@@ -33,11 +33,18 @@ class Mainhub: UIViewController{
     }
     
     func setWelLab(){
-        firebaseRef.child("users").child(uid).child("username").observeSingleEvent(of: .value, with: {
+        firebaseRef.child("users").child(uid).child("name").observeSingleEvent(of: .value, with: {
             snapshot in
             username = snapshot.value as! String
-            print(username)
             self.navigationItem.title = username
+        })
+        firebaseRef.child("users").child(uid).child("points").observeSingleEvent(of: .value, with: {
+            snapshot in
+            points = snapshot.value as! Int
+        })
+        firebaseRef.child("users").child(uid).child("gameBurst").observeSingleEvent(of: .value, with: {
+            snapshot in
+            gameburst = snapshot.value as! Int
         })
     }
     

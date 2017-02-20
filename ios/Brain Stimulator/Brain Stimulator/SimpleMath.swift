@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SimpleMath: UIViewController{
+class SimpleMath: UIViewController{//fix checks and fix display of problem to match neg numbers
     
     var button1: UIButton!
     var button2: UIButton!
@@ -24,7 +24,7 @@ class SimpleMath: UIViewController{
     
     var easyRangeEnd = 10
     var mediumRangeEnd = 15
-    var hardRangeEnd = 20
+    var hardRangeEnd = 30
     var rangeEnd = 12
     
     var answerSelected = ""
@@ -203,9 +203,9 @@ class SimpleMath: UIViewController{
     
     func additionGame(){
         roundLab.text = "Round " + count.description
-        let t1 = randomGen(range: rangeEnd+1)
-        let t2 = randomGen(range: rangeEnd+1)
-        mathText.text = String(t1) + " + " + String(t2) + " = "
+        let t1 = randomGen(range: rangeEnd*2+1, start: -rangeEnd)
+        let t2 = randomGen(range: rangeEnd*2+1, start: -rangeEnd)
+        mathText.text = "(" + String(t1) + ") + (" + String(t2) + ") = "
         correctAnswer = Int(t1+t2).description
         var buttPos:[Int] = [1,2,3,4]
         var w1 = 0
@@ -213,13 +213,9 @@ class SimpleMath: UIViewController{
         var w3 = 0
         repeat{
             w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
-        }while(w1 == Int(correctAnswer)!)
-        repeat{
             w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
-        }while(w1 == w2 && w2==Int(correctAnswer)!)
-        repeat{
             w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
-        }while(w3 == w2 && w3 == w1 && w3 == Int(correctAnswer)!)
+        }while(w1 == Int(correctAnswer)! && w2 == w1 && w2 == Int(correctAnswer)! && w3 == w2 && w3 == w1 && w3 == Int(correctAnswer)!)
         var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
         var a1 = 0
         while(buttPos.count != 0){
@@ -272,20 +268,23 @@ class SimpleMath: UIViewController{
     func square(){
         roundLab.text = "Round " + count.description
         let t1 = randomGen(range: rangeEnd+1)
-        mathText.text = String(t1) + "^2 = "
+        mathText.text = String(t1) + "² = "
         correctAnswer = Int(t1*t1).description
         var buttPos:[Int] = [1,2,3,4]
         var w1 = 0
         var w2 = 0
         var w3 = 0
         repeat{
-            w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+            w1 = randomGen(range: 30, start: Int(correctAnswer)!-15)
+            w1 = abs(w1)
         }while(w1 == Int(correctAnswer)!)
         repeat{
-            w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+            w2 = randomGen(range: 30, start: Int(correctAnswer)!-15)
+            w2 = abs(w2)
         }while(w1 == w2 || w2==Int(correctAnswer)!)
         repeat{
-            w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+            w3 = randomGen(range: 30, start: Int(correctAnswer)!-15)
+            w3 = abs(w3)
         }while(w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)!)
         var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
         var a1 = 0
@@ -317,8 +316,15 @@ class SimpleMath: UIViewController{
             playGameType()
         }
         else{
-            points += pointsEarned
             self.performSegue(withIdentifier: "smtopvsegue", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "smtopvsegue" {
+            if let toViewController = segue.destination as? PointsView {
+                toViewController.pointsEarned = pointsEarned
+            }
         }
     }
     

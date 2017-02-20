@@ -145,7 +145,6 @@ class ColorGame: UIViewController{//make method that returns button with specifi
             playGameType()
         }
         else{
-            points += pointsEarned
             self.performSegue(withIdentifier: "coltopvsegue", sender: nil)
         }
     }
@@ -299,6 +298,14 @@ class ColorGame: UIViewController{//make method that returns button with specifi
         else{
             pointsEarned += incorrect[selectScorePos()]
             return false
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "coltopvsegue" {
+            if let toViewController = segue.destination as? PointsView {
+                toViewController.pointsEarned = pointsEarned
+            }
         }
     }
     

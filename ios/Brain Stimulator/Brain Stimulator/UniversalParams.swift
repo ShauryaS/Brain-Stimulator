@@ -17,7 +17,7 @@ var days = 0
 var correct:[Int] = [10, 20, 30]
 var incorrect:[Int] = [4, 11, 17]
 
-var gameburst = 10
+var gameburst = 0
 var username = ""
 var email = ""
 var pswd = ""

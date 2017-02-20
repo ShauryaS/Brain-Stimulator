@@ -14,12 +14,13 @@
 		492BA3511DDAD382003345AE /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BA3501DDAD382003345AE /* ProgressView.swift */; };
 		4938617E1E544A4A0017597A /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938617D1E544A4A0017597A /* PointsView.swift */; };
 		494C50831DDAEACD0079E4D3 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 494C50821DDAEACD0079E4D3 /* pause.png */; };
+		4966F2321E59998F00D06345 /* brainbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4966F2311E59998F00D06345 /* brainbg.jpg */; };
+		4966F2341E599AD300D06345 /* celebration.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4966F2331E599AD200D06345 /* celebration.jpg */; };
 		49A0F3A11DD99C7300540372 /* ColorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0F3A01DD99C7300540372 /* ColorGame.swift */; };
 		49A41E191DEAA29500C0884B /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A41E181DEAA29500C0884B /* Directions.swift */; };
 		49A98D8C1DC885DF0088B029 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */; };
 		49ADD38E1DC019A2006F4431 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD38D1DC019A2006F4431 /* CreateAccount.swift */; };
 		49ADD3901DC019CC006F4431 /* MainHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD38F1DC019CC006F4431 /* MainHub.swift */; };
-		49ADD3981DC0603F006F4431 /* Brain.png in Resources */ = {isa = PBXBuildFile; fileRef = 49ADD3971DC0603F006F4431 /* Brain.png */; };
 		49D759F91DBDDC1D007E5216 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D759F81DBDDC1D007E5216 /* Login.swift */; };
 		49D759FB1DBDE6EC007E5216 /* UniversalParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */; };
 		49DEC32C1D8921C4002DEE51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC32B1D8921C4002DEE51 /* AppDelegate.swift */; };
@@ -69,13 +70,14 @@
 		492BA3501DDAD382003345AE /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		4938617D1E544A4A0017597A /* PointsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 		494C50821DDAEACD0079E4D3 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		4966F2311E59998F00D06345 /* brainbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = brainbg.jpg; path = ../../../../../../../../Downloads/brainbg.jpg; sourceTree = "<group>"; };
+		4966F2331E599AD200D06345 /* celebration.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = celebration.jpg; path = ../../../../../../../../Downloads/celebration.jpg; sourceTree = "<group>"; };
 		49A0F3A01DD99C7300540372 /* ColorGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGame.swift; sourceTree = "<group>"; };
 		49A41E181DEAA29500C0884B /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
 		49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49A98D8D1DC8880B0088B029 /* Brain Stimulator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Brain Stimulator.entitlements"; sourceTree = "<group>"; };
 		49ADD38D1DC019A2006F4431 /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		49ADD38F1DC019CC006F4431 /* MainHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHub.swift; sourceTree = "<group>"; };
-		49ADD3971DC0603F006F4431 /* Brain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brain.png; sourceTree = "<group>"; };
 		49D759F81DBDDC1D007E5216 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalParams.swift; sourceTree = "<group>"; };
 		49DEC3281D8921C4002DEE51 /* Brain Stimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brain Stimulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,32 +190,33 @@
 				49DEC32B1D8921C4002DEE51 /* AppDelegate.swift */,
 				49DEC3381D8921C4002DEE51 /* Assets.xcassets */,
 				49A98D8D1DC8880B0088B029 /* Brain Stimulator.entitlements */,
-				49ADD3971DC0603F006F4431 /* Brain.png */,
+				49D759F81DBDDC1D007E5216 /* Login.swift */,
+				49ADD38D1DC019A2006F4431 /* CreateAccount.swift */,
+				49ADD38F1DC019CC006F4431 /* MainHub.swift */,
+				49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */,
+				4901DA231DD8683F00962C9D /* Settings.swift */,
+				492BA3501DDAD382003345AE /* ProgressView.swift */,
+				4966F2311E59998F00D06345 /* brainbg.jpg */,
+				4966F2331E599AD200D06345 /* celebration.jpg */,
+				49DEC3351D8921C4002DEE51 /* Main.storyboard */,
+				49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */,
 				49A0F3A01DD99C7300540372 /* ColorGame.swift */,
 				49E467591DDC476500950EA1 /* SimpleMath.swift */,
 				49E467621DDC48AD00950EA1 /* ComplexMath.swift */,
-				49ADD38D1DC019A2006F4431 /* CreateAccount.swift */,
-				49DEC32D1D8921C4002DEE51 /* GameScene.sks */,
-				49DEC3311D8921C4002DEE51 /* GameScene.swift */,
-				49DEC3331D8921C4002DEE51 /* GameViewController.swift */,
-				49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */,
-				49DEC33D1D8921C4002DEE51 /* Info.plist */,
-				49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */,
-				49D759F81DBDDC1D007E5216 /* Login.swift */,
-				49DEC3351D8921C4002DEE51 /* Main.storyboard */,
-				49ADD38F1DC019CC006F4431 /* MainHub.swift */,
-				494C50821DDAEACD0079E4D3 /* pause.png */,
-				491AFC571E48612B00235F71 /* checkmarkunselected.png */,
-				491AFC551E48612400235F71 /* checkmarkselected.png */,
-				492BA3501DDAD382003345AE /* ProgressView.swift */,
-				49E467491DDC3FA800950EA1 /* SelectDifficulty.swift */,
-				49E467471DDC3F9800950EA1 /* SelectMode.swift */,
-				4901DA231DD8683F00962C9D /* Settings.swift */,
-				49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */,
 				49E467641DDC4BD200950EA1 /* FindIt.swift */,
 				49E467661DDC4C7E00950EA1 /* Memory.swift */,
 				49A41E181DEAA29500C0884B /* Directions.swift */,
+				49DEC32D1D8921C4002DEE51 /* GameScene.sks */,
+				49DEC3311D8921C4002DEE51 /* GameScene.swift */,
+				49DEC3331D8921C4002DEE51 /* GameViewController.swift */,
+				49E467491DDC3FA800950EA1 /* SelectDifficulty.swift */,
+				49E467471DDC3F9800950EA1 /* SelectMode.swift */,
 				4938617D1E544A4A0017597A /* PointsView.swift */,
+				49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */,
+				49DEC33D1D8921C4002DEE51 /* Info.plist */,
+				494C50821DDAEACD0079E4D3 /* pause.png */,
+				491AFC571E48612B00235F71 /* checkmarkunselected.png */,
+				491AFC551E48612400235F71 /* checkmarkselected.png */,
 			);
 			path = "Brain Stimulator";
 			sourceTree = "<group>";
@@ -360,7 +363,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49ADD3981DC0603F006F4431 /* Brain.png in Resources */,
 				49DEC3371D8921C4002DEE51 /* Main.storyboard in Resources */,
 				494C50831DDAEACD0079E4D3 /* pause.png in Resources */,
 				49DEC32E1D8921C4002DEE51 /* GameScene.sks in Resources */,
@@ -369,7 +371,9 @@
 				491AFC561E48612400235F71 /* checkmarkselected.png in Resources */,
 				49DEC3301D8921C4002DEE51 /* Actions.sks in Resources */,
 				49A98D8C1DC885DF0088B029 /* GoogleService-Info.plist in Resources */,
+				4966F2341E599AD300D06345 /* celebration.jpg in Resources */,
 				491AFC581E48612B00235F71 /* checkmarkunselected.png in Resources */,
+				4966F2321E59998F00D06345 /* brainbg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,6 +24,8 @@ class SelectDifficulty: UIViewController{
     }
     
     func getSpecifiedSegue()->String{
+        gamesPlayed += 1
+        firebaseRef.child("users").child(uid).updateChildValues(["gamesPlayed": gamesPlayed])
         switch(game){
             case "Simple Math":
                 return "difftosmsegue"

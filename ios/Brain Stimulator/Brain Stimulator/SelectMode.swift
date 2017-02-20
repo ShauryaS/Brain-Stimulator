@@ -34,7 +34,6 @@ class SelectMode: UIViewController{
         height = Int(UIScreen.main.bounds.height - (self.navigationController?.navigationBar.frame.size.height)!)
         buttonHeight = Int(height/5)
         scroll.contentSize.height = CGFloat(buttonHeight*options.count)
-        addButtons()
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,10 +41,15 @@ class SelectMode: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addButtons()
+    }
+    
     func addButtons(){
         scroll.contentInset = UIEdgeInsets.zero
         for mode in options{
-            let button = UIButton(frame: CGRect(x: 0,y: Int(CGFloat(buttonHeight) * (CGFloat(count))-(self.navigationController?.navigationBar.frame.size.height)!), width: width, height: buttonHeight))
+            let button = UIButton(frame: CGRect(x: 0,y: Int(CGFloat(buttonHeight) * (CGFloat(count))), width: width, height: buttonHeight))
             button.titleLabel!.font = button.titleLabel!.font.withSize(18)
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
             button.contentVerticalAlignment = UIControlContentVerticalAlignment.center

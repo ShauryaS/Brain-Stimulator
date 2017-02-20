@@ -140,7 +140,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbH-aT-FHO">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbH-aT-FHO">
                                 <rect key="frame" x="16" y="212" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -499,10 +499,10 @@
             </objects>
             <point key="canvasLocation" x="1853.5999999999999" y="198.35082458770617"/>
         </scene>
-        <!--View Controller-->
+        <!--Points View-->
         <scene sceneID="Ye7-n0-LMV">
             <objects>
-                <viewController id="bST-dR-UQq" sceneMemberID="viewController">
+                <viewController id="bST-dR-UQq" customClass="PointsView" customModule="Brain_Stimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dXn-nN-zQI"/>
                         <viewControllerLayoutGuide type="bottom" id="T6C-9z-X0q"/>
@@ -518,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axy-Js-bRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2820" y="199"/>
+            <point key="canvasLocation" x="2820" y="198.35082458770617"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Z7v-ZI-AcZ">
@@ -871,7 +871,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AS-a9-dY6">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1133,8 +1133,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Gbg-qZ-cvf"/>
-        <segue reference="8FK-ln-BUt"/>
-        <segue reference="BFB-H4-fkB"/>
+        <segue reference="kPg-Ax-Bxh"/>
+        <segue reference="Vte-ay-V1M"/>
         <segue reference="A6V-cT-gxd"/>
     </inferredMetricsTieBreakers>
 </document>

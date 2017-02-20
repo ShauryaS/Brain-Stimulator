@@ -51,6 +51,7 @@ class LogIn: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //assignbackground()
         readAuthFile()
     }
     
@@ -63,7 +64,7 @@ class LogIn: UIViewController{
     }
     
     func assignbackground(){
-        let background = UIImage(named: "Brain.png")
+        let background = UIImage(named: "brainbg.jpg")
         var imageView : UIImageView!
         imageView = UIImageView(frame: view.bounds)
         imageView.contentMode =  UIViewContentMode.scaleAspectFill
