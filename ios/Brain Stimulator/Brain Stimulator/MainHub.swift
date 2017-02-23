@@ -46,6 +46,10 @@ class Mainhub: UIViewController{
             snapshot in
             gameburst = snapshot.value as! Int
         })
+        firebaseRef.child("users").child(uid).child("gamesPlayed").observeSingleEvent(of: .value, with: {
+            snapshot in
+            gamesPlayed = snapshot.value as! Int
+        })
     }
     
     func setButtons(){

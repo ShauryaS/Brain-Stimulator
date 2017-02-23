@@ -48,7 +48,7 @@ class PointsView: UIViewController{
         label2.textAlignment = .center
         points += pointsEarned
         label2.text = "Total Points: " + points.description
-        label2.font = label2.font.withSize(50)
+        label2.font = label2.font.withSize(30)
         self.view.addSubview(label2)
     }
     

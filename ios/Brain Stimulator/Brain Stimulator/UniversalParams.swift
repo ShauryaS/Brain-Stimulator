@@ -14,8 +14,8 @@ var points = 0
 var gamesPlayed = 0
 var days = 0
 
-var correct:[Int] = [10, 20, 30]
-var incorrect:[Int] = [4, 11, 17]
+var correct:[Int] = [4, 8, 12]
+var incorrect:[Int] = [2, 4, 6]
 
 var gameburst = 0
 var username = ""

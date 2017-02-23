@@ -22,6 +22,8 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
     @IBOutlet var roundLab: UILabel!
     @IBOutlet var buttonDisp: UIView!
     
+    var mixed = false
+    
     var easyRangeEnd = 10
     var mediumRangeEnd = 15
     var hardRangeEnd = 30
@@ -65,10 +67,22 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         switch(gameType){
             case "Addition":
                 additionGame()
+                break
+            case "Subtraction":
+                subtraction()
+                break
             case "Multiplication":
                 multiplication()
+                break
+            case "Division":
+                division()
+                break
             case "Square":
                 square()
+                break
+            case "Square Root":
+                sqroot()
+                break
             default:
                 break
         }
@@ -215,7 +229,7 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
             w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
             w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
             w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
-        }while(w1 == Int(correctAnswer)! && w2 == w1 && w2 == Int(correctAnswer)! && w3 == w2 && w3 == w1 && w3 == Int(correctAnswer)!)
+        }while(w1 == Int(correctAnswer)! || w2 == w1 || w2 == Int(correctAnswer)! || w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)!)
         var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
         var a1 = 0
         while(buttPos.count != 0){
@@ -228,14 +242,36 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
     }
     
     func subtraction(){
-        
+        roundLab.text = "Round " + count.description
+        let t1 = randomGen(range: rangeEnd*2+1, start: -rangeEnd)
+        let t2 = randomGen(range: rangeEnd*2+1, start: -rangeEnd)
+        mathText.text = "(" + String(t1) + ") - (" + String(t2) + ") = "
+        correctAnswer = Int(t1-t2).description
+        var buttPos:[Int] = [1,2,3,4]
+        var w1 = 0
+        var w2 = 0
+        var w3 = 0
+        repeat{
+            w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+            w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+            w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+        }while(w1 == Int(correctAnswer)! || w2 == w1 || w2 == Int(correctAnswer)! || w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)!)
+        var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
+        var a1 = 0
+        while(buttPos.count != 0){
+            let p = randomGen(range: buttPos.count)
+            getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            buttPos.remove(at: p)
+            a1 += 1
+        }
+        count += 1
     }
     
     func multiplication(){
         roundLab.text = "Round " + count.description
-        let t1 = randomGen(range: rangeEnd+1)
-        let t2 = randomGen(range: rangeEnd+1)
-        mathText.text = String(t1) + " x " + String(t2) + " = "
+        let t1 = randomGen(range: rangeEnd*2+1, start: -rangeEnd)
+        let t2 = randomGen(range: rangeEnd*2+1, start: -rangeEnd)
+        mathText.text = "(" + String(t1) + ") x (" + String(t2) + ") = "
         correctAnswer = Int(t1*t2).description
         var buttPos:[Int] = [1,2,3,4]
         var w1 = 0
@@ -243,13 +279,9 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         var w3 = 0
         repeat{
             w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
-        }while(w1 == Int(correctAnswer)!)
-        repeat{
             w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
-        }while(w1 == w2 && w2==Int(correctAnswer)!)
-        repeat{
             w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
-        }while(w3 == w2 && w3 == w1 && w3 == Int(correctAnswer)!)
+        }while(w1 == Int(correctAnswer)! || w2 == w1 || w2 == Int(correctAnswer)! || w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)!)
         var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
         var a1 = 0
         while(buttPos.count != 0){
@@ -262,30 +294,48 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
     }
     
     func division(){
-        
+        roundLab.text = "Round " + count.description
+        let t1 = randomGen(range: rangeEnd*2+1, start: -rangeEnd)
+        var t2 = 0
+        repeat{
+            t2 = randomGen(range: rangeEnd*2+1, start: -rangeEnd)
+        }while(t2 == 0 || t1%t2 != 0 || (t2>t1 && t1 != 0))
+        mathText.text = "(" + String(t1) + ") / (" + String(t2) + ") = "
+        correctAnswer = Int(t1/t2).description
+        var buttPos:[Int] = [1,2,3,4]
+        var w1 = 0
+        var w2 = 0
+        var w3 = 0
+        repeat{
+            w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+            w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+            w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+        }while(w1 == Int(correctAnswer)! || w2 == w1 || w2 == Int(correctAnswer)! || w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)!)
+        var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
+        var a1 = 0
+        while(buttPos.count != 0){
+            let p = randomGen(range: buttPos.count)
+            getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            buttPos.remove(at: p)
+            a1 += 1
+        }
+        count += 1
     }
     
     func square(){
         roundLab.text = "Round " + count.description
-        let t1 = randomGen(range: rangeEnd+1)
-        mathText.text = String(t1) + "² = "
+        let t1 = randomGen(range: rangeEnd*2+1, start: -rangeEnd)
+        mathText.text = "(" + String(t1) + ")² = "
         correctAnswer = Int(t1*t1).description
         var buttPos:[Int] = [1,2,3,4]
         var w1 = 0
         var w2 = 0
         var w3 = 0
         repeat{
-            w1 = randomGen(range: 30, start: Int(correctAnswer)!-15)
-            w1 = abs(w1)
-        }while(w1 == Int(correctAnswer)!)
-        repeat{
-            w2 = randomGen(range: 30, start: Int(correctAnswer)!-15)
-            w2 = abs(w2)
-        }while(w1 == w2 || w2==Int(correctAnswer)!)
-        repeat{
-            w3 = randomGen(range: 30, start: Int(correctAnswer)!-15)
-            w3 = abs(w3)
-        }while(w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)!)
+            w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+            w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+            w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+        }while(w1 == Int(correctAnswer)! || w2 == w1 || w2 == Int(correctAnswer)! || w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)!)
         var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
         var a1 = 0
         while(buttPos.count != 0){
@@ -298,7 +348,28 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
     }
     
     func sqroot(){
-        
+        roundLab.text = "Round " + count.description
+        let t1 = randomGen(range: rangeEnd*2+1, start: -rangeEnd)
+        mathText.text = "√(" + String(t1*t1) + ") = "
+        correctAnswer = Int(sqrt(Double(t1*t1))).description
+        var buttPos:[Int] = [1,2,3,4]
+        var w1 = 0
+        var w2 = 0
+        var w3 = 0
+        repeat{
+            w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+            w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+            w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
+        }while(w1 == Int(correctAnswer)! || w2 == w1 || w2 == Int(correctAnswer)! || w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)! || w1 == -t1 || w2 == -t1 || w3 == -t1)
+        var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
+        var a1 = 0
+        while(buttPos.count != 0){
+            let p = randomGen(range: buttPos.count)
+            getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            buttPos.remove(at: p)
+            a1 += 1
+        }
+        count += 1
     }
     
     @IBAction func nextPressed(_ sender: Any) {
