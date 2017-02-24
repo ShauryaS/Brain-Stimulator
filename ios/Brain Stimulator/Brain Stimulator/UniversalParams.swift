@@ -28,6 +28,7 @@ var gameType = ""
 var gameDifficulty = ""
 var bgColor = UIColor.white
 var fontColor = UIColor.black
+var isTherapist = false
 
 let firebaseRef = FIRDatabase.database().reference()
 

@@ -23,7 +23,7 @@ class Mainhub: UIViewController{
         super.viewDidLoad()
         self.view.backgroundColor = bgColor
         self.navigationController?.isNavigationBarHidden = false
-        setWelLab()
+        setStuff()
         setButtons()
     }
      
@@ -32,7 +32,7 @@ class Mainhub: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    func setWelLab(){
+    func setStuff(){
         firebaseRef.child("users").child(uid).child("name").observeSingleEvent(of: .value, with: {
             snapshot in
             username = snapshot.value as! String
@@ -49,6 +49,14 @@ class Mainhub: UIViewController{
         firebaseRef.child("users").child(uid).child("gamesPlayed").observeSingleEvent(of: .value, with: {
             snapshot in
             gamesPlayed = snapshot.value as! Int
+        })
+        firebaseRef.child("users").child(uid).child("days").observeSingleEvent(of: .value, with: {
+            snapshot in
+            days = snapshot.value as! Int
+        })
+        firebaseRef.child("users").child(uid).child("isTherapist").observeSingleEvent(of: .value, with: {
+            snapshot in
+            isTherapist = snapshot.value as! Bool
         })
     }
     

@@ -12,10 +12,38 @@ import Firebase
 
 class Settings: UIViewController{
     
+    @IBOutlet var userLab: UILabel!
+    @IBOutlet var typeLab: UILabel!
+    @IBOutlet var pointsLab: UILabel!
+    @IBOutlet var gamesPlayedLab: UILabel!
+    @IBOutlet var daysLab: UILabel!
+    @IBOutlet var burstLab: UILabel!
+    @IBOutlet var burstTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        userLab.text = username
+        if isTherapist == true{
+            typeLab.text = "Account Type: Therapist"
+        }
+        else{
+            typeLab.text = "Account Type: Client"
+        }
+        pointsLab.text = "Points: " + String(points)
+        gamesPlayedLab.text = "Games Played: " + String(gamesPlayed)
+        daysLab.text = "Days Played: " + String(days)
+        burstLab.text = "Burst: "
+        burstTF.placeholder = String(gameburst)
         self.view.backgroundColor = bgColor
         navigationItem.title = "Settings"
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogIn.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,6 +68,12 @@ class Settings: UIViewController{
         }
         try! FIRAuth.auth()!.signOut()
         self.performSegue(withIdentifier: "backToLogInSegue", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "settomainseg" {
+            firebaseRef.child("users").child(uid).updateChildValues(["gameBurst": Int(burstTF.text!) ?? gameburst])
+        }
     }
 
 }

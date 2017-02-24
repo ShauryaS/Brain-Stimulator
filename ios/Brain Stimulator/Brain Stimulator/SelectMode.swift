@@ -13,12 +13,12 @@ class SelectMode: UIViewController{
     
     @IBOutlet var scroll: UIScrollView!
     var options:[String] = []
-    var colorModes:[String] = ["Name The Color", "Identify The Word Color", "Name The Font Color", "Name The Background Color", "Mix"]
-    var complexMathModes:[String] = ["Exponents", "PEMDAS", "Algebra Addition", "Algebra Subtraction", "Algebra Multiplication", "Algebra Division", "Mix"]
+    var colorModes:[String] = ["Name The Color", "Identify The Word Color", "Name The Font Color", "Name The Background Color"]
+    var complexMathModes:[String] = ["Exponents", "PEMDAS", "Algebra Addition", "Algebra Subtraction", "Algebra Multiplication", "Algebra Division"]
     var memoryModes:[String] = []
     var directionModes:[String] = []
     var findItModes:[String] = []
-    var simpleMathModes:[String] = ["Addition", "Subtraction", "Multiplication", "Division", "Square", "Square Root", "Mix"]
+    var simpleMathModes:[String] = ["Addition", "Subtraction", "Multiplication", "Division", "Square", "Square Root"]
     var count = 0
     
     let width = Int(UIScreen.main.bounds.width)

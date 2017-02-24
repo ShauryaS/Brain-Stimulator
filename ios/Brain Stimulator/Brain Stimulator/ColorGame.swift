@@ -21,8 +21,6 @@ class ColorGame: UIViewController{//make method that returns button with specifi
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var roundLab: UILabel!
     @IBOutlet var buttonDisp: UIView!
-    
-    var mixed = false
 
     var answerSelected = ""
     var correctAnswer = ""
