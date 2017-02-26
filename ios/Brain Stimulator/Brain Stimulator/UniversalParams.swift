@@ -28,7 +28,9 @@ var gameType = ""
 var gameDifficulty = ""
 var bgColor = UIColor.white
 var fontColor = UIColor.black
+var tintColor = UIColor.black
 var isTherapist = false
+var darkMode = false
 
 let firebaseRef = FIRDatabase.database().reference()
 
@@ -48,6 +50,8 @@ func getColor(color:String) -> UIColor{
         return UIColor.orange
     case "Yellow":
         return UIColor.yellow
+    case "Gold":
+        return UIColor.init(displayP3Red: 255.0/255.0, green: 215.0/255.0, blue: 0.0/255.0, alpha: 1.0)
     case "Green":
         return UIColor.green
     case "Dark Green":

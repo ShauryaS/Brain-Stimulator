@@ -19,6 +19,7 @@ class Settings: UIViewController{
     @IBOutlet var daysLab: UILabel!
     @IBOutlet var burstLab: UILabel!
     @IBOutlet var burstTF: UITextField!
+    @IBOutlet var modeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,12 @@ class Settings: UIViewController{
         }
         else{
             typeLab.text = "Account Type: Client"
+        }
+        if darkMode == true{
+            modeButton.setTitle("Enable Light Mode", for: UIControlState())
+        }
+        else{
+            modeButton.setTitle("Enable Dark Mode", for: UIControlState())
         }
         pointsLab.text = "Points: " + String(points)
         gamesPlayedLab.text = "Games Played: " + String(gamesPlayed)
@@ -74,6 +81,18 @@ class Settings: UIViewController{
         if segue.identifier == "settomainseg" {
             firebaseRef.child("users").child(uid).updateChildValues(["gameBurst": Int(burstTF.text!) ?? gameburst])
         }
+    }
+    
+    @IBAction func changeMode(_ sender: Any) {
+        darkMode = !darkMode
+        if darkMode == true{
+            modeButton.setTitle("Save to Enable Dark Mode", for: UIControlState())
+        }
+        else{
+            modeButton.setTitle("Save to Enable Light Mode", for: UIControlState())
+        }
+        firebaseRef.child("users").child(uid).updateChildValues(["darkMode": darkMode])
+        modeButton.isEnabled = false
     }
 
 }

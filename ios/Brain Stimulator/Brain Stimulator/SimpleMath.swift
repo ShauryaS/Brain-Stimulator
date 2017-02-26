@@ -22,6 +22,9 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
     @IBOutlet var roundLab: UILabel!
     @IBOutlet var buttonDisp: UIView!
     
+    var correctAns = 0
+    var incorrectAns = 0
+    
     var mixed = false
     
     var easyRangeEnd = 10
@@ -153,10 +156,12 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
     func checkAnswer()->Bool{
         if answerSelected == correctAnswer {
             pointsEarned += correct[selectScorePos()]
+            correctAns += 1
             return true
         }
         else{
             pointsEarned += incorrect[selectScorePos()]
+            incorrectAns += 1
             return false
         }
     }
@@ -357,10 +362,10 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         var w2 = 0
         var w3 = 0
         repeat{
-            w1 = randomGen(range: 20, start: Int(correctAnswer)!-10)
-            w2 = randomGen(range: 20, start: Int(correctAnswer)!-10)
-            w3 = randomGen(range: 20, start: Int(correctAnswer)!-10)
-        }while(w1 == Int(correctAnswer)! || w2 == w1 || w2 == Int(correctAnswer)! || w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)! || w1 == -t1 || w2 == -t1 || w3 == -t1)
+            w1 = abs(randomGen(range: 20, start: Int(correctAnswer)!-10))
+            w2 = abs(randomGen(range: 20, start: Int(correctAnswer)!-10))
+            w3 = abs(randomGen(range: 20, start: Int(correctAnswer)!-10))
+        }while(w1 == Int(correctAnswer)! || w2 == w1 || w2 == Int(correctAnswer)! || w3 == w2 || w3 == w1 || w3 == Int(correctAnswer)!)
         var answerOps:[Int] = [Int(correctAnswer)!, w1, w2, w3]
         var a1 = 0
         while(buttPos.count != 0){
@@ -395,6 +400,8 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         if segue.identifier == "smtopvsegue" {
             if let toViewController = segue.destination as? PointsView {
                 toViewController.pointsEarned = pointsEarned
+                toViewController.corrAns = correctAns
+                toViewController.incorrAns = incorrectAns
             }
         }
     }

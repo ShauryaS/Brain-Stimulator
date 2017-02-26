@@ -27,6 +27,9 @@ class ColorGame: UIViewController{//make method that returns button with specifi
     var count = 1
     var pointsEarned = 0
     
+    var correctAns = 0
+    var incorrectAns = 0
+    
     var easyColor:[String] = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"]
     var medColor:[String] = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray", "Indigo", "Violet", "Black"]
     var hardColor:[String] = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Gray", "Indigo", "Violet", "Black", "Cyan", "Royal Blue", "Magenta", "Peach", "Tan", "Turquoise"]
@@ -293,10 +296,12 @@ class ColorGame: UIViewController{//make method that returns button with specifi
     func checkAnswer()->Bool{
         if answerSelected == correctAnswer {
             pointsEarned += correct[selectScorePos()]
+            correctAns += 1
             return true
         }
         else{
             pointsEarned += incorrect[selectScorePos()]
+            incorrectAns += 1
             return false
         }
     }
@@ -305,6 +310,8 @@ class ColorGame: UIViewController{//make method that returns button with specifi
         if segue.identifier == "coltopvsegue" {
             if let toViewController = segue.destination as? PointsView {
                 toViewController.pointsEarned = pointsEarned
+                toViewController.corrAns = correctAns
+                toViewController.incorrAns = incorrectAns
             }
         }
     }

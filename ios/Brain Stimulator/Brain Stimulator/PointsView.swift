@@ -15,6 +15,9 @@ class PointsView: UIViewController{
     var height = 0
     var pointsEarned = 0
     
+    var corrAns = 0
+    var incorrAns = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         width = Int(UIScreen.main.bounds.width)
@@ -39,17 +42,31 @@ class PointsView: UIViewController{
     }
     
     func addLabels(){
-        let label1 = UILabel(frame: CGRect(x:0, y:0, width: width, height: height/2))
+        let label1 = UILabel(frame: CGRect(x:0, y:0, width: width, height: height/4))
         label1.textAlignment = .center
-        label1.text = "Points Earned: " + pointsEarned.description
+        label1.text = "Correct Answers: " + corrAns.description
         label1.font = label1.font.withSize(20)
+        label1.textColor = getColor(color: "Dark Green")
         self.view.addSubview(label1)
-        let label2 = UILabel(frame: CGRect(x:0, y:height/2, width: width, height: height/2))
+        let label2 = UILabel(frame: CGRect(x:0, y:height/4, width: width, height: height/4))
         label2.textAlignment = .center
-        points += pointsEarned
-        label2.text = "Total Points: " + points.description
-        label2.font = label2.font.withSize(30)
+        label2.text = "Incorrect Answers: " + incorrAns.description
+        label2.font = label2.font.withSize(20)
+        label2.textColor = getColor(color: "Dark Red")
         self.view.addSubview(label2)
+        let label3 = UILabel(frame: CGRect(x:0, y:2*height/4, width: width, height: height/4))
+        label3.textAlignment = .center
+        label3.text = "Points Earned: " + pointsEarned.description
+        label3.font = label3.font.withSize(20)
+        label3.textColor = getColor(color: "Orange")
+        self.view.addSubview(label3)
+        let label4 = UILabel(frame: CGRect(x:0, y:3*height/4, width: width, height: height/4))
+        label4.textAlignment = .center
+        points += pointsEarned
+        label4.text = "Total Points: " + points.description
+        label4.font = label4.font.withSize(20)
+        label4.textColor = getColor(color: "Gold")
+        self.view.addSubview(label4)
     }
     
     func pushPoints(){

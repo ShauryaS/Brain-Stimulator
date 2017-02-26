@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 
-class LogIn: UIViewController{
+class LogIn: UIViewController{//figure out how to perform actions before a screen loads
     
     @IBOutlet var titleLab: UILabel!
     @IBOutlet var rememberMeButton: UIButton!
@@ -19,6 +19,14 @@ class LogIn: UIViewController{
     @IBOutlet var useremailField: UITextField!
     @IBOutlet var pswdField: UITextField!
     var selected:Bool = false
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        readAuthFile()
+        if username != "" && pswd != ""{
+            login(useremail: username, pswd: pswd)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +40,6 @@ class LogIn: UIViewController{
         }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogIn.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        readAuthFile()
-        if username != "" && pswd != ""{
-            login(useremail: username, pswd: pswd)
-        }
     }
     
     //Calls this function when the tap is recognized.
