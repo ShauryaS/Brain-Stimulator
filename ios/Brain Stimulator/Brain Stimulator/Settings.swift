@@ -19,7 +19,6 @@ class Settings: UIViewController{
     @IBOutlet var daysLab: UILabel!
     @IBOutlet var burstLab: UILabel!
     @IBOutlet var burstTF: UITextField!
-    @IBOutlet var modeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,21 +29,26 @@ class Settings: UIViewController{
         else{
             typeLab.text = "Account Type: Client"
         }
-        if darkMode == true{
-            modeButton.setTitle("Enable Light Mode", for: UIControlState())
-        }
-        else{
-            modeButton.setTitle("Enable Dark Mode", for: UIControlState())
-        }
         pointsLab.text = "Points: " + String(points)
         gamesPlayedLab.text = "Games Played: " + String(gamesPlayed)
         daysLab.text = "Days Played: " + String(days)
         burstLab.text = "Burst: "
-        burstTF.placeholder = String(gameburst)
         self.view.backgroundColor = bgColor
         navigationItem.title = "Settings"
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogIn.dismissKeyboard))
         view.addGestureRecognizer(tap)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        userLab.textColor = fontColor
+        typeLab.textColor = fontColor
+        pointsLab.textColor = fontColor
+        gamesPlayedLab.textColor = fontColor
+        daysLab.textColor = fontColor
+        burstLab.textColor = fontColor
+        burstTF.textColor = fontColor
+        burstTF.attributedPlaceholder = NSAttributedString(string:String(gameburst), attributes:[NSForegroundColorAttributeName: fontColor])
     }
     
     //Calls this function when the tap is recognized.
@@ -63,16 +67,7 @@ class Settings: UIViewController{
         email = ""
         pswd = ""
         uid = ""
-        let filePath = getDocumentsDirectory().appending("/savedData.txt")
-        let fileManager = FileManager.default
-        if fileManager.fileExists(atPath: filePath) {
-            do {
-                try fileManager.removeItem(atPath: filePath)
-            }
-            catch let error as NSError {
-                print("Error: "+"\(error)")
-            }
-        }
+        removeSavedData(fileName: "savedData.txt")
         try! FIRAuth.auth()!.signOut()
         self.performSegue(withIdentifier: "backToLogInSegue", sender: sender)
     }
@@ -83,16 +78,17 @@ class Settings: UIViewController{
         }
     }
     
-    @IBAction func changeMode(_ sender: Any) {
-        darkMode = !darkMode
-        if darkMode == true{
-            modeButton.setTitle("Save to Enable Dark Mode", for: UIControlState())
+    func removeSavedData(fileName:String){
+        let filePath = getDocumentsDirectory().appending("/"+fileName)
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: filePath) {
+            do {
+                try fileManager.removeItem(atPath: filePath)
+            }
+            catch let error as NSError {
+                print("Error: "+"\(error)")
+            }
         }
-        else{
-            modeButton.setTitle("Save to Enable Light Mode", for: UIControlState())
-        }
-        firebaseRef.child("users").child(uid).updateChildValues(["darkMode": darkMode])
-        modeButton.isEnabled = false
     }
 
 }

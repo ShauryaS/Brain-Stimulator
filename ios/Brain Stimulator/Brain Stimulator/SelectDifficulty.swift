@@ -11,11 +11,42 @@ import UIKit
 
 class SelectDifficulty: UIViewController{
     
+    var width = 0
+    var height = 0
+    
+    let diff:[String] = ["Easy", "Medium", "Hard"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = bgColor
         self.navigationController?.isNavigationBarHidden = false
+        width = Int(UIScreen.main.bounds.width)
+        height = Int(UIScreen.main.bounds.height - (self.navigationController?.navigationBar.frame.size.height)!)
         navigationItem.title = "Select Difficulty"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setButtons()
+    }
+    
+    func setButtons(){
+        for i in 1...3{
+            let button = UIButton(frame: CGRect(x: 0, y: Int((self.navigationController?.navigationBar.frame.size.height)!)+(i-1)*height/3, width: width, height: height/3))
+            button.titleLabel!.font = button.titleLabel!.font.withSize(20)
+            button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+            button.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+            button.setTitleColor(fontColor, for: UIControlState())
+            button.setTitle(diff[i-1], for: UIControlState())
+            button.addTarget(self, action: #selector(SelectMode.buttonClicked(_:)),
+                             for: UIControlEvents.touchUpInside)
+            self.view.addSubview(button)
+        }
+    }
+    
+    func buttonClicked(_ sender:UIButton){
+        gameDifficulty = (sender.titleLabel?.text!)!
+        self.performSegue(withIdentifier: getSpecifiedSegue(), sender: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,21 +71,6 @@ class SelectDifficulty: UIViewController{
             default:
                 return ""
         }
-    }
-    
-    @IBAction func selEasy(_ sender: Any) {
-        gameDifficulty = "Easy"
-        self.performSegue(withIdentifier: getSpecifiedSegue(), sender: nil)
-    }
-    
-    @IBAction func selMedium(_ sender: Any) {
-        gameDifficulty = "Medium"
-        self.performSegue(withIdentifier: getSpecifiedSegue(), sender: nil)
-    }
-    
-    @IBAction func selHard(_ sender: Any) {
-        gameDifficulty = "Hard"
-        self.performSegue(withIdentifier: getSpecifiedSegue(), sender: nil)
     }
     
 }

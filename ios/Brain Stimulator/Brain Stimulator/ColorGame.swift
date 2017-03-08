@@ -41,6 +41,7 @@ class ColorGame: UIViewController{//make method that returns button with specifi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = bgColor
+        buttonDisp.backgroundColor = bgColor
         timerLab.textColor = fontColor
         self.navigationController?.isNavigationBarHidden = true
         selectColorBank()
@@ -57,6 +58,7 @@ class ColorGame: UIViewController{//make method that returns button with specifi
         print(totWidth)
         totHeight = Int(colorWordDisp.frame.size.height)
         print(totHeight)
+        roundLab.textColor = fontColor
         addButtons()
         startGame()
     }
@@ -88,62 +90,30 @@ class ColorGame: UIViewController{//make method that returns button with specifi
     
     func addButtons(){
         button1 = UIButton(frame: CGRect(x: 0,y: 0, width: totWidth/2, height: totHeight/2))
-        button1.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
-        button1.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button1.setTitleColor(UIColor.black, for: UIControlState())
-        button1.layer.borderWidth = 2.0
-        button1.layer.borderColor = UIColor.white.cgColor
-        button1.layer.cornerRadius = 5.0
-        button1.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
-                         for: UIControlEvents.touchUpInside)
-        buttonDisp.addSubview(button1)
         button2 = UIButton(frame: CGRect(x: totWidth/2,y: 0, width: totWidth/2, height: totHeight/2))
-        button2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
-        button2.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button2.setTitleColor(UIColor.black, for: UIControlState())
-        button2.layer.borderWidth = 2.0
-        button2.layer.borderColor = UIColor.white.cgColor
-        button2.layer.cornerRadius = 5.0
-        button2.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
-                          for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button2)
         button3 = UIButton(frame: CGRect(x: 0,y: totHeight/2, width: totWidth/2, height: totHeight/2))
-        button3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
-        button3.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button3.setTitleColor(UIColor.black, for: UIControlState())
-        button3.layer.borderWidth = 2.0
-        button3.layer.borderColor = UIColor.white.cgColor
-        button3.layer.cornerRadius = 5.0
-        button3.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
-                          for: UIControlEvents.touchUpInside)
-        buttonDisp.addSubview(button3)
         button4 = UIButton(frame: CGRect(x: totWidth/2,y: totHeight/2, width: totWidth/2, height: totHeight/2))
-        button4.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
-        button4.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button4.setTitleColor(UIColor.black, for: UIControlState())
-        button4.layer.borderWidth = 2.0
-        button4.layer.borderColor = UIColor.white.cgColor
-        button4.layer.cornerRadius = 5.0
-        button4.addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
-                          for: UIControlEvents.touchUpInside)
-        buttonDisp.addSubview(button4)
+        for i in 1...4{
+            getButton(pos: i).contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+            getButton(pos: i).contentVerticalAlignment = UIControlContentVerticalAlignment.center
+            getButton(pos: i).setTitleColor(fontColor, for: UIControlState())
+            getButton(pos: i).layer.borderWidth = 2.0
+            getButton(pos: i).layer.borderColor = bgColor.cgColor
+            getButton(pos: i).backgroundColor = bgColor
+            getButton(pos: i).layer.cornerRadius = 5.0
+            getButton(pos: i).addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
+                              for: UIControlEvents.touchUpInside)
+            buttonDisp.addSubview(getButton(pos: i))
+        }
     }
     
     @IBAction func nextPressed(_ sender: Any) {
         if(count <= gameburst){
-            button1.isEnabled = true
-            button2.isEnabled = true
-            button3.isEnabled = true
-            button4.isEnabled = true
+            for i in 1...4{
+                getButton(pos: i).isEnabled = true
+            }
             timerLab.text = ""
-            button1.backgroundColor = getColor(color: "")
-            button2.backgroundColor = getColor(color: "")
-            button3.backgroundColor = getColor(color: "")
-            button4.backgroundColor = getColor(color: "")
-            button1.layer.borderColor = getColor(color: "").cgColor
-            button2.layer.borderColor = getColor(color: "").cgColor
-            button3.layer.borderColor = getColor(color: "").cgColor
-            button4.layer.borderColor = getColor(color: "").cgColor
             nextButton.isHidden = true
             playGameType()
         }
@@ -163,23 +133,23 @@ class ColorGame: UIViewController{//make method that returns button with specifi
             timerLab.text = "Incorrect"
             sender.layer.borderColor = getColor(color: "Dark Red").cgColor
         }
-        button1.isEnabled = false
-        button2.isEnabled = false
-        button3.isEnabled = false
-        button4.isEnabled = false
+        for i in 1...4{
+            getButton(pos: i).isEnabled = false
+        }
         nextButton.isHidden = false
+        nextButton.titleLabel?.textColor = fontColor
     }
     
     func playNTC(){
         roundLab.text = "Round " + count.description
         var colorNames:[String] = randomSelColor()
         let correctAnswerPos = randomGen(range: colorNames.count)
-        colorWordDisp.backgroundColor = getColor(color: colorNames[correctAnswerPos])
         correctAnswer = colorNames[correctAnswerPos]
-        button1.setTitle(colorNames[0], for: .normal)
-        button2.setTitle(colorNames[1], for: .normal)
-        button3.setTitle(colorNames[2], for: .normal)
-        button4.setTitle(colorNames[3], for: .normal)
+        colorWordDisp.backgroundColor = getColor(color: colorNames[correctAnswerPos])
+        for i in 1...4{
+            getButton(pos: i).setTitle(colorNames[i-1], for: .normal)
+            getButton(pos: i).layer.borderColor = bgColor.cgColor
+        }
         count += 1
     }
     
@@ -189,19 +159,13 @@ class ColorGame: UIViewController{//make method that returns button with specifi
         let correctAnswerPos = randomGen(range: colorNames.count)
         correctAnswer = colorNames[correctAnswerPos]
         colorWordText.text = correctAnswer
-        colorWordText.textColor = getColor(color: "Black")
-        button1.setTitleColor(getColor(color: colorNames[0]), for: .normal)
-        button1.backgroundColor = getColor(color: colorNames[0])
-        button1.setTitle(colorNames[0], for: .normal)
-        button2.setTitleColor(getColor(color: colorNames[1]), for: .normal)
-        button2.backgroundColor = getColor(color: colorNames[1])
-        button2.setTitle(colorNames[1], for: .normal)
-        button3.setTitleColor(getColor(color: colorNames[2]), for: .normal)
-        button3.backgroundColor = getColor(color: colorNames[2])
-        button3.setTitle(colorNames[2], for: .normal)
-        button4.setTitleColor(getColor(color: colorNames[3]), for: .normal)
-        button4.backgroundColor = getColor(color: colorNames[3])
-        button4.setTitle(colorNames[3], for: .normal)
+        colorWordText.textColor = getColor(color: "")
+        for i in 1...4{
+            getButton(pos: i).setTitle(colorNames[i-1], for: .normal)
+            getButton(pos: i).setTitleColor(getColor(color: colorNames[i-1]), for: .normal)
+            getButton(pos: i).layer.borderColor = bgColor.cgColor
+            getButton(pos: i).backgroundColor = getColor(color: colorNames[i-1])
+        }
         count += 1
     }
     
@@ -212,10 +176,10 @@ class ColorGame: UIViewController{//make method that returns button with specifi
         correctAnswer = colorNames[correctAnswerPos]
         colorWordText.text = colorNames[randomGen(range: colorNames.count)]
         colorWordText.textColor = getColor(color: colorNames[correctAnswerPos])
-        button1.setTitle(colorNames[0], for: .normal)
-        button2.setTitle(colorNames[1], for: .normal)
-        button3.setTitle(colorNames[2], for: .normal)
-        button4.setTitle(colorNames[3], for: .normal)
+        for i in 1...4{
+            getButton(pos: i).setTitle(colorNames[i-1], for: .normal)
+            getButton(pos: i).layer.borderColor = bgColor.cgColor
+        }
         count += 1
     }
     
@@ -228,15 +192,28 @@ class ColorGame: UIViewController{//make method that returns button with specifi
         colorWordText.backgroundColor = getColor(color: colorNames[correctAnswerPos])
         colorWordText.text = colorNames[randomGen(range: colorNames.count)]
         colorWordText.textColor = getColor(color: colorNames[randomGen(range: colorNames.count)])
-        button1.setTitle(colorNames[0], for: .normal)
-        button2.setTitle(colorNames[1], for: .normal)
-        button3.setTitle(colorNames[2], for: .normal)
-        button4.setTitle(colorNames[3], for: .normal)
+        for i in 1...4{
+            getButton(pos: i).setTitle(colorNames[i-1], for: .normal)
+            getButton(pos: i).layer.borderColor = bgColor.cgColor
+        }
         count += 1
     }
     
     @IBAction func pause(_ sender: Any) {
         
+    }
+    
+    func getButton(pos:Int)->UIButton{
+        switch(pos){
+        case 1:
+            return button1
+        case 2:
+            return button2
+        case 3:
+            return button3
+        default:
+            return button4
+        }
     }
     
     func selectColorBank(){

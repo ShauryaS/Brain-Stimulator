@@ -26,9 +26,9 @@ var remembered:Bool!
 var game = ""
 var gameType = ""
 var gameDifficulty = ""
-var bgColor = UIColor.white
-var fontColor = UIColor.black
-var tintColor = UIColor.black
+var bgColor = UIColor.init(displayP3Red: 20.0/255.0, green: 26.0/255.0, blue: 36.0/255.0, alpha: 1.0)
+var fontColor = UIColor.white
+var tintColor = UIColor.red
 var isTherapist = false
 var darkMode = false
 

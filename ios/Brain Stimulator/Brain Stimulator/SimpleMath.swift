@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SimpleMath: UIViewController{//fix checks and fix display of problem to match neg numbers
+class SimpleMath: UIViewController{
     
     var button1: UIButton!
     var button2: UIButton!
@@ -42,6 +42,7 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonDisp.backgroundColor = bgColor
         self.view.backgroundColor = bgColor
         timerLab.textColor = fontColor
         self.navigationController?.isNavigationBarHidden = true
@@ -56,6 +57,7 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
     override func viewDidAppear(_ animated: Bool) {
         totWidth = Int(buttonDisp.frame.size.width)
         totHeight = Int(buttonDisp.frame.size.height)
+        roundLab.textColor = fontColor
         addButtons()
         startGame()
     }
@@ -107,15 +109,17 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         button3.isEnabled = false
         button4.isEnabled = false
         nextButton.isHidden = false
+        nextButton.titleLabel?.textColor = fontColor
     }
     
     func addButtons(){
         button1 = UIButton(frame: CGRect(x: 0,y: 0, width: totWidth/2, height: totHeight/2))
         button1.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button1.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button1.setTitleColor(UIColor.black, for: UIControlState())
+        button1.setTitleColor(fontColor, for: UIControlState())
         button1.layer.borderWidth = 2.0
-        button1.layer.borderColor = UIColor.white.cgColor
+        button1.layer.borderColor = bgColor.cgColor
+        button1.backgroundColor = bgColor
         button1.layer.cornerRadius = 5.0
         button1.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
@@ -123,9 +127,10 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         button2 = UIButton(frame: CGRect(x: totWidth/2,y: 0, width: totWidth/2, height: totHeight/2))
         button2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button2.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button2.setTitleColor(UIColor.black, for: UIControlState())
+        button2.setTitleColor(fontColor, for: UIControlState())
         button2.layer.borderWidth = 2.0
-        button2.layer.borderColor = UIColor.white.cgColor
+        button2.layer.borderColor = bgColor.cgColor
+        button2.backgroundColor = bgColor
         button2.layer.cornerRadius = 5.0
         button2.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
@@ -133,9 +138,10 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         button3 = UIButton(frame: CGRect(x: 0,y: totHeight/2, width: totWidth/2, height: totHeight/2))
         button3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button3.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button3.setTitleColor(UIColor.black, for: UIControlState())
+        button3.setTitleColor(fontColor, for: UIControlState())
         button3.layer.borderWidth = 2.0
-        button3.layer.borderColor = UIColor.white.cgColor
+        button3.layer.borderColor = bgColor.cgColor
+        button3.backgroundColor = bgColor
         button3.layer.cornerRadius = 5.0
         button3.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
@@ -143,9 +149,10 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         button4 = UIButton(frame: CGRect(x: totWidth/2, y: totHeight/2, width: totWidth/2, height: totHeight/2))
         button4.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         button4.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button4.setTitleColor(UIColor.black, for: UIControlState())
+        button4.setTitleColor(fontColor, for: UIControlState())
         button4.layer.borderWidth = 2.0
-        button4.layer.borderColor = UIColor.white.cgColor
+        button4.layer.borderColor = bgColor.cgColor
+        button4.backgroundColor = bgColor
         button4.layer.cornerRadius = 5.0
         button4.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                           for: UIControlEvents.touchUpInside)
@@ -240,6 +247,8 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         while(buttPos.count != 0){
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            getButton(pos: buttPos[p]).backgroundColor = bgColor
+            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }
@@ -266,6 +275,8 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         while(buttPos.count != 0){
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            getButton(pos: buttPos[p]).backgroundColor = bgColor
+            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }
@@ -292,6 +303,8 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         while(buttPos.count != 0){
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            getButton(pos: buttPos[p]).backgroundColor = bgColor
+            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }
@@ -321,6 +334,8 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         while(buttPos.count != 0){
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            getButton(pos: buttPos[p]).backgroundColor = bgColor
+            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }
@@ -346,6 +361,8 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         while(buttPos.count != 0){
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            getButton(pos: buttPos[p]).backgroundColor = bgColor
+            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }
@@ -371,6 +388,8 @@ class SimpleMath: UIViewController{//fix checks and fix display of problem to ma
         while(buttPos.count != 0){
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
+            getButton(pos: buttPos[p]).backgroundColor = bgColor
+            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }

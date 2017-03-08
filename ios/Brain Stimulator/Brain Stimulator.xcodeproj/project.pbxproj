@@ -13,6 +13,8 @@
 		491AFC581E48612B00235F71 /* checkmarkunselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 491AFC571E48612B00235F71 /* checkmarkunselected.png */; };
 		492BA3511DDAD382003345AE /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BA3501DDAD382003345AE /* ProgressView.swift */; };
 		4938617E1E544A4A0017597A /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938617D1E544A4A0017597A /* PointsView.swift */; };
+		494BBD741E656ABE00445AB2 /* lighcheckunfilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 494BBD731E656ABE00445AB2 /* lighcheckunfilled.png */; };
+		494BBD761E656AD600445AB2 /* lightcheckfilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 494BBD751E656AD600445AB2 /* lightcheckfilled.png */; };
 		494C50831DDAEACD0079E4D3 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 494C50821DDAEACD0079E4D3 /* pause.png */; };
 		4966F2321E59998F00D06345 /* brainbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4966F2311E59998F00D06345 /* brainbg.jpg */; };
 		4966F2341E599AD300D06345 /* celebration.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4966F2331E599AD200D06345 /* celebration.jpg */; };
@@ -69,6 +71,8 @@
 		491AFC571E48612B00235F71 /* checkmarkunselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkmarkunselected.png; path = ../../../../../../../../Downloads/checkmarkunselected.png; sourceTree = "<group>"; };
 		492BA3501DDAD382003345AE /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		4938617D1E544A4A0017597A /* PointsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
+		494BBD731E656ABE00445AB2 /* lighcheckunfilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lighcheckunfilled.png; path = ../../../../../../../../Downloads/lighcheckunfilled.png; sourceTree = "<group>"; };
+		494BBD751E656AD600445AB2 /* lightcheckfilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lightcheckfilled.png; path = ../../../../../../../../Downloads/lightcheckfilled.png; sourceTree = "<group>"; };
 		494C50821DDAEACD0079E4D3 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		4966F2311E59998F00D06345 /* brainbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = brainbg.jpg; path = ../../../../../../../../Downloads/brainbg.jpg; sourceTree = "<group>"; };
 		4966F2331E599AD200D06345 /* celebration.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = celebration.jpg; path = ../../../../../../../../Downloads/celebration.jpg; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 				49DEC33D1D8921C4002DEE51 /* Info.plist */,
 				494C50821DDAEACD0079E4D3 /* pause.png */,
 				491AFC571E48612B00235F71 /* checkmarkunselected.png */,
+				494BBD731E656ABE00445AB2 /* lighcheckunfilled.png */,
+				494BBD751E656AD600445AB2 /* lightcheckfilled.png */,
 				491AFC551E48612400235F71 /* checkmarkselected.png */,
 			);
 			path = "Brain Stimulator";
@@ -363,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494BBD741E656ABE00445AB2 /* lighcheckunfilled.png in Resources */,
 				49DEC3371D8921C4002DEE51 /* Main.storyboard in Resources */,
 				494C50831DDAEACD0079E4D3 /* pause.png in Resources */,
 				49DEC32E1D8921C4002DEE51 /* GameScene.sks in Resources */,
@@ -374,6 +381,7 @@
 				4966F2341E599AD300D06345 /* celebration.jpg in Resources */,
 				491AFC581E48612B00235F71 /* checkmarkunselected.png in Resources */,
 				4966F2321E59998F00D06345 /* brainbg.jpg in Resources */,
+				494BBD761E656AD600445AB2 /* lightcheckfilled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

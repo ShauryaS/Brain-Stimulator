@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 
-class LogIn: UIViewController{//figure out how to perform actions before a screen loads
+class LogIn: UIViewController{//figure out how to perform actions before a screen loads //fix color based on mode
     
     @IBOutlet var titleLab: UILabel!
     @IBOutlet var rememberMeButton: UIButton!
@@ -18,6 +18,7 @@ class LogIn: UIViewController{//figure out how to perform actions before a scree
     @IBOutlet var signupButton: UIButton!
     @IBOutlet var useremailField: UITextField!
     @IBOutlet var pswdField: UITextField!
+    @IBOutlet var rememberLab: UILabel!
     var selected:Bool = false
     
     override func viewWillAppear(_ animated: Bool){
@@ -31,9 +32,9 @@ class LogIn: UIViewController{//figure out how to perform actions before a scree
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewColor()
-        //assignbackground()
         let sharedApp = UIApplication.shared
         sharedApp.delegate?.window??.tintColor = fontColor
+        setViewColor()
         self.navigationController?.isNavigationBarHidden = true
         if bgColor != UIColor.white{
             UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
@@ -53,30 +54,13 @@ class LogIn: UIViewController{//figure out how to perform actions before a scree
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //assignbackground()
-        readAuthFile()
-    }
-    
     func setViewColor(){
         self.view.backgroundColor = bgColor
         self.titleLab.textColor = fontColor
         rememberMeButton.setTitleColor(fontColor, for: UIControlState.normal)
         loginButton.setTitleColor(fontColor, for: UIControlState.normal)
         signupButton.setTitleColor(fontColor, for: UIControlState.normal)
-    }
-    
-    func assignbackground(){
-        let background = UIImage(named: "brainbg.jpg")
-        var imageView : UIImageView!
-        imageView = UIImageView(frame: view.bounds)
-        imageView.contentMode =  UIViewContentMode.scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.image = background
-        imageView.center = view.center
-        view.addSubview(imageView)
-        self.view.sendSubview(toBack: imageView)
+        rememberLab.textColor = fontColor
     }
 
     @IBAction func logIn(_ sender: AnyObject) {
@@ -115,10 +99,10 @@ class LogIn: UIViewController{//figure out how to perform actions before a scree
     @IBAction func remembermeTriggered(_ sender: AnyObject) {
         selected = !selected
         if selected == true{
-            rememberMeButton.setImage(UIImage(named: "checkmarkselected"), for: .normal)
+            rememberMeButton.setImage(UIImage(named: "lightcheckfilled"), for: .normal)
         }
         else{
-            rememberMeButton.setImage(UIImage(named: "checkmarkunselected"), for: .normal)
+            rememberMeButton.setImage(UIImage(named: "lighcheckunfilled"), for: .normal)
         }
     }
     
@@ -150,6 +134,17 @@ class LogIn: UIViewController{//figure out how to perform actions before a scree
             catch{
                 print("Error: "+"\(error)")
             }
+        }
+    }
+    
+    func getBool(s:String)->Bool{
+        switch(s){
+            case "True", "true", "yes", "1":
+                return true
+            case "False", "false", "no", "0":
+                return false
+            default:
+                return false
         }
     }
 

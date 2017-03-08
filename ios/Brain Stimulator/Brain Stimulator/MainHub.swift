@@ -27,23 +27,16 @@ class Mainhub: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-        if darkMode == true{
-            bgColor = UIColor.init(displayP3Red: 20.0/255.0, green: 26.0/255.0, blue: 36.0/255.0, alpha: 1.0)
-            fontColor = UIColor.white
-            tintColor = UIColor.red
-            UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        }
-        else{
-            bgColor = UIColor.white
-            fontColor = UIColor.black
-            tintColor = UIColor.black
-            UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-        }
         UINavigationBar.appearance().barTintColor = bgColor
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: fontColor]
         self.view.backgroundColor = bgColor
         let sharedApp = UIApplication.shared
         sharedApp.delegate?.window??.tintColor = tintColor
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        mainLabel.textColor = fontColor
         setButtons()
     }
      
@@ -78,13 +71,10 @@ class Mainhub: UIViewController{
             snapshot in
             isTherapist = snapshot.value as! Bool
         })
-        firebaseRef.child("users").child(uid).child("darkMode").observeSingleEvent(of: .value, with: {
-            snapshot in
-            darkMode = snapshot.value as! Bool
-        })
     }
     
     func setButtons(){
+        print(fontColor)
         button1.backgroundColor = bgColor
         button1.titleLabel?.textColor = fontColor
         button2.backgroundColor = bgColor

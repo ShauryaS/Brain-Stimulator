@@ -20,6 +20,7 @@ class PointsView: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = bgColor
         width = Int(UIScreen.main.bounds.width)
         height = Int(UIScreen.main.bounds.height)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PointsView.doneViewingPoints))
