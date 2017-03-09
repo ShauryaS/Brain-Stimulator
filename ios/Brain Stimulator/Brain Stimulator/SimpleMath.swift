@@ -114,49 +114,22 @@ class SimpleMath: UIViewController{
     
     func addButtons(){
         button1 = UIButton(frame: CGRect(x: 0,y: 0, width: totWidth/2, height: totHeight/2))
-        button1.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
-        button1.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button1.setTitleColor(fontColor, for: UIControlState())
-        button1.layer.borderWidth = 2.0
-        button1.layer.borderColor = bgColor.cgColor
-        button1.backgroundColor = bgColor
-        button1.layer.cornerRadius = 5.0
-        button1.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
-                          for: UIControlEvents.touchUpInside)
-        buttonDisp.addSubview(button1)
         button2 = UIButton(frame: CGRect(x: totWidth/2,y: 0, width: totWidth/2, height: totHeight/2))
-        button2.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
-        button2.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button2.setTitleColor(fontColor, for: UIControlState())
-        button2.layer.borderWidth = 2.0
-        button2.layer.borderColor = bgColor.cgColor
-        button2.backgroundColor = bgColor
-        button2.layer.cornerRadius = 5.0
-        button2.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
-                          for: UIControlEvents.touchUpInside)
         buttonDisp.addSubview(button2)
         button3 = UIButton(frame: CGRect(x: 0,y: totHeight/2, width: totWidth/2, height: totHeight/2))
-        button3.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
-        button3.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button3.setTitleColor(fontColor, for: UIControlState())
-        button3.layer.borderWidth = 2.0
-        button3.layer.borderColor = bgColor.cgColor
-        button3.backgroundColor = bgColor
-        button3.layer.cornerRadius = 5.0
-        button3.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
-                          for: UIControlEvents.touchUpInside)
-        buttonDisp.addSubview(button3)
-        button4 = UIButton(frame: CGRect(x: totWidth/2, y: totHeight/2, width: totWidth/2, height: totHeight/2))
-        button4.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
-        button4.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        button4.setTitleColor(fontColor, for: UIControlState())
-        button4.layer.borderWidth = 2.0
-        button4.layer.borderColor = bgColor.cgColor
-        button4.backgroundColor = bgColor
-        button4.layer.cornerRadius = 5.0
-        button4.addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
-                          for: UIControlEvents.touchUpInside)
-        buttonDisp.addSubview(button4)
+        button4 = UIButton(frame: CGRect(x: totWidth/2,y: totHeight/2, width: totWidth/2, height: totHeight/2))
+        for i in 1...4{
+            getButton(pos: i).contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+            getButton(pos: i).contentVerticalAlignment = UIControlContentVerticalAlignment.center
+            getButton(pos: i).setTitleColor(fontColor, for: UIControlState())
+            getButton(pos: i).layer.borderWidth = 2.0
+            getButton(pos: i).layer.borderColor = bgColor.cgColor
+            getButton(pos: i).backgroundColor = bgColor
+            getButton(pos: i).layer.cornerRadius = 5.0
+            getButton(pos: i).addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
+                                        for: UIControlEvents.touchUpInside)
+            buttonDisp.addSubview(getButton(pos: i))
+        }
     }
 
     
@@ -398,15 +371,11 @@ class SimpleMath: UIViewController{
     
     @IBAction func nextPressed(_ sender: Any) {
         if(count <= gameburst){
-            button1.isEnabled = true
-            button2.isEnabled = true
-            button3.isEnabled = true
-            button4.isEnabled = true
+            for i in 1...4{
+                getButton(pos: i).isEnabled = true
+                getButton(pos: i).layer.borderColor = getColor(color: "").cgColor
+            }
             timerLab.text = ""
-            button1.layer.borderColor = getColor(color: "").cgColor
-            button2.layer.borderColor = getColor(color: "").cgColor
-            button3.layer.borderColor = getColor(color: "").cgColor
-            button4.layer.borderColor = getColor(color: "").cgColor
             nextButton.isHidden = true
             playGameType()
         }
