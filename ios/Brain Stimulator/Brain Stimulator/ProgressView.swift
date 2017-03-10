@@ -14,6 +14,7 @@ class ProgressView: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = bgColor
+        navigationItem.title = "Progress"
     }
     
     override func didReceiveMemoryWarning() {
