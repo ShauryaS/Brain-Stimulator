@@ -194,35 +194,35 @@
 				49DEC32B1D8921C4002DEE51 /* AppDelegate.swift */,
 				49DEC3381D8921C4002DEE51 /* Assets.xcassets */,
 				49A98D8D1DC8880B0088B029 /* Brain Stimulator.entitlements */,
-				49D759F81DBDDC1D007E5216 /* Login.swift */,
-				49ADD38D1DC019A2006F4431 /* CreateAccount.swift */,
-				49ADD38F1DC019CC006F4431 /* MainHub.swift */,
-				49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */,
-				4901DA231DD8683F00962C9D /* Settings.swift */,
-				492BA3501DDAD382003345AE /* ProgressView.swift */,
 				4966F2311E59998F00D06345 /* brainbg.jpg */,
 				4966F2331E599AD200D06345 /* celebration.jpg */,
-				49DEC3351D8921C4002DEE51 /* Main.storyboard */,
-				49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */,
+				491AFC551E48612400235F71 /* checkmarkselected.png */,
+				491AFC571E48612B00235F71 /* checkmarkunselected.png */,
 				49A0F3A01DD99C7300540372 /* ColorGame.swift */,
-				49E467591DDC476500950EA1 /* SimpleMath.swift */,
 				49E467621DDC48AD00950EA1 /* ComplexMath.swift */,
-				49E467641DDC4BD200950EA1 /* FindIt.swift */,
-				49E467661DDC4C7E00950EA1 /* Memory.swift */,
+				49ADD38D1DC019A2006F4431 /* CreateAccount.swift */,
 				49A41E181DEAA29500C0884B /* Directions.swift */,
+				49E467641DDC4BD200950EA1 /* FindIt.swift */,
 				49DEC32D1D8921C4002DEE51 /* GameScene.sks */,
 				49DEC3311D8921C4002DEE51 /* GameScene.swift */,
 				49DEC3331D8921C4002DEE51 /* GameViewController.swift */,
-				49E467491DDC3FA800950EA1 /* SelectDifficulty.swift */,
-				49E467471DDC3F9800950EA1 /* SelectMode.swift */,
-				4938617D1E544A4A0017597A /* PointsView.swift */,
 				49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */,
 				49DEC33D1D8921C4002DEE51 /* Info.plist */,
-				494C50821DDAEACD0079E4D3 /* pause.png */,
-				491AFC571E48612B00235F71 /* checkmarkunselected.png */,
+				49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */,
 				494BBD731E656ABE00445AB2 /* lighcheckunfilled.png */,
 				494BBD751E656AD600445AB2 /* lightcheckfilled.png */,
-				491AFC551E48612400235F71 /* checkmarkselected.png */,
+				49D759F81DBDDC1D007E5216 /* Login.swift */,
+				49DEC3351D8921C4002DEE51 /* Main.storyboard */,
+				49ADD38F1DC019CC006F4431 /* MainHub.swift */,
+				49E467661DDC4C7E00950EA1 /* Memory.swift */,
+				494C50821DDAEACD0079E4D3 /* pause.png */,
+				4938617D1E544A4A0017597A /* PointsView.swift */,
+				492BA3501DDAD382003345AE /* ProgressView.swift */,
+				49E467491DDC3FA800950EA1 /* SelectDifficulty.swift */,
+				49E467471DDC3F9800950EA1 /* SelectMode.swift */,
+				4901DA231DD8683F00962C9D /* Settings.swift */,
+				49E467591DDC476500950EA1 /* SimpleMath.swift */,
+				49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */,
 			);
 			path = "Brain Stimulator";
 			sourceTree = "<group>";
@@ -722,7 +722,7 @@
 				INFOPLIST_FILE = "Brain Stimulator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shauryas.Brain-Stimulator";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shauryas.Brain-Stim";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -739,7 +739,7 @@
 				INFOPLIST_FILE = "Brain Stimulator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shauryas.Brain-Stimulator";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shauryas.Brain-Stim";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

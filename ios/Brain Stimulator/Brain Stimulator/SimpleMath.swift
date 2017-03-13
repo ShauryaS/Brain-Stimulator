@@ -21,6 +21,7 @@ class SimpleMath: UIViewController{
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var roundLab: UILabel!
     @IBOutlet var buttonDisp: UIView!
+    @IBOutlet var pauseOverlayDisp: UIView!
     
     var correctAns = 0
     var incorrectAns = 0
@@ -44,6 +45,8 @@ class SimpleMath: UIViewController{
         super.viewDidLoad()
         buttonDisp.backgroundColor = bgColor
         self.view.backgroundColor = bgColor
+        pauseOverlayDisp.isHidden = true
+        pauseOverlayDisp.backgroundColor = bgColor
         timerLab.textColor = fontColor
         self.navigationController?.isNavigationBarHidden = true
         selectRangeEnd()
@@ -197,7 +200,39 @@ class SimpleMath: UIViewController{
     }
     
     @IBAction func pause(_ sender: Any) {
-        
+        pauseOverlayDisp.isHidden = false
+        let w = Int(pauseOverlayDisp.frame.size.width)
+        let h = Int(pauseOverlayDisp.frame.size.height)
+        let continueButton = UIButton(frame: CGRect(x: 0, y: 0, width: w, height: h/2))
+        continueButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        continueButton.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        continueButton.setTitle("Continue", for: .normal)
+        continueButton.layer.borderWidth = 2.0
+        continueButton.backgroundColor = getColor(color: "Dark Green")
+        continueButton.setTitleColor(fontColor, for: UIControlState())
+        continueButton.titleLabel?.font = continueButton.titleLabel?.font.withSize(30)
+        continueButton.addTarget(self, action: #selector(SimpleMath.cont),
+                                 for: UIControlEvents.touchUpInside)
+        pauseOverlayDisp.addSubview(continueButton)
+        let quitButton = UIButton(frame: CGRect(x: 0, y: h/2, width: w, height: h/2))
+        quitButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        quitButton.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        quitButton.setTitle("Leave", for: .normal)
+        quitButton.layer.borderWidth = 2.0
+        quitButton.backgroundColor = getColor(color: "Dark Red")
+        quitButton.setTitleColor(fontColor, for: UIControlState())
+        quitButton.titleLabel?.font = quitButton.titleLabel?.font.withSize(30)
+        quitButton.addTarget(self, action: #selector(SimpleMath.quit),
+                             for: UIControlEvents.touchUpInside)
+        pauseOverlayDisp.addSubview(quitButton)
+    }
+    
+    func cont(){
+        pauseOverlayDisp.isHidden = true
+    }
+    
+    func quit(){
+        self.performSegue(withIdentifier: "smtopvsegue", sender: nil)
     }
     
     func additionGame(){

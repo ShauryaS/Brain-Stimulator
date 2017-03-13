@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ColorGame: UIViewController{//make method that returns button with specific text//find out why button disp width is always 343 --> same no matter the actual size
+class ColorGame: UIViewController{
     
     var button1: UIButton!
     var button2: UIButton!
@@ -21,6 +21,7 @@ class ColorGame: UIViewController{//make method that returns button with specifi
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var roundLab: UILabel!
     @IBOutlet var buttonDisp: UIView!
+    @IBOutlet var pauseOverlayView: UIView!
 
     var answerSelected = ""
     var correctAnswer = ""
@@ -43,6 +44,8 @@ class ColorGame: UIViewController{//make method that returns button with specifi
         self.view.backgroundColor = bgColor
         buttonDisp.backgroundColor = bgColor
         timerLab.textColor = fontColor
+        pauseOverlayView.isHidden = true
+        pauseOverlayView.backgroundColor = bgColor
         self.navigationController?.isNavigationBarHidden = true
         selectColorBank()
     }
@@ -200,7 +203,39 @@ class ColorGame: UIViewController{//make method that returns button with specifi
     }
     
     @IBAction func pause(_ sender: Any) {
-        
+        pauseOverlayView.isHidden = false
+        let w = Int(pauseOverlayView.frame.size.width)
+        let h = Int(pauseOverlayView.frame.size.height)
+        let continueButton = UIButton(frame: CGRect(x: 0, y: 0, width: w, height: h/2))
+        continueButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        continueButton.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        continueButton.setTitle("Continue", for: .normal)
+        continueButton.layer.borderWidth = 2.0
+        continueButton.backgroundColor = getColor(color: "Dark Green")
+        continueButton.setTitleColor(fontColor, for: UIControlState())
+        continueButton.titleLabel?.font = continueButton.titleLabel?.font.withSize(30)
+        continueButton.addTarget(self, action: #selector(ColorGame.cont),
+                                for: UIControlEvents.touchUpInside)
+        pauseOverlayView.addSubview(continueButton)
+        let quitButton = UIButton(frame: CGRect(x: 0, y: h/2, width: w, height: h/2))
+        quitButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+        quitButton.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+        quitButton.setTitle("Leave", for: .normal)
+        quitButton.layer.borderWidth = 2.0
+        quitButton.backgroundColor = getColor(color: "Dark Red")
+        quitButton.setTitleColor(fontColor, for: UIControlState())
+        quitButton.titleLabel?.font = quitButton.titleLabel?.font.withSize(30)
+        quitButton.addTarget(self, action: #selector(ColorGame.quit),
+                                 for: UIControlEvents.touchUpInside)
+        pauseOverlayView.addSubview(quitButton)
+    }
+    
+    func cont(){
+        pauseOverlayView.isHidden = true
+    }
+    
+    func quit(){
+        self.performSegue(withIdentifier: "coltopvsegue", sender: nil)
     }
     
     func getButton(pos:Int)->UIButton{
