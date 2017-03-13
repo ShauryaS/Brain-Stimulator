@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 
-class LogIn: UIViewController{//figure out how to perform actions before a screen loads //fix color based on mode
+class LogIn: UIViewController{
     
     @IBOutlet var titleLab: UILabel!
     @IBOutlet var rememberMeButton: UIButton!

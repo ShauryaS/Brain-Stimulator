@@ -9,15 +9,13 @@
 /* Begin PBXBuildFile section */
 		1C34F97B8F7188D7ED4316D9 /* Pods_Brain_Stimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED74D80DA81CCC3A02DFF8C /* Pods_Brain_Stimulator.framework */; };
 		4901DA241DD8683F00962C9D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901DA231DD8683F00962C9D /* Settings.swift */; };
-		491AFC561E48612400235F71 /* checkmarkselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 491AFC551E48612400235F71 /* checkmarkselected.png */; };
-		491AFC581E48612B00235F71 /* checkmarkunselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 491AFC571E48612B00235F71 /* checkmarkunselected.png */; };
 		492BA3511DDAD382003345AE /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492BA3501DDAD382003345AE /* ProgressView.swift */; };
 		4938617E1E544A4A0017597A /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938617D1E544A4A0017597A /* PointsView.swift */; };
+		494914491E76594600BA0EAF /* S.png in Resources */ = {isa = PBXBuildFile; fileRef = 494914481E76594600BA0EAF /* S.png */; };
+		4949144B1E765C7300BA0EAF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4949144A1E765C7300BA0EAF /* Launch Screen.storyboard */; };
 		494BBD741E656ABE00445AB2 /* lighcheckunfilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 494BBD731E656ABE00445AB2 /* lighcheckunfilled.png */; };
 		494BBD761E656AD600445AB2 /* lightcheckfilled.png in Resources */ = {isa = PBXBuildFile; fileRef = 494BBD751E656AD600445AB2 /* lightcheckfilled.png */; };
 		494C50831DDAEACD0079E4D3 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 494C50821DDAEACD0079E4D3 /* pause.png */; };
-		4966F2321E59998F00D06345 /* brainbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4966F2311E59998F00D06345 /* brainbg.jpg */; };
-		4966F2341E599AD300D06345 /* celebration.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4966F2331E599AD200D06345 /* celebration.jpg */; };
 		49A0F3A11DD99C7300540372 /* ColorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0F3A01DD99C7300540372 /* ColorGame.swift */; };
 		49A41E191DEAA29500C0884B /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A41E181DEAA29500C0884B /* Directions.swift */; };
 		49A98D8C1DC885DF0088B029 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */; };
@@ -32,7 +30,6 @@
 		49DEC3341D8921C4002DEE51 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC3331D8921C4002DEE51 /* GameViewController.swift */; };
 		49DEC3371D8921C4002DEE51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DEC3351D8921C4002DEE51 /* Main.storyboard */; };
 		49DEC3391D8921C4002DEE51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DEC3381D8921C4002DEE51 /* Assets.xcassets */; };
-		49DEC33C1D8921C4002DEE51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */; };
 		49DEC3471D8921C4002DEE51 /* Brain_StimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC3461D8921C4002DEE51 /* Brain_StimulatorTests.swift */; };
 		49DEC3521D8921C4002DEE51 /* Brain_StimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC3511D8921C4002DEE51 /* Brain_StimulatorUITests.swift */; };
 		49E467481DDC3F9800950EA1 /* SelectMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E467471DDC3F9800950EA1 /* SelectMode.swift */; };
@@ -67,15 +64,13 @@
 		2A18F14AE8DC1CCE8614CD1E /* Pods-Brain StimulatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain StimulatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brain StimulatorUITests/Pods-Brain StimulatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A5ECE2501C918056964048E /* Pods-Brain StimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brain StimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brain StimulatorTests/Pods-Brain StimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		4901DA231DD8683F00962C9D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		491AFC551E48612400235F71 /* checkmarkselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkmarkselected.png; path = ../../../../../../../../Downloads/checkmarkselected.png; sourceTree = "<group>"; };
-		491AFC571E48612B00235F71 /* checkmarkunselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkmarkunselected.png; path = ../../../../../../../../Downloads/checkmarkunselected.png; sourceTree = "<group>"; };
 		492BA3501DDAD382003345AE /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		4938617D1E544A4A0017597A /* PointsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
+		494914481E76594600BA0EAF /* S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = S.png; path = ../../../../../../../../Downloads/S.png; sourceTree = "<group>"; };
+		4949144A1E765C7300BA0EAF /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		494BBD731E656ABE00445AB2 /* lighcheckunfilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lighcheckunfilled.png; path = ../../../../../../../../Downloads/lighcheckunfilled.png; sourceTree = "<group>"; };
 		494BBD751E656AD600445AB2 /* lightcheckfilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lightcheckfilled.png; path = ../../../../../../../../Downloads/lightcheckfilled.png; sourceTree = "<group>"; };
 		494C50821DDAEACD0079E4D3 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
-		4966F2311E59998F00D06345 /* brainbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = brainbg.jpg; path = ../../../../../../../../Downloads/brainbg.jpg; sourceTree = "<group>"; };
-		4966F2331E599AD200D06345 /* celebration.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = celebration.jpg; path = ../../../../../../../../Downloads/celebration.jpg; sourceTree = "<group>"; };
 		49A0F3A01DD99C7300540372 /* ColorGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGame.swift; sourceTree = "<group>"; };
 		49A41E181DEAA29500C0884B /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
 		49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -92,7 +87,6 @@
 		49DEC3331D8921C4002DEE51 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		49DEC3361D8921C4002DEE51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49DEC3381D8921C4002DEE51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		49DEC33B1D8921C4002DEE51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49DEC33D1D8921C4002DEE51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DEC3421D8921C4002DEE51 /* Brain StimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brain StimulatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DEC3461D8921C4002DEE51 /* Brain_StimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brain_StimulatorTests.swift; sourceTree = "<group>"; };
@@ -194,10 +188,7 @@
 				49DEC32B1D8921C4002DEE51 /* AppDelegate.swift */,
 				49DEC3381D8921C4002DEE51 /* Assets.xcassets */,
 				49A98D8D1DC8880B0088B029 /* Brain Stimulator.entitlements */,
-				4966F2311E59998F00D06345 /* brainbg.jpg */,
-				4966F2331E599AD200D06345 /* celebration.jpg */,
-				491AFC551E48612400235F71 /* checkmarkselected.png */,
-				491AFC571E48612B00235F71 /* checkmarkunselected.png */,
+				494914481E76594600BA0EAF /* S.png */,
 				49A0F3A01DD99C7300540372 /* ColorGame.swift */,
 				49E467621DDC48AD00950EA1 /* ComplexMath.swift */,
 				49ADD38D1DC019A2006F4431 /* CreateAccount.swift */,
@@ -208,7 +199,6 @@
 				49DEC3331D8921C4002DEE51 /* GameViewController.swift */,
 				49A98D8B1DC885DF0088B029 /* GoogleService-Info.plist */,
 				49DEC33D1D8921C4002DEE51 /* Info.plist */,
-				49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */,
 				494BBD731E656ABE00445AB2 /* lighcheckunfilled.png */,
 				494BBD751E656AD600445AB2 /* lightcheckfilled.png */,
 				49D759F81DBDDC1D007E5216 /* Login.swift */,
@@ -223,6 +213,7 @@
 				4901DA231DD8683F00962C9D /* Settings.swift */,
 				49E467591DDC476500950EA1 /* SimpleMath.swift */,
 				49D759FA1DBDE6EC007E5216 /* UniversalParams.swift */,
+				4949144A1E765C7300BA0EAF /* Launch Screen.storyboard */,
 			);
 			path = "Brain Stimulator";
 			sourceTree = "<group>";
@@ -369,18 +360,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494914491E76594600BA0EAF /* S.png in Resources */,
 				494BBD741E656ABE00445AB2 /* lighcheckunfilled.png in Resources */,
 				49DEC3371D8921C4002DEE51 /* Main.storyboard in Resources */,
 				494C50831DDAEACD0079E4D3 /* pause.png in Resources */,
 				49DEC32E1D8921C4002DEE51 /* GameScene.sks in Resources */,
 				49DEC3391D8921C4002DEE51 /* Assets.xcassets in Resources */,
-				49DEC33C1D8921C4002DEE51 /* LaunchScreen.storyboard in Resources */,
-				491AFC561E48612400235F71 /* checkmarkselected.png in Resources */,
+				4949144B1E765C7300BA0EAF /* Launch Screen.storyboard in Resources */,
 				49DEC3301D8921C4002DEE51 /* Actions.sks in Resources */,
 				49A98D8C1DC885DF0088B029 /* GoogleService-Info.plist in Resources */,
-				4966F2341E599AD300D06345 /* celebration.jpg in Resources */,
-				491AFC581E48612B00235F71 /* checkmarkunselected.png in Resources */,
-				4966F2321E59998F00D06345 /* brainbg.jpg in Resources */,
 				494BBD761E656AD600445AB2 /* lightcheckfilled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,14 +591,6 @@
 				49DEC3361D8921C4002DEE51 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		49DEC33A1D8921C4002DEE51 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49DEC33B1D8921C4002DEE51 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

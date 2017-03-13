@@ -32,7 +32,7 @@ class SelectMode: UIViewController{
         navigationItem.title = "Select Mode"
         getGameModeOps()
         height = Int(UIScreen.main.bounds.height - (self.navigationController?.navigationBar.frame.size.height)!)
-        buttonHeight = Int(height/5)
+        buttonHeight = Int(height/4)
         scroll.contentSize.height = CGFloat(buttonHeight*options.count)
     }
     
