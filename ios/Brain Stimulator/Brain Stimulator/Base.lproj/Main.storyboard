@@ -34,13 +34,13 @@
                                 <rect key="frame" x="16" y="212" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4A-Ty-Rlk">
                                 <rect key="frame" x="16" y="267" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cz3-ak-Kjj">
                                 <rect key="frame" x="16" y="307" width="20" height="20"/>
@@ -84,6 +84,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Gro-Pj-Gzv" firstAttribute="top" secondItem="o4A-Ty-Rlk" secondAttribute="bottom" constant="9" id="8Nb-7d-deb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lMp-Xt-8mc" secondAttribute="trailing" id="GKj-ZY-4X4"/>
@@ -116,7 +117,7 @@
                         <outlet property="signupButton" destination="Srk-qT-bvE" id="0WJ-wi-eCI"/>
                         <outlet property="titleLab" destination="Siq-2X-pV7" id="D6q-TR-AK4"/>
                         <outlet property="useremailField" destination="mga-J6-caV" id="QyT-cF-tq6"/>
-                        <segue destination="Pvn-JM-KSv" kind="show" identifier="logtohubseg" id="MPp-ax-rlS"/>
+                        <segue destination="Pvn-JM-KSv" kind="presentation" identifier="logtohubseg" id="MPp-ax-rlS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pb4-A8-IOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,25 +146,25 @@
                                 <rect key="frame" x="16" y="212" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bac-DT-O9q">
                                 <rect key="frame" x="16" y="267" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XkV-E0-Oey">
                                 <rect key="frame" x="16" y="322" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yO-Ho-Crf">
                                 <rect key="frame" x="16" y="377" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7Y-ST-3Ko">
                                 <rect key="frame" x="16" y="457" width="343" height="30"/>
@@ -202,6 +203,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Bac-DT-O9q" secondAttribute="trailing" id="1CY-M8-NTk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XEq-ko-vuh" secondAttribute="trailing" id="30a-S2-HPr"/>
@@ -1177,8 +1179,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="Gbg-qZ-cvf"/>
         <segue reference="ape-ah-GU6"/>
-        <segue reference="IZ9-tp-9ZK"/>
-        <segue reference="BFB-H4-fkB"/>
         <segue reference="A6V-cT-gxd"/>
+        <segue reference="Vte-ay-V1M"/>
+        <segue reference="MPp-ax-rlS"/>
     </inferredMetricsTieBreakers>
 </document>
