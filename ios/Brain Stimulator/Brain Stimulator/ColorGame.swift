@@ -47,6 +47,9 @@ class ColorGame: UIViewController{
         pauseOverlayView.isHidden = true
         pauseOverlayView.backgroundColor = bgColor
         self.navigationController?.isNavigationBarHidden = true
+        colorWordDisp.layer.borderWidth = 2.0
+        colorWordDisp.layer.cornerRadius = 10.0
+        colorWordDisp.layer.borderColor = getColor(color: "Black").cgColor
         selectColorBank()
     }
     
@@ -102,9 +105,9 @@ class ColorGame: UIViewController{
             getButton(pos: i).contentVerticalAlignment = UIControlContentVerticalAlignment.center
             getButton(pos: i).setTitleColor(fontColor, for: UIControlState())
             getButton(pos: i).layer.borderWidth = 2.0
-            getButton(pos: i).layer.borderColor = bgColor.cgColor
+            getButton(pos: i).layer.borderColor = getColor(color: "Black").cgColor
             getButton(pos: i).backgroundColor = bgColor
-            getButton(pos: i).layer.cornerRadius = 5.0
+            getButton(pos: i).layer.cornerRadius = 10.0
             getButton(pos: i).addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
                               for: UIControlEvents.touchUpInside)
             buttonDisp.addSubview(getButton(pos: i))
@@ -151,7 +154,7 @@ class ColorGame: UIViewController{
         colorWordDisp.backgroundColor = getColor(color: colorNames[correctAnswerPos])
         for i in 1...4{
             getButton(pos: i).setTitle(colorNames[i-1], for: .normal)
-            getButton(pos: i).layer.borderColor = bgColor.cgColor
+            getButton(pos: i).layer.borderColor = getColor(color: "Black").cgColor
         }
         count += 1
     }
@@ -166,7 +169,7 @@ class ColorGame: UIViewController{
         for i in 1...4{
             getButton(pos: i).setTitle(colorNames[i-1], for: .normal)
             getButton(pos: i).setTitleColor(getColor(color: colorNames[i-1]), for: .normal)
-            getButton(pos: i).layer.borderColor = bgColor.cgColor
+            getButton(pos: i).layer.borderColor = getColor(color: "Black").cgColor
             getButton(pos: i).backgroundColor = getColor(color: colorNames[i-1])
         }
         count += 1
@@ -181,7 +184,7 @@ class ColorGame: UIViewController{
         colorWordText.textColor = getColor(color: colorNames[correctAnswerPos])
         for i in 1...4{
             getButton(pos: i).setTitle(colorNames[i-1], for: .normal)
-            getButton(pos: i).layer.borderColor = bgColor.cgColor
+            getButton(pos: i).layer.borderColor = getColor(color: "Black").cgColor
         }
         count += 1
     }
@@ -197,7 +200,7 @@ class ColorGame: UIViewController{
         colorWordText.textColor = getColor(color: colorNames[randomGen(range: colorNames.count)])
         for i in 1...4{
             getButton(pos: i).setTitle(colorNames[i-1], for: .normal)
-            getButton(pos: i).layer.borderColor = bgColor.cgColor
+            getButton(pos: i).layer.borderColor = getColor(color: "Black").cgColor
         }
         count += 1
     }
@@ -213,6 +216,7 @@ class ColorGame: UIViewController{
         continueButton.layer.borderWidth = 2.0
         continueButton.backgroundColor = getColor(color: "Dark Green")
         continueButton.setTitleColor(fontColor, for: UIControlState())
+        continueButton.layer.cornerRadius = 10.0
         continueButton.titleLabel?.font = continueButton.titleLabel?.font.withSize(30)
         continueButton.addTarget(self, action: #selector(ColorGame.cont),
                                 for: UIControlEvents.touchUpInside)
@@ -223,6 +227,7 @@ class ColorGame: UIViewController{
         quitButton.setTitle("Leave", for: .normal)
         quitButton.layer.borderWidth = 2.0
         quitButton.backgroundColor = getColor(color: "Dark Red")
+        quitButton.layer.cornerRadius = 10.0
         quitButton.setTitleColor(fontColor, for: UIControlState())
         quitButton.titleLabel?.font = quitButton.titleLabel?.font.withSize(30)
         quitButton.addTarget(self, action: #selector(ColorGame.quit),

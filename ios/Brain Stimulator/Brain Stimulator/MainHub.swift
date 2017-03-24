@@ -12,12 +12,15 @@ import UIKit
 class Mainhub: UIViewController{
     
     @IBOutlet var mainLabel: UILabel!
-    @IBOutlet var button1: UIButton!
-    @IBOutlet var button2: UIButton!
-    @IBOutlet var button3: UIButton!
-    @IBOutlet var button4: UIButton!
-    @IBOutlet var button5: UIButton!
-    @IBOutlet var button6: UIButton!
+    @IBOutlet var buttonScroll: UIScrollView!
+    var buttons:[UIButton] = []
+    var gameNames:[String] = ["Colors", "Simple Math", "Complex Math", "Memory", "Directions", "Find It"]
+    var patientNames:[String] = []
+    let width = Int(UIScreen.main.bounds.width)
+    var scrHeight = 0
+    var buttonWidth = 0
+    var buttonHeight = 0
+    var alreadyEntered = false
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
@@ -37,9 +40,17 @@ class Mainhub: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         mainLabel.textColor = fontColor
-        setButtons()
+        scrHeight = Int(buttonScroll.bounds.height)
+        buttonWidth = width/2
+        buttonHeight = scrHeight/3
+        buttonScroll.isScrollEnabled = true
+        if alreadyEntered == false{
+            addButtons()
+            alreadyEntered = true
+        }
+        buttonScroll.contentSize.height = CGFloat(buttonHeight*buttons.count/2)
     }
-     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -73,45 +84,52 @@ class Mainhub: UIViewController{
         })
     }
     
-    func setButtons(){
-        print(fontColor)
-        button1.backgroundColor = bgColor
-        button1.titleLabel?.textColor = fontColor
-        button2.backgroundColor = bgColor
-        button2.titleLabel?.textColor = fontColor
-        button3.backgroundColor = bgColor
-        button3.titleLabel?.textColor = fontColor
-        button4.backgroundColor = bgColor
-        button4.titleLabel?.textColor = fontColor
-        button5.backgroundColor = bgColor
-        button5.titleLabel?.textColor = fontColor
-        button6.backgroundColor = bgColor
-        button6.titleLabel?.textColor = fontColor
+    func addButtons(){
+        var names:[String] = []
+        if isTherapist == false{
+            mainLabel.text = "Stimulation Games"
+            names = gameNames
+        }
+        else{
+            mainLabel.text = "Patients"
+            names = patientNames
+        }
+        if names.count > 0{
+            for i in 1...(names.count)/2{
+                for j in 1...2{
+                    let button = UIButton(frame: CGRect(x: (j-1)*buttonWidth,y: (i-1)*buttonHeight, width: buttonWidth, height: buttonHeight))
+                    buttons.append(button)
+                }
+            }
+            for b in 1...buttons.count{
+                buttons[b-1].titleLabel!.font = buttons[b-1].titleLabel!.font.withSize(20)
+                buttons[b-1].contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+                buttons[b-1].contentVerticalAlignment = UIControlContentVerticalAlignment.center
+                buttons[b-1].setTitleColor(fontColor, for: UIControlState())
+                buttons[b-1].setTitle(names[b-1], for: UIControlState())
+                buttons[b-1].layer.cornerRadius = 10.0
+                buttons[b-1].backgroundColor = bgColor
+                buttons[b-1].layer.borderWidth = 1.0
+                buttons[b-1].layer.borderColor = UIColor.black.cgColor
+                buttons[b-1].titleLabel?.textColor = fontColor
+                buttons[b-1].addTarget(self, action: #selector(Mainhub.buttonPressed(_:)),
+                                       for: UIControlEvents.touchUpInside)
+                buttonScroll.addSubview(buttons[b-1])
+            }
+        }
     }
     
-    @IBAction func transSM(_ sender: UIButton) {
+    func buttonPressed(_ sender: UIButton){
         game = (sender.titleLabel?.text!)!
-        self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
-    }
-    
-    @IBAction func transColors(_ sender: UIButton) {
-        game = (sender.titleLabel?.text!)!
-        self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
-    }
-    
-    @IBAction func transCM(_ sender: UIButton) {
-        game = (sender.titleLabel?.text!)!
-        self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
-    }
-    
-    @IBAction func transMem(_ sender: UIButton) {
-        game = (sender.titleLabel?.text!)!
-        self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
-    }
-    
-    @IBAction func transFind(_ sender: UIButton) {
-        game = (sender.titleLabel?.text!)!
-        self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
+        if game == "Complex Math" || game == "Directions" || game == "Find It" || game == "Memory"{
+            let alert = UIAlertController(title: "Locked", message: "Game Coming Soon.", preferredStyle: UIAlertControllerStyle.alert)
+            let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
+        else{
+            self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
+        }
     }
     
 }

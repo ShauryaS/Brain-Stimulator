@@ -53,6 +53,10 @@ class SelectMode: UIViewController{
             button.titleLabel!.font = button.titleLabel!.font.withSize(18)
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
             button.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+            button.layer.cornerRadius = 10.0
+            button.backgroundColor = bgColor
+            button.layer.borderWidth = 1.0
+            button.layer.borderColor = UIColor.black.cgColor
             button.setTitleColor(fontColor, for: UIControlState())
             button.setTitle(mode, for: UIControlState())
             button.addTarget(self, action: #selector(SelectMode.buttonClicked(_:)),

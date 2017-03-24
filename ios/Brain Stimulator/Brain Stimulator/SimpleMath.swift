@@ -44,6 +44,9 @@ class SimpleMath: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonDisp.backgroundColor = bgColor
+        mathDisp.layer.borderWidth = 2.0
+        mathDisp.layer.cornerRadius = 10.0
+        mathDisp.layer.borderColor = getColor(color: "Black").cgColor
         self.view.backgroundColor = bgColor
         pauseOverlayDisp.isHidden = true
         pauseOverlayDisp.backgroundColor = bgColor
@@ -126,9 +129,9 @@ class SimpleMath: UIViewController{
             getButton(pos: i).contentVerticalAlignment = UIControlContentVerticalAlignment.center
             getButton(pos: i).setTitleColor(fontColor, for: UIControlState())
             getButton(pos: i).layer.borderWidth = 2.0
-            getButton(pos: i).layer.borderColor = bgColor.cgColor
+            getButton(pos: i).layer.borderColor = UIColor.black.cgColor
             getButton(pos: i).backgroundColor = bgColor
-            getButton(pos: i).layer.cornerRadius = 5.0
+            getButton(pos: i).layer.cornerRadius = 10.0
             getButton(pos: i).addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
                                         for: UIControlEvents.touchUpInside)
             buttonDisp.addSubview(getButton(pos: i))
@@ -210,6 +213,7 @@ class SimpleMath: UIViewController{
         continueButton.layer.borderWidth = 2.0
         continueButton.backgroundColor = getColor(color: "Dark Green")
         continueButton.setTitleColor(fontColor, for: UIControlState())
+        continueButton.layer.cornerRadius = 10.0
         continueButton.titleLabel?.font = continueButton.titleLabel?.font.withSize(30)
         continueButton.addTarget(self, action: #selector(SimpleMath.cont),
                                  for: UIControlEvents.touchUpInside)
@@ -220,6 +224,7 @@ class SimpleMath: UIViewController{
         quitButton.setTitle("Leave", for: .normal)
         quitButton.layer.borderWidth = 2.0
         quitButton.backgroundColor = getColor(color: "Dark Red")
+        quitButton.layer.cornerRadius = 10.0
         quitButton.setTitleColor(fontColor, for: UIControlState())
         quitButton.titleLabel?.font = quitButton.titleLabel?.font.withSize(30)
         quitButton.addTarget(self, action: #selector(SimpleMath.quit),
@@ -256,7 +261,7 @@ class SimpleMath: UIViewController{
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
             getButton(pos: buttPos[p]).backgroundColor = bgColor
-            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
+            getButton(pos: buttPos[p]).layer.borderColor = UIColor.black.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }
@@ -284,7 +289,7 @@ class SimpleMath: UIViewController{
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
             getButton(pos: buttPos[p]).backgroundColor = bgColor
-            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
+            getButton(pos: buttPos[p]).layer.borderColor = UIColor.black.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }
@@ -312,7 +317,7 @@ class SimpleMath: UIViewController{
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
             getButton(pos: buttPos[p]).backgroundColor = bgColor
-            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
+            getButton(pos: buttPos[p]).layer.borderColor = UIColor.black.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }
@@ -343,7 +348,7 @@ class SimpleMath: UIViewController{
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
             getButton(pos: buttPos[p]).backgroundColor = bgColor
-            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
+            getButton(pos: buttPos[p]).layer.borderColor = UIColor.black.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }
@@ -370,7 +375,7 @@ class SimpleMath: UIViewController{
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
             getButton(pos: buttPos[p]).backgroundColor = bgColor
-            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
+            getButton(pos: buttPos[p]).layer.borderColor = UIColor.black.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }
@@ -397,7 +402,7 @@ class SimpleMath: UIViewController{
             let p = randomGen(range: buttPos.count)
             getButton(pos: buttPos[p]).setTitle(String(answerOps[a1]), for: .normal)
             getButton(pos: buttPos[p]).backgroundColor = bgColor
-            getButton(pos: buttPos[p]).layer.borderColor = bgColor.cgColor
+            getButton(pos: buttPos[p]).layer.borderColor = UIColor.black.cgColor
             buttPos.remove(at: p)
             a1 += 1
         }

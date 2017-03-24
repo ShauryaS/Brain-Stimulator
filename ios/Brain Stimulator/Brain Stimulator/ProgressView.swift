@@ -15,6 +15,14 @@ class ProgressView: UIViewController{
         super.viewDidLoad()
         self.view.backgroundColor = bgColor
         navigationItem.title = "Progress"
+        let alert = UIAlertController(title: "Locked", message: "Feature Coming Soon.", preferredStyle: UIAlertControllerStyle.alert)
+        let action = UIAlertAction(title: "Okay", style: .default){
+            UIAlertAction in
+            self.performSegue(withIdentifier: "progtomainseg", sender: nil)
+        }
+
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

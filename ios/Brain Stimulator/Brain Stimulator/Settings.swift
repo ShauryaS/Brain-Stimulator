@@ -31,7 +31,7 @@ class Settings: UIViewController{
         }
         pointsLab.text = "Points: " + String(points)
         gamesPlayedLab.text = "Games Played: " + String(gamesPlayed)
-        daysLab.text = "Days Played: " + String(days)
+        //daysLab.text = "Days Played: " + String(days)
         burstLab.text = "Burst: "
         self.view.backgroundColor = bgColor
         navigationItem.title = "Settings"
