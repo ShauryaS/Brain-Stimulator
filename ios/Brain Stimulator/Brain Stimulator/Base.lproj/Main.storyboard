@@ -1021,9 +1021,21 @@
                     <view key="view" contentMode="scaleToFill" id="igN-k5-zEB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dx7-kk-CSa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dx7-kk-CSa" firstAttribute="top" secondItem="g3s-4V-vrl" secondAttribute="bottom" id="CAY-1J-NQ9"/>
+                            <constraint firstItem="Dx7-kk-CSa" firstAttribute="leading" secondItem="igN-k5-zEB" secondAttribute="leading" id="ZcV-Zr-gTH"/>
+                            <constraint firstItem="B03-ea-qKi" firstAttribute="top" secondItem="Dx7-kk-CSa" secondAttribute="bottom" id="klL-d1-YJR"/>
+                            <constraint firstAttribute="trailing" secondItem="Dx7-kk-CSa" secondAttribute="trailing" id="orn-Yg-UyI"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="scroll" destination="Dx7-kk-CSa" id="ncs-B8-rkb"/>
                         <segue destination="ccv-Xw-TrV" kind="show" identifier="difftosmsegue" id="ciB-Ya-mw6"/>
                         <segue destination="PEG-mU-hoa" kind="show" identifier="difftocolorsegue" id="qUa-5z-9Pg"/>
                         <segue destination="Iih-9q-ySJ" kind="show" identifier="difftocmsegue" id="ScE-bb-DSc"/>
@@ -1035,7 +1047,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqa-95-frm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="1786"/>
+            <point key="canvasLocation" x="136.80000000000001" y="1785.1574212893554"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">

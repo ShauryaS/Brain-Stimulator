@@ -14,6 +14,10 @@ class SelectDifficulty: UIViewController{
     var width = 0
     var height = 0
     
+    var buttonHeight = 0
+    
+    @IBOutlet var scroll: UIScrollView!
+    
     let diff:[String] = ["Easy", "Medium", "Hard"]
     
     override func viewDidLoad() {
@@ -22,6 +26,8 @@ class SelectDifficulty: UIViewController{
         self.navigationController?.isNavigationBarHidden = false
         width = Int(UIScreen.main.bounds.width)
         height = Int(UIScreen.main.bounds.height - (self.navigationController?.navigationBar.frame.size.height)!)
+        buttonHeight = Int(height/3)
+        scroll.contentSize.height = CGFloat(buttonHeight*3)
         navigationItem.title = "Select Difficulty"
     }
     
@@ -31,8 +37,9 @@ class SelectDifficulty: UIViewController{
     }
     
     func setButtons(){
+        scroll.contentInset = UIEdgeInsets.zero
         for i in 1...3{
-            let button = UIButton(frame: CGRect(x: 0, y: Int((self.navigationController?.navigationBar.frame.size.height)!)+(i-1)*height/3, width: width, height: height/3))
+            let button = UIButton(frame: CGRect(x: 0, y: (i-1)*buttonHeight, width: width, height: buttonHeight))
             button.titleLabel!.font = button.titleLabel!.font.withSize(20)
             button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
             button.contentVerticalAlignment = UIControlContentVerticalAlignment.center
@@ -44,7 +51,7 @@ class SelectDifficulty: UIViewController{
             button.setTitle(diff[i-1], for: UIControlState())
             button.addTarget(self, action: #selector(SelectMode.buttonClicked(_:)),
                              for: UIControlEvents.touchUpInside)
-            self.view.addSubview(button)
+            scroll.addSubview(button)
         }
     }
     
