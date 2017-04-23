@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.shauryas.Brain-Stim</string>
+	<string>com.shauryas.BrainStim</string>
 	<key>PROJECT_ID</key>
 	<string>brain-stimulator-b8473</string>
 	<key>STORAGE_BUCKET</key>
