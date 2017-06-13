@@ -66,7 +66,7 @@ class CreateAccount: UIViewController{
                             if error == nil{
                                 let data = ["name": username, "isTherapist": self.selected, "points": 0, "gamesPlayed": 0, "days": 0, "gameBurst": 10] as [String : Any]
                                 firebaseRef.child("users").child((user?.uid)!).setValue(data)
-                                self.performSegue(withIdentifier: "createtologseg", sender: nil)
+                                self.performSegue(withIdentifier: "createtomainseg", sender: nil)
                             }
                             else{
                                 print(error!)
@@ -110,7 +110,7 @@ class CreateAccount: UIViewController{
         emailField.text = ""
         paswdField.text = ""
         confirmpswdField.text = ""
-        self.performSegue(withIdentifier: "createtologseg", sender: nil)
+        self.performSegue(withIdentifier: "createtomainseg", sender: nil)
     }
     
 }

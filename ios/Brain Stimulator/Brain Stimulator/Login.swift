@@ -15,7 +15,7 @@ class LogIn: UIViewController{
     @IBOutlet var titleLab: UILabel!
     @IBOutlet var rememberMeButton: UIButton!
     @IBOutlet var loginButton: UIButton!
-    @IBOutlet var signupButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
     @IBOutlet var useremailField: UITextField!
     @IBOutlet var pswdField: UITextField!
     @IBOutlet var rememberLab: UILabel!
@@ -34,7 +34,6 @@ class LogIn: UIViewController{
         setViewColor()
         let sharedApp = UIApplication.shared
         sharedApp.delegate?.window??.tintColor = fontColor
-        setViewColor()
         self.navigationController?.isNavigationBarHidden = true
         if bgColor != UIColor.white{
             UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
@@ -59,7 +58,7 @@ class LogIn: UIViewController{
         self.titleLab.textColor = fontColor
         rememberMeButton.setTitleColor(fontColor, for: UIControlState.normal)
         loginButton.setTitleColor(fontColor, for: UIControlState.normal)
-        signupButton.setTitleColor(fontColor, for: UIControlState.normal)
+        cancelButton.setTitleColor(fontColor, for: UIControlState.normal)
         rememberLab.textColor = fontColor
     }
 
@@ -78,6 +77,7 @@ class LogIn: UIViewController{
                         self.saveAuth(username: useremail, password: pswd)
                     }
                     uid = (user?.uid)!
+                    loggedIn = true
                     self.performSegue(withIdentifier: "logtohubseg", sender: nil)
                 }
                 else{
@@ -94,6 +94,10 @@ class LogIn: UIViewController{
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        self.performSegue(withIdentifier: "logtohubseg", sender: nil)
     }
     
     @IBAction func remembermeTriggered(_ sender: AnyObject) {

@@ -132,7 +132,7 @@ class SimpleMath: UIViewController{
             getButton(pos: i).layer.borderColor = UIColor.black.cgColor
             getButton(pos: i).backgroundColor = bgColor
             getButton(pos: i).layer.cornerRadius = 10.0
-            getButton(pos: i).addTarget(self, action: #selector(ColorGame.doButtonStuff(_:)),
+            getButton(pos: i).addTarget(self, action: #selector(SimpleMath.doButtonStuff(_:)),
                                         for: UIControlEvents.touchUpInside)
             buttonDisp.addSubview(getButton(pos: i))
         }

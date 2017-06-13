@@ -17,11 +17,12 @@ var days = 0
 var correct:[Int] = [4, 8, 12]
 var incorrect:[Int] = [2, 4, 6]
 
-var gameburst = 0
+var gameburst = 10
 var username = ""
 var email = ""
 var pswd = ""
 var uid = ""
+var loggedIn = false
 var remembered:Bool!
 var game = ""
 var gameType = ""
