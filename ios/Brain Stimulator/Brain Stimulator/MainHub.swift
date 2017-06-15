@@ -15,7 +15,7 @@ class Mainhub: UIViewController{
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var buttonScroll: UIScrollView!
     var buttons:[UIButton] = []
-    var gameNames:[String] = ["Colors", "Simple Math", "Complex Math", "Memory", "Directions", "Find It"]
+    var gameNames:[String] = ["Colors", "Simple Math"/*, "Complex Math", "Memory", "Directions", "Find It"*/]
     var patientNames:[String] = []
     let width = Int(UIScreen.main.bounds.width)
     var scrHeight = 0
@@ -114,9 +114,9 @@ class Mainhub: UIViewController{
             names = patientNames
         }
         if names.count > 0{
-            for i in 1...(names.count)/2{
-                for j in 1...2{
-                    let button = UIButton(frame: CGRect(x: (j-1)*buttonWidth,y: (i-1)*buttonHeight, width: buttonWidth, height: buttonHeight))
+            for i in 1...2{//should be till the names.count/2
+                for j in 1...1{//should be till 2
+                    let button = UIButton(frame: CGRect(x: (j-1)*buttonWidth*2,y: (i-1)*buttonHeight*3/2, width: buttonWidth*2, height: buttonHeight*3/2))
                     buttons.append(button)
                 }
             }
