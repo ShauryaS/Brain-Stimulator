@@ -704,8 +704,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shauryas.BrainStim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "67893150-7191-40d8-87a7-b6691a715fdd";
-				PROVISIONING_PROFILE_SPECIFIER = "Shaurya Srivastava";
+				PROVISIONING_PROFILE = "b04a0f9e-68f7-42a9-b18d-da59ba0c8000";
+				PROVISIONING_PROFILE_SPECIFIER = ShauryaS;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -724,8 +724,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shauryas.BrainStim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "67893150-7191-40d8-87a7-b6691a715fdd";
-				PROVISIONING_PROFILE_SPECIFIER = "Shaurya Srivastava";
+				PROVISIONING_PROFILE = "50d822a0-5983-42a9-8c24-3eee88e698e8";
+				PROVISIONING_PROFILE_SPECIFIER = ShauryaS;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
