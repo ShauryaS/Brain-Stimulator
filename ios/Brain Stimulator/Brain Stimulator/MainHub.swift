@@ -8,13 +8,14 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class Mainhub: UIViewController{
     
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var buttonScroll: UIScrollView!
     var buttons:[UIButton] = []
-    var gameNames:[String] = ["Colors", "Simple Math", "Complex Math", "Memory", "Directions", "Find It"]
+    var gameNames:[String] = ["Colors", "Simple Math"/*, "Complex Math", "Memory", "Directions", "Find It"*/]
     var patientNames:[String] = []
     let width = Int(UIScreen.main.bounds.width)
     var scrHeight = 0
@@ -24,17 +25,26 @@ class Mainhub: UIViewController{
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
-        setStuff()
+        if loggedIn == true{
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(rightBarStuff))
+            setStuff()
+        }
+        if loggedIn == false{
+            self.navigationItem.title = "Client"
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log In", style: .plain, target: self, action: #selector(rightBarStuff))
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Join", style: .plain, target: self, action: #selector(leftBarStuff))
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-        UINavigationBar.appearance().barTintColor = bgColor
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: fontColor]
+        self.navigationController?.navigationBar.barTintColor = bgColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: fontColor]
         self.view.backgroundColor = bgColor
         let sharedApp = UIApplication.shared
         sharedApp.delegate?.window??.tintColor = tintColor
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,10 +71,19 @@ class Mainhub: UIViewController{
             snapshot in
             username = snapshot.value as! String
             self.navigationItem.title = username
+            let button = UIButton(frame: CGRect(x:0, y:0, width:100, height: 40))
+            button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+            button.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+            button.setTitleColor(UIColor.white, for: UIControlState())
+            button.setTitle(username, for: .normal)
+            button.addTarget(self, action: #selector(Mainhub.goToProfile(_:)), for: UIControlEvents.touchUpInside)
+            self.navigationItem.titleView = button
         })
         firebaseRef.child("users").child(uid).child("points").observeSingleEvent(of: .value, with: {
             snapshot in
             points = snapshot.value as! Int
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: String(points), style: .plain, target: self, action: nil)
+            self.navigationItem.leftBarButtonItem?.isEnabled = false
         })
         firebaseRef.child("users").child(uid).child("gameBurst").observeSingleEvent(of: .value, with: {
             snapshot in
@@ -95,9 +114,9 @@ class Mainhub: UIViewController{
             names = patientNames
         }
         if names.count > 0{
-            for i in 1...(names.count)/2{
-                for j in 1...2{
-                    let button = UIButton(frame: CGRect(x: (j-1)*buttonWidth,y: (i-1)*buttonHeight, width: buttonWidth, height: buttonHeight))
+            for i in 1...2{//should be till the names.count/2
+                for j in 1...1{//should be till 2
+                    let button = UIButton(frame: CGRect(x: (j-1)*buttonWidth*2,y: (i-1)*buttonHeight*3/2, width: buttonWidth*2, height: buttonHeight*3/2))
                     buttons.append(button)
                 }
             }
@@ -130,6 +149,45 @@ class Mainhub: UIViewController{
         else{
             self.performSegue(withIdentifier: "maintomodesegue", sender: nil)
         }
+    }
+    
+    func rightBarStuff(){
+        if navigationItem.rightBarButtonItem?.title == "Log In"{
+            self.performSegue(withIdentifier: "maintologsegue", sender: nil)
+        }
+        if navigationItem.rightBarButtonItem?.title == "Log Out"{
+            username = ""
+            email = ""
+            pswd = ""
+            uid = ""
+            loggedIn = false
+            removeSavedData(fileName: "savedData.txt")
+            try! FIRAuth.auth()!.signOut()
+            self.performSegue(withIdentifier: "logoutseg", sender: nil)
+        }
+    }
+    
+    func leftBarStuff(){
+        if navigationItem.leftBarButtonItem?.title == "Join"{
+            self.performSegue(withIdentifier: "maintocreateseg", sender: nil)
+        }
+    }
+    
+    func removeSavedData(fileName:String){
+        let filePath = getDocumentsDirectory().appending("/"+fileName)
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: filePath) {
+            do {
+                try fileManager.removeItem(atPath: filePath)
+            }
+            catch let error as NSError {
+                print("Error: "+"\(error)")
+            }
+        }
+    }
+    
+    func goToProfile(_ sender: UIButton){
+        self.performSegue(withIdentifier: "maintoprofsegue", sender: nil)
     }
     
 }

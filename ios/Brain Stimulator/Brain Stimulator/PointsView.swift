@@ -39,7 +39,9 @@ class PointsView: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         addLabels()
-        pushPoints()
+        if(loggedIn)==true{
+            pushPoints()
+        }
     }
     
     func addLabels(){
